@@ -1,0 +1,22 @@
+
+  .book-slider .slick-list {
+    margin-left: 199px; 
+    margin-right: 199px;
+  }
+  
+  .book-slider .arrow-right {
+    right: 100px; 
+  }
+
+  .book-slider .arrow-left {
+    left: 100px;
+  }
+  
+  @media (min-width: 250px) and (max-width: 700px) {
+
+  .book-slider .slick-list {
+    margin-left: 0; 
+    margin-right: 0;
+  }
+
+  }

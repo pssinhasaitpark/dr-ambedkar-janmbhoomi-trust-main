@@ -1,10 +1,18 @@
 import React from 'react';
-import { HeaderClient } from '../../components/index';
+import { Header, Footer, About, HeaderTop,BookSlider,PhotoGallery,Achievment,FaqSection} from '../../components/index.js';
 
 function PageLayout() {
   return (
     <div className="dashboard-container">
-      <HeaderClient />
+      <HeaderTop/>
+      <Header />
+      <About />
+      <BookSlider/>
+      <PhotoGallery/>
+    <FaqSection/>
+      <Achievment/>
+      <Footer/>
+
     </div>
   );
 }
