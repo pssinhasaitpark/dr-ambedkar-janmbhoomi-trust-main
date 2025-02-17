@@ -25,19 +25,20 @@ const FaqSection= () => {
   ];
 
   return (
+    <div className="bg-light p-1 mt-4">
     <div className="container my-5">
       <h2 className="text-center mb-4">Frequently Asked Questions</h2>
       {faqs.map((section, sectionIndex) => (
         <div key={sectionIndex} className="mb-4">
           <h4 className="fw-bold">{section.category}</h4>
-          <div className="accordion">
+          <div className="accordion ">
             {section.items.map((item, index) => {
               const isOpen = openIndex === `${sectionIndex}-${index}`;
               return (
-                <div key={index} className="accordion-item">
-                  <h2 className="accordion-header">
+                <div key={index} className="accordion-item border-bottom border-0">
+                  <h2 className="accordion-header ">
                     <button
-                      className={`accordion-button ${isOpen ? "" : "collapsed"}`}
+                      className={`accordion-button fs-4 mt-3 ${isOpen ? "" : "collapsed"}`}
                       type="button"
                       onClick={() => toggleAccordion(`${sectionIndex}-${index}`)}
                     >
@@ -55,6 +56,7 @@ const FaqSection= () => {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

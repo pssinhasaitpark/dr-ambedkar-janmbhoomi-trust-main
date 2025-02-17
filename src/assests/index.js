@@ -24,5 +24,10 @@ import achieve1 from '../assests/images/achieve1.png'
 import achieve2 from '../assests/images/achieve2.png'
 import achieve3 from '../assests/images/achieve3.png'
 import achieve4 from '../assests/images/achieve4.png'
-
-export {app,fb,insta,logo,phone,Search,yt,abouta,aboutb,aboutc,aboutd,slick,slick1,slick2,slick3,slick4,photo,photo1,photo2,photo3,photo4,achieve,achieve1,achieve2,achieve3,achieve4 }
+import image404 from '../assests/images/image 404.png'
+import birth from '../assests/images/birth.png'
+import birth1 from '../assests/images/birth1.png'
+import birth2 from '../assests/images/birth2.png'
+import birth3 from '../assests/images/birth3.png'
+import dajt from '../assests/images/dajt.png'
+export {app,fb,insta,logo,phone,Search,yt,abouta,aboutb,aboutc,aboutd,slick,slick1,slick2,slick3,slick4,photo,photo1,photo2,photo3,photo4,achieve,achieve1,achieve2,achieve3,achieve4,image404,birth,birth1,birth2,birth3,dajt }

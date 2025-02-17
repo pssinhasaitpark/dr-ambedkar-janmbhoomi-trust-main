@@ -5,14 +5,21 @@ import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import App from './App';
+import { Provider } from 'react-redux';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';  
+import store from './view/redux/store'; 
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const queryClient = new QueryClient();
 root.render(
   <React.StrictMode>
+    <Provider store={store}> <QueryClientProvider client={queryClient}>
       <BrowserRouter>
           <App />
         </BrowserRouter>
+        </QueryClientProvider>
+        </Provider>,
   </React.StrictMode>
 );
 
