@@ -1,72 +1,83 @@
-import React from "react";
+import React from 'react';
 import './Footer.css';
 import FooterBottom from "./FooterBottom.jsx";
-import footerData from "../../../utils/footerData.json";
-
 import { yt, fb, app, insta } from "../../../../assests/index.js";
 const Footer = () => {
+  const quickLinks1 = ["Home", "About", "History", "Books"];
+  const quickLinks2 = ["News", "Gallery", "Contact"];
+
   return (
     <>
-      <div className="Footer  border-top">
-        <div className="Footer-main container mt-3">
-          <div className="footer-uls row">
-            {footerData.sections.map((section, index) => (
-              <div key={index} className={`footer-li col-sm-${section.col}`}>
-                <h5 className="mb-4 badge bg-primary text-light">{section.subhead}</h5>
-                <h5 className="mb-4">{section.title}</h5>
-                {section.type === "text" ? (
-                  <>
-                    <p>{section.content}</p>
-                    {section.paragraph &&
-                      section.paragraph.map((paragraph, i) => (
-                        <p key={i} className="text-muted">
-                          <b>{paragraph.label}</b> : {paragraph.value}
-                        </p>
-                      ))}
-                  </>
-                ) : (
-                
-                  <ul className="list-unstyled">
-                    {section.links.map((link, i) => (
-                      <li key={i}>
-                        <a href={link.url} className="text-decoration-none text-black fw-normal text-muted">
-                          {link.text}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+      <div className="footer bg-dark text-light py-4">
+        <div className="container">
+          <div className="row">
+
+            <div className="col-md-4">
+              <span className="badge bg-primary mb-3">Dr Bhimrao Ambedkar</span>
+              <h5 className="mb-4 fs-5">Bhim Janmabhoomi, Dr. Bhimrao Ambedkar Memorial Mhow</h5>
+              <div>
+                <h6 className='fs-5'>Locate us</h6>
+                <p className="text-light opacity-75 fs-5">
+                  Dr. Ambedkar Nagar (Mhow), Indore district, Madhya Pradesh, India
+                </p>
               </div>
-            ))}
-
-            <div className="footer-li col-sm-4 h-100">
-              <div className="footer-weekly-newsletter text-center p-4">
-                <h5>Sign up for our newsletter</h5>
-
-                <div className="email-btn input-group rounded border w-100">
-                  <input
-                    type="email"
-                    className="form-control rounded border-0"
-                    placeholder="Enter Email"
-                    aria-label="enter email"
-                    aria-describedby="email-addon"
-                  />
-                  <span className="input-group-text all-background text-light px-3" id="email-addon ">
-                    Suscribe
-                  </span>
+            </div>
+            <div className="col-md-4">
+             
+              <div className="quick-links-container">
+              <h5 className="mb-4 ms-5 mt-5">Quick Links</h5>
+                <div className="d-flex justify-content-center me-5">
+                  
+                  <div className="me-5 pe-5">
+                    {quickLinks1.map((link, index) => (
+                      <div key={index} className="mb-3">
+                        <a href="/" className="text-light text-decoration-none opacity-75">
+                          {link}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                  <div>
+                    {quickLinks2.map((link, index) => (
+                      <div key={index} className="mb-3">
+                        <a href="/" className="text-light text-decoration-none opacity-75">
+                          {link}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="mt-3 d-flex justify-content-center justify-content-start ">
-                  <img src={app} alt="WhatsApp" className=" header-icons me-2" />
-                  <img src={fb} alt="Facebook" className=" header-icons me-2" />
-                  <img src={insta} alt="Instagram" className=" header-icons me-2" />
-                  <img src={yt} alt="YouTube" className=" header-icons me-2" />
-                </div>
+              </div>
+            </div>
+            <div className="col-md-4 mt-5">
+              <h5 className="mb-4">Sign up for our newsletter</h5>
+              <div className="d-flex newsletter-container">
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Enter Email"
+                  style={{ borderRadius: "4px 0 0 4px" }}
+                />
+                <button
+                  className="btn btn-primary px-4"
+                  style={{ borderRadius: "0 4px 4px 0" }}
+                >
+                  Subscribe
+                </button>
+              </div>
+              <div className="mt-4 d-flex social-icons-container">
+                <img src={app} alt="WhatsApp" className='me-2' />
+                <img src={fb} alt="Facebook" className='me-2' />
+                <img src={insta} alt="Instagram" className='me-2' />
+                <img src={yt} alt="YouTube" className='me-2' />
+
               </div>
             </div>
           </div>
         </div>
-        <FooterBottom />
+
       </div>
+      <FooterBottom />
     </>
   );
 };

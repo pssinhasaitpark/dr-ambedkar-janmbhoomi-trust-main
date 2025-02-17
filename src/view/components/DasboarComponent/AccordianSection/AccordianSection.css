@@ -1,0 +1,13 @@
+.Accordian-width{
+    width:32%;
+}
+.hover-li:hover {
+    background-color: #d0d0d0;
+    border-radius: 5px;
+  }
+@media (min-width: 250px) and (max-width: 767px) {
+    .Accordian-width{
+        width:94%;
+        
+    }
+ }

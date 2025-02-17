@@ -1,5 +1,6 @@
 import React from 'react';
-import { Header, Footer, About, HeaderTop,BookSlider,PhotoGallery,Achievment,FaqSection} from '../../components/index.js';
+import "./PageLayout.css";
+import { Header, Footer, About, HeaderTop,BookSlider,PhotoGallery,Achievment,FaqSection, Biography, AccordianSection} from '../../components/index.js';
 
 function PageLayout() {
   return (
@@ -8,7 +9,9 @@ function PageLayout() {
       <Header />
       <About />
       <BookSlider/>
+      <Biography/>
       <PhotoGallery/>
+      <AccordianSection/>
     <FaqSection/>
       <Achievment/>
       <Footer/>

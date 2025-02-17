@@ -1,10 +1,16 @@
-.email-btn{
-    margin: 0 auto;
-}
-.FB-left-img{
-    width: 50px;
-    height: 50px;
-}
-.FB-left-img-data>p{
-    margin: 0 !important;
-}
+
+ .quick-links-container {
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-right: 1px solid rgba(255,255,255,0.3);
+    padding: 0 20px;
+  }
+  .social-icon img {
+    width: 40px;
+    height: 40px;
+  }
+  @media (max-width: 768px) {
+    .quick-links-container {
+      border: none;
+      padding: 0;
+    }
+  }

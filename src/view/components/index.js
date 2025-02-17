@@ -8,4 +8,6 @@ import BookSlider from "./DasboarComponent/BookSlider/BookSlider.jsx";
 import PhotoGallery from "./DasboarComponent/Gallery/PhotoGallery.jsx";
 import Achievment from "./DasboarComponent/Achievement/Achievment.jsx";
 import FaqSection from "./DasboarComponent/FAQSection/FaqSection.jsx";
-export { HeaderTop,Header, FooterBottom, Footer,About,Contact,BookSlider,PhotoGallery,Achievment,FaqSection }
+import Biography from "./DasboarComponent/Biography/Biography.jsx";
+import AccordianSection from "./DasboarComponent/AccordianSection/AccordianSection.jsx";
+export { HeaderTop,Header, FooterBottom, Footer,About,Contact,BookSlider,PhotoGallery,Achievment,FaqSection,Biography,AccordianSection}
