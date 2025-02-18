@@ -5,12 +5,28 @@
     background-repeat: no-repeat;
     width: 100%; 
 }
-.card-style{
-    padding:8%;
+.badge-ambedkar {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    width:233px;
+    height:32px;
+    border-radius: 0; 
 }
-
+.heading-ambedkar{
+    font-size: 45px;
+    font-weight: 500;
+    text-shadow:2px 2px rgba(0,0,0,0.15)
+}
+.card-style{padding:10%;}
+.about-slider .slick-list{
+    max-height: 700px;
+    background-size: cover;
+}
+.no-background-table {background-color: transparent !important;}
+.no-background-table td { background-color: transparent !important; }
+.no-background-table th {background-color: transparent !important;}
+.no-background-table td:first-child { width: 30%;}
 @media (min-width: 250px) and (max-width: 700px) {
 .card-style {
-    padding: 0%;
-}
-}
+    padding: 0%;}}
