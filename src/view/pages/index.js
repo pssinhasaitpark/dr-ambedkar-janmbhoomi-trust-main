@@ -1,2 +1,3 @@
 import HomeDashboard from "./HomeDashboard/HomeDashboard";
-export { HomeDashboard}
+import BirthPlacePage from "./BirthPlacePage/BirthPlacePage";
+export { HomeDashboard,BirthPlacePage}

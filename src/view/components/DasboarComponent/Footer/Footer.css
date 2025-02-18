@@ -1,16 +1,36 @@
 
  .quick-links-container {
-    border-left: 1px solid rgba(255,255,255,0.3);
-    border-right: 1px solid rgba(255,255,255,0.3);
+  margin-right: 22%;
+    border-left: 1px solid rgba(255, 255, 255, 0.082);
+    border-right:1px solid rgba(255, 255, 255, 0.082);
     padding: 0 20px;
   }
   .social-icon img {
     width: 40px;
     height: 40px;
   }
+  .newsletter-email{
+    height:57px;
+    width:591px;
+  }
+  .newsletter-email {border-radius: 50px 0 0 50px; }
+  .btn {
+    border-radius: 0 50px 50px 0; 
+    height: 57px; }
+  .footer-icons{
+    width: 54px;
+    height: 51px; }
   @media (max-width: 768px) {
     .quick-links-container {
       border: none;
       padding: 0;
+    }
+    .footer-section{
+      width:100%!important;
+      margin:0 !important;
+    }
+    .newsletter-email{
+      height:57px;
+      width:100%;
     }
   }

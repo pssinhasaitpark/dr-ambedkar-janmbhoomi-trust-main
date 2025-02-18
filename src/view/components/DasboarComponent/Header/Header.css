@@ -1,9 +1,8 @@
-.all-background{
-  background-color: #0160D8;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+.header-nav{
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px;
 }
-.header-icons{
-  width:40px;
-}
-.logo-image{
-  max-height:130px;
-}
+.all-background{background-color: #0160D8;}

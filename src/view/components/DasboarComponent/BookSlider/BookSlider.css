@@ -1,22 +1,14 @@
-
-  .book-slider .slick-list {
-    margin-left: 199px; 
-    margin-right: 199px;
-  }
-  
-  .book-slider .arrow-right {
-    right: 100px; 
-  }
-
-  .book-slider .arrow-left {
-    left: 100px;
-  }
-  
+.book-slider .slick-slide img {max-height: 283px;}
+.book-image{ width:95%}
+.book-slider .slick-list {
+    margin-left: 140px; 
+    margin-right: 140px;}
+  .book-slider .arrow-right { right: 55px; }
+  .book-slider .arrow-left {left: 55px;}
+  .book-slider.slick-slider {
+    width: 99%;
+    margin-left: 10px;}
   @media (min-width: 250px) and (max-width: 700px) {
-
   .book-slider .slick-list {
     margin-left: 0; 
-    margin-right: 0;
-  }
-
-  }
+    margin-right: 0;}}

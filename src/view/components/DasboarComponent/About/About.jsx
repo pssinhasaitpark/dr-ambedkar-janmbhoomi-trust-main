@@ -1,5 +1,5 @@
 import React from "react";
-import useBanners from "../../../hooks/HomeHook/useBanners";  
+import useBanners from "../../../hooks/HomeHook/useBanners";
 import "./About.css";
 import { Card } from "react-bootstrap";
 import Slider from "react-slick";
@@ -24,8 +24,8 @@ const About = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
-    speed: 1000,
+    autoplaySpeed: 3000,
+    speed: 2000,
     arrows: false,
     responsive: [
       {
@@ -61,33 +61,49 @@ const About = () => {
     <div className="container-fluid px-0 mb-4" id="about">
       <div className="row g-0">
         <div className="col-sm-12 col-md-6 p-0">
-          <div className="text-white background-image h-100">
+          <div className="text-white background-image h-100 position-relative">
             <Card className="custom-card bg-transparent border-0">
-              <Card.Body className="card-style">
-                <h5 className="badge bg-primary text-white mb-3">{name}</h5>
-                <h3 className="fw-bold fs-1">
+              <Card.Body className="card-style mt-4">
+                <h5 className="badge-ambedkar badge bg-primary text-white mb-3">{name}</h5>
+
+                <h3 className="fw-bold heading-ambedkar lh-base fs-1">
                   {heading.split(",")[0]},
                   <span className="text-primary">{heading.split(",")[1]}</span>
                 </h3>
-                <p className="fw-medium mt-4 fs-4">
-                  Beginning date : <span className="fw-normal">{beginning_date}</span>
-                </p>
-                <p className="fw-medium mt-4 fs-4">
-                  Completion date : <span className="fw-normal">{completion_date}</span>
-                </p>
-                <p className="fw-medium mt-4 fs-4">
-                  Opening date : <span className="fw-normal">{opening_date}</span>
-                </p>
-                <hr />
-                <p className="fw-medium mt-4 fs-4">
-                  Location : <span className="fw-normal">{location}</span>
-                </p>
+
+                <table className="table table-borderless no-background-table ">
+                  <tbody>
+                    <tr>
+                      <td className="fw-medium fs-4 heading-ambedkar">Beginning date:</td>
+                      <td className="fw-normal fs-4">{beginning_date}</td>
+                    </tr>
+                    <tr>
+                      <td className="fw-medium fs-4 heading-ambedkar" >Completion date:</td>
+                      <td className="fw-normal fs-4">{completion_date}</td>
+                    </tr>
+                    <tr>
+                      <td className="fw-medium fs-4 heading-ambedkar">Opening date:</td>
+                      <td className="fw-normal fs-4">{opening_date}</td>
+                    </tr>
+                 
+                    </tbody>
+                    </table>
+                    <hr />
+                <table className="table table-borderless no-background-table">
+                  <tbody>
+                    <tr>
+                      <td className="fw-medium fs-4 heading-ambedkar">Location:</td>
+                      <td className="fw-normal p-0 fs-4 lh-lg">{location}</td>
+                    </tr>
+                  </tbody>
+                </table>
               </Card.Body>
+
             </Card>
           </div>
         </div>
         <div className="col-sm-12 col-md-6 p-0">
-          <Slider {...settings}>
+          <Slider {...settings} className="about-slider">
             {sliderImages.map((image, index) => (
               <div key={index} className="border-0">
                 <img className="card-img-top" src={image.src} alt={image.alt} />

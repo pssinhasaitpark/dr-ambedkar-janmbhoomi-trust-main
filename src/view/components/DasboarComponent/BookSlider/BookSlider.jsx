@@ -3,17 +3,18 @@ import Slider from "react-slick";
 import './BookSlider.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
+import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import { slick, slick1, slick2, slick3, slick4 } from '../../../../assests';
 
 function SampleNextArrow(props) {
   const { onClick } = props;
   return (
     <div
-      className="d-block position-absolute top-50 translate-middle-y arrow-right"
+      className="d-block position-absolute top-50 translate-middle-y arrow-right "
       onClick={onClick}
     >
-      <FiArrowRightCircle size={30} />
+      <IoIosArrowRoundForward
+        size={45} className='heading-ambedkar  border border-dark border rounded-circle' />
     </div>
   );
 }
@@ -25,7 +26,8 @@ function SamplePrevArrow(props) {
       className="d-block position-absolute top-50 translate-middle-y arrow-left"
       onClick={onClick}
     >
-      <FiArrowLeftCircle size={30} />
+      <IoIosArrowRoundBack
+        size={45} className='heading-ambedkar  border border-dark border rounded-circle' />
     </div>
   );
 }
@@ -71,22 +73,22 @@ const BookSlider = () => {
 
   return (
     <>
-      <div className="container mt-4 mb-4">
+      <div className="container-fluid mt-4 mb-4">
         <Slider {...settings} className="book-slider">
-          <div className="position-relative">
-            <img className="w-100 p-1" src={slick} alt="View of the memorial" />
+          <div className="position-relative book-image">
+            <img className="book-image" src={slick} alt="View of the memorial" />
           </div>
           <div>
-            <img className="w-100 p-1" src={slick1} alt="Exterior shot of the Bhimrao Ambedkar Memorial" />
+            <img className="book-image" src={slick1} alt="Exterior shot of the Bhimrao Ambedkar Memorial" />
           </div>
           <div>
-            <img className="w-100 p-1" src={slick2} alt="Another angle of the Bhimrao Ambedkar Memorial" />
+            <img className="book-image" src={slick2} alt="Another angle of the Bhimrao Ambedkar Memorial" />
           </div>
           <div>
-            <img className="w-100 p-1" src={slick3} alt="Aerial view of the Bhimrao Ambedkar Memorial" />
+            <img className=" book-image" src={slick3} alt="Aerial view of the Bhimrao Ambedkar Memorial" />
           </div>
           <div>
-            <img className="w-100 p-1" src={slick4} alt="Aerial view of the Bhimrao Ambedkar Memorial" />
+            <img className="book-image" src={slick4} alt="Aerial view of the Bhimrao Ambedkar Memorial" />
           </div>
         </Slider>
       </div>
