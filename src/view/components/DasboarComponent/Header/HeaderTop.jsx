@@ -7,15 +7,15 @@ const HeaderTop = () => {
      ">
       <div className="row align-items-center">
         <div className="col-12 col-md-4 mb-md-0 d-flex ">
-          <div className="input-group search-bar bg-light" >
+          <div className="input-group search-bar bg-light border rounded-1" >
             <input
               type="search"
-              className="form-control border-end-0  bg-light"
+              className="form-control border-end-0 outline-0 border-0  bg-light"
               placeholder="What Are You looking for?"
               aria-label="Search"
               aria-describedby="search-addon"
             />
-            <span className="input-group-text border-start-0 bg-transparent">
+            <span className="input-group-text outline-0 border-0   bg-transparent">
               <img src={Search} alt="Search Icon" />
             </span>
           </div>

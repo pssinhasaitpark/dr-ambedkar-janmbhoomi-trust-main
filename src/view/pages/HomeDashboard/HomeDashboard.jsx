@@ -80,7 +80,7 @@ const HomeDashboard = () => {
           </li>
         </ul>
       </div>
-      <div className="border p-4 mt-4 shadow-sm">
+      <div className="border p-4 mt-4 ">
         <h5 className="fs-3">Ambedkar's Life (1891-1956)</h5>
         <p className="fs-5 lh-base p-0 m-0">
           {" "}

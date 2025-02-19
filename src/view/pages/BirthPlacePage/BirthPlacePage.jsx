@@ -1,159 +1,200 @@
-import React from 'react'
-import { birth, birth1, birth2, dajt } from "../../../assests/index.js";
+import React from "react";
+import "./BirthPlace.css";
+import { birth, birth1, birth2, birth3, dajt } from "../../../assests/index.js";
 const BirthPlacePage = () => {
   return (
-    <div className="container">
-    <div className="img-banner mt-3">
-      <img src={dajt} alt="about-image" className="w-100" />
-    </div>
-    <div className=" ">
-      <h2 className="text-uppercase fs-1 mt-4">The Birthplace</h2>
-      <p className="mb-4 fs-5">Dr. Bhimrao Ambedkar</p>
-      <p className="fs-5 fw-medium lh-lg">
-        <span className="fs-3">Birthplace:</span> Dr. B.R. Ambedkar – Mhow,
-        Madhya Pradesh Dr. Bhimrao Ramji Ambedkar was born on April 14,
-        1891, in Mhow, a British military cantonment in present-day Madhya
-        Pradesh, India. His birthplace holds great historical significance
-        as the origin of one of India's greatest social reformers, who later
-        became the architect of the Indian Constitution and a champion of
-        Dalit rights, social justice, and equality.
-      </p>
-    </div>
-    <div className="border p-4 mt-4 shadow-sm mb-4 ">
-      <h5 className="fs-3">
-        Historical Significance of Dr. B.R. Ambedkar’s Birthplace
-      </h5>
-      <ul>
-        <li className="fs-5 lh-lg">
-          {" "}
-          Dr. Bhimrao Ramji Ambedkar was a multifaceted personality—an
-          economist, social reformer, jurist, and principal architect of the
-          Indian Constitution. His major achievements include:
-        </li>
-        <p className="fs-5 m-0 lh-base">
-          {" "}
-          a.Symbol of Social Justice Movement: Mhow is where the journey of
-          India’s foremost social reformer and the father of the Indian
-          Constitution began. His early life experiences with caste
-          discrimination shaped his lifelong fight for equality, justice,
-          and human rights.{" "}
+    <div className="all-section-width">
+      <div className="img-banner ">
+        <img src={dajt} alt="about-image" className="mb-2 all-image" />
+      </div>
+      <div className="mt-5 mb-4">
+        <h2 className="text-uppercase fs-1  ">biography Dr Ambedkar</h2>
+        <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
+        <p className=" fw-medium  mt-2 paragraph-birth ">
+          <span className="fs-3">Birthplace : </span> Dr. B.R. Ambedkar – Mhow,
+          Madhya Pradesh <br /> Dr. Bhimrao Ramji Ambedkar was born on April 14,
+          1891, in Mhow, a British military cantonment in present-day Madhya
+          Pradesh, India. His birthplace holds great historical significance as
+          the origin of one of India's greatest social reformers, who later
+          became the architect of the Indian Constitution and a champion of
+          Dalit rights, social justice, and equality.
         </p>
-        <p className="fs-5 m-0 lh-base">
-          {" "}
-          b.Inspiration for Dalit Rights: Being born in an oppressed
-          community, Ambedkar’s life from Mhow to global academic
-          institutions became an inspiration for marginalized communities to
-          pursue education and self-respect{" "}
+      </div>
+      <div className="border p-4 mt-4 shadow-sm mb-4 ">
+        <h5 className="fs-3">
+          Historical Significance of Dr. B.R. Ambedkar’s Birthplace
+        </h5>
+        <ul className="m-0">
+          <li className="fs-5 lh-base me-2  ">
+            {" "}
+            Dr. B.R. Ambedkar was born on April 14, 1891, in Mhow (now Dr.
+            Ambedkar Nagar), Madhya Pradesh, which was a British military
+            cantonment at the time. His birthplace holds immense historical and
+            social significance for several reasons:
+          </li>
+          <ol type="a">
+            <li className="fs-5 m-0 lh-base ">
+              Symbol of Social Justice Movement: Mhow is where the journey of
+              India’s foremost social reformer and the father of the Indian
+              Constitution began. His early life experiences with caste
+              discrimination shaped his lifelong fight for equality, justice,
+              and human rights.{" "}
+            </li>
+            <li className="fs-5 m-0 lh-base">
+              Inspiration for Dalit Rights: Being born in an oppressed
+              community, Ambedkar’s life from Mhow to global academic
+              institutions became an inspiration for marginalized communities to
+              pursue education and self-respect{" "}
+            </li>
+            <li className="fs-5 m-0 lh-base">
+              Now a National Memorial: Today, his birthplace is recognized as
+              "Dr. Ambedkar Nagar," featuring monuments and memorials that
+              attract visitors, scholars, and leaders who seek to understand and
+              honor his legacy.
+            </li>
+          </ol>
+        </ul>
+
+        <ul>
+          <li className="fs-5  lh-base">
+            {" "}
+            Mhow remains a sacred site for social justice movements, symbolizing
+            Ambedkar’s transformative vision for an equal and democratic India.{" "}
+          </li>
+        </ul>
+      </div>
+      <div className="row mt-5 m-0">
+        <div className="col-sm-4 p-0">
+          <img src={birth} alt="birth-image" className="w-100" />
+        </div>
+        <div className="col-sm-4 p-0">
+          <img src={birth1} alt="birth-image" className="w-100" />
+        </div>
+        <div className="col-sm-4 p-0">
+          <img src={birth2} alt="birth-image" className="w-100" />
+        </div>
+      </div>
+
+      <div className="border p-4 mt-4 ">
+        <h5 className="fs-4">
+          Timeline of the Development of Dr. B.R. Ambedkar’s Birthplace (Mhow,
+          Madhya Pradesh){" "}
+        </h5>
+        <p className="fs-5 lh-base">
+          Dr. B.R. Ambedkar’s birthplace in Mhow (now Dr. Ambedkar Nagar),
+          Madhya Pradesh, has evolved over the years into a site of national
+          significance, with several initiatives aimed at preserving his legacy.
+          Here’s a timeline of its development
+        </p>
+        <h5 className="fs-4 ">1. British Era & Early Years (1891–1947)</h5>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ April 14, 1891 – Dr. B.R. Ambedkar was born in Mhow, a British
+          military cantonment.
+        </p>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ 1891–1906 – Lived in Mhow before moving for education; birthplace
+          remained a regular military area.
+        </p>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ 1947 – India gained independence, but Mhow continued as a military
+          base with no official recognition of Ambedkar's birthplace.
+        </p>
+        <h5 className="fs-4 mt-5">
+          2. Recognition & Initial Developments (1950s–1990s)
+        </h5>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ 1956 – Ambedkar passed away on December 6, 1956; followers began
+          visiting Mhow as a mark of respect.
+        </p>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ 1970s–1980s – Ambedkarite movements and Dalit organizations started
+          demanding official recognition of his birthplace.
+        </p>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ April 14, 1991 – On his 100th birth anniversary, large-scale
+          celebrations took place in Mhow.
+        </p>
+        <h5 className="fs-4 mt-5">
+          3. Renaming & Infrastructure Development (2000–2015)
+        </h5>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ 2003 – The Government of Madhya Pradesh renamed Mhow as "Dr.
+          Ambedkar Nagar" in his honor.
+        </p>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ 2007 – Dr. Ambedkar Memorial Park was built at his birthplace.
         </p>
 
-        <p className="fs-5 m-0 lh-base">
-          {" "}
-          c.Now a National Memorial: Today, his birthplace is recognized as
-          "Dr. Ambedkar Nagar," featuring monuments and memorials that
-          attract visitors, scholars, and leaders who seek to understand and
-          honor his legacy.
+        <p className="fs-5 lh-base mt-1 p-0 m-0">
+          ✅ 2012 – The site was officially declared a national heritage
+          location by the state government.
         </p>
-      </ul>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ 2015 – A grand Ambedkar Smarak (memorial complex) was inaugurated,
+          including a library and museum.
+        </p>
+        <h5 className="fs-4 mt-5">
+          4. Modernization & Global Recognition (2016–Present)
+        </h5>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ 2016 – The Central Government announced the development of the site
+          as a major pilgrimage and tourist center.
+        </p>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ 2018 – Upgraded infrastructure, better roads, and visitor
+          facilities were introduced.
+        </p>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ 2021 – Plans for a new multimedia museum and educational research
+          center on Ambedkar’s life and works.
+        </p>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ 2023 – Digital exhibits and virtual tours were introduced, making
+          it more accessible globally.
+        </p>
+        <p className="fs-5 lh-base p-0 m-0">
+          ✅ April 14, Every Year – Thousands of followers and political leaders
+          gather to celebrate Ambedkar Jayanti at the site.
+        </p>
+      </div>
+      <div className="row border mt-4 m-0">
+        <div className="col-sm-6 p-0 mt-4">
+          <h5 className="fs-4 ms-4">
+            Virtual tour or interactive map of the location.
 
-      <ul>
-        <li className="fs-5  lh-base">
-          {" "}
-          Mhow remains a sacred site for social justice movements,
-          symbolizing Ambedkar’s transformative vision for an equal and
-          democratic India.{" "}
-        </li>
-      </ul>
-    </div>
-    <div className="row mt-3">
-      <div className="col-sm-4">
-        <img src={birth} alt="birth-image" />
-      </div>
-      <div className="col-sm-4">
-        <img src={birth1} alt="birth-image" />
-      </div>
-      <div className="col-sm-4">
-        <img src={birth2} alt="birth-image" />
-      </div>
-    </div>
-    <div className="border p-4 mt-4 shadow-sm">
-        <p></p>
-      <h5 className="fs-3">Timeline of the Development of Dr. B.R. Ambedkar’s Birthplace (Mhow, Madhya Pradesh) </h5>
-      <p className="fs-5 lh-base">
-      Dr. B.R. Ambedkar’s birthplace in Mhow (now Dr. Ambedkar Nagar), Madhya Pradesh, has evolved over the years into a site of national significance, with several initiatives aimed at preserving his legacy. Here’s a timeline of its development 1. British Era & Early Years (1891–1947) ✅ April 14, 1891 – Dr. B.R. Ambedkar was born in Mhow, a British military cantonment.
-      </p>
-      <p className="fs-5  lh-base">
-        {" "}
-        ✅ 1907 – Passed Matriculation (10th standard), first from his
-        community to do so.
-      </p>
-      <p className="fs-5  lh-base">
-        ✅ 1912 – Graduated with a degree in Economics & Political Science
-        from Bombay University.
-      </p>
-      <p className="fs-5 lh-base">
-        {" "}
-        ✅ 1913 – Won a scholarship from the Maharaja of Baroda to study in
-        the U.S.
-      </p>
-      <p className=" fs-5 lh-base">
-        {" "}
-        ✅ 1915 – Earned a Master’s degree in Economics from Columbia
-        University, New York.
-      </p>
-      <p className="fs-5  lh-base">
-        ✅ 1916 – Presented a research paper on caste discrimination at
-        Columbia University.
-      </p>
-      <p className="fs-5 lh-base">
-        {" "}
-        ✅ 1917 – Joined London School of Economics & Gray’s Inn to study
-        law and economics.
-      </p>
-      <p className="fs-5 lh-base mb-4">
-        {" "}
-        ✅ 1923 – Earned Doctor of Science (D.Sc.) in Economics from London.
-      </p>
-      <h5 className="fs-3 m-3">Social and Political Reforms (1924–1947)</h5>
-      <p className="fs-5 lh-base mt-1">
-        {" "}
-        ✅ April 14, 1891 – Born in Mhow, Madhya Pradesh, into the Mahar
-        caste (considered untouchables).
-      </p>
-      <p className="fs-5  lh-base">
-        {" "}
-        ✅ 1907 – Passed Matriculation (10th standard), first from his
-        community to do so.
-      </p>
-      <p className="fs-5  lh-base">
-        ✅ 1912 – Graduated with a degree in Economics & Political Science
-        from Bombay University.
-      </p>
-      <p className="fs-5 lh-base">
-        {" "}
-        ✅ 1913 – Won a scholarship from the Maharaja of Baroda to study in
-        the U.S.
-      </p>
-      <p className=" fs-5 lh-base">
-        {" "}
-        ✅ 1915 – Earned a Master’s degree in Economics from Columbia
-        University, New York.
-      </p>
-      <p className="fs-5  lh-base">
-        ✅ 1916 – Presented a research paper on caste discrimination at
-        Columbia University.
-      </p>
-      <p className="fs-5 lh-base">
-        {" "}
-        ✅ 1917 – Joined London School of Economics & Gray’s Inn to study
-        law and economics.
-      </p>
-      <p className="fs-5 lh-base">
-        {" "}
-        ✅ 1923 – Earned Doctor of Science (D.Sc.) in Economics from London.
-      </p>
-    </div>
-  </div>
-  )
-}
+          </h5>
+          <p className="fs-5 ms-4 fw-small"> While a fully immersive virtual tour of Dr. B.R. Ambedkar's birthplace in Mhow, Madhya Pradesh, may not be available, you can explore the area through various online resources:</p>
+          <ol className="ms-3">
+            <li className="fs-5 m-0 lh-lg ">
+              Mhow City Tour Video: This video provides a visual tour of Mhow, offering insights into the town's layout and significant landmarks.
+            </li>
+            <li className="fs-5 m-0 lh-lg">
+              Interactive Map: The Mhow Cantonment Board provides a detailed city map, highlighting key areas and infrastructure.
+            </li>
 
-export default BirthPlacePage
+          </ol>
+          <div className="mt-5">
+            <ol className="ms-3">
+              <li className="fs-5 m-0 lh-lg ">
+
+                Dr. Ambedkar Nagar Railway Station Video: This video showcases the railway station in Mhow, giving a glimpse into the town's connectivity and environment.
+              </li>
+              <li className="fs-5 m-0 lh-lg">
+                These resources offer a closer look at Dr. Ambedkar Nagar (Mhow) and its significance as Dr. B.R. Ambedkar's birthplace.
+              </li>
+
+            </ol>
+          </div>
+
+
+        </div>
+        <div className="col-sm-6 p-0 mt-3 ">
+          <img src={birth3} alt="birth-image" className="map-image" />
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default BirthPlacePage;
