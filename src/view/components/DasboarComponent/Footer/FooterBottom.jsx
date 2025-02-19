@@ -4,7 +4,7 @@ const FooterBottom = () => {
   return (
     <>
     <div className="Footer-Bottom p-2 all-background">
-         <p className="text-center fs-5 fw-medium font-monospace m-0 text-light">Copyright © 2025  Dr Ambedkar Janmbhoomi trust</p>
+         <p className="text-center fs-5 fw-normal m-0 text-light">Copyright © 2025  Dr Ambedkar Janmbhoomi trust</p>
     </div>
     </>
   );

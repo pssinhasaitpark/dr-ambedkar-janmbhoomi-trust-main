@@ -23,40 +23,44 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="col-md-4 ms-5 footer-section">
-             
+            <div className="col-md-4 ms-5 footer-section mt-2">
+
               <div className="quick-links-container">
-              <h5 className="mb-4 ms-5 mt-5">Quick Links</h5>
-                <div className=" d-flex justify-content-around ">
-                  
-                  <div className="">
-                    {quickLinks1.map((link, index) => (
-                      <div key={index} className="mb-3">
-                        <Link href="/" className="text-light text-decoration-none fs-5 me-4 ">
-                          {link}
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                  <div>
-                    {quickLinks2.map((link, index) => (
-                      <div key={index} className="mb-3">
-                        <Link href="/" className="text-light text-decoration-none fs-5 me-5">
-                          {link}
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
+                <div className='quick-links'>
+
+                <p className="mb-3 fs-4 mt-5 ms-3">Quick Links</p>
                 </div>
+                  <div className='row quick-links'>
+                    <div className='col-6 p-0'>
+                      <div className="ms-4 ">
+                        {quickLinks1.map((link, index) => (
+                          <div key={index} className="lh-lg ">
+                            <Link href="/" className="text-light text-decoration-none fs-5 me-4 ">
+                              {link}
+                            </Link>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className='col-6 p-0 m-0'>
+                      {quickLinks2.map((link, index) => (
+                        <div key={index} className="lh-lg ">
+                          <Link href="/" className="text-light text-decoration-none fs-5 me-5">
+                            {link}
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
               </div>
             </div>
-            <div className="col-md-4 mt-5 w-25 footer-section">
-              <h5 className="mb-4 fs-5 fw-medium ">Sign up for our newsletter</h5>
+            <div className="col-md-4 mt-5  footer-section footer-middle">
+              <h5 className="mb-4 fs-4 fw-medium mt-2 ">Sign up for our newsletter</h5>
               <div className="d-flex newsletter-container d-flex align-items-center">
                 <input
                   type="email"
                   className="form-control newsletter-email border rounded-start"
-                  placeholder="Enter Email" 
+                  placeholder="Enter Email"
                 />
                 <button
                   className="btn btn-primary px-5 rounded-end text-light fs-5 fw-bolder "
@@ -64,7 +68,7 @@ const Footer = () => {
                   Subscribe
                 </button>
               </div>
-              <div className="mt-4 d-flex social-icons-container">
+              <div className="d-flex social-icons-container">
                 <img src={app} alt="WhatsApp" className='me-2 footer-icons' />
                 <img src={fb} alt="Facebook" className='me-2 footer-icons' />
                 <img src={insta} alt="Instagram" className='me-2 footer-icons' />

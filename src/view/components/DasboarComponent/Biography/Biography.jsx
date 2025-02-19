@@ -22,14 +22,14 @@ const biographyData = [
 
 const Biography = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid mb-5">
       <div className="row">
         <div className="col-sm-12 mt-4">
           <div className="p-3 border biography-container">
             <div className="biography-subheader">
               <div className="row p-2 mt-3 biography-row">
                 <div className="col-sm-3">
-                  <h2 className="text-uppercase fw-medium heading-ambedkar biography-header ms-5 fs-1">
+                  <h2 className="text-uppercase fw-medium biography-header ms-5 fs-1">
                     Biography
                   </h2>
                   <p className="side-line mb-4 ms-5 font-monospace position-relative">
@@ -37,7 +37,7 @@ const Biography = () => {
                   </p>
                 </div>
                 <div className="col-sm-9 biography-head">
-                  <p className="fw-medium lh-base fs-4 text-dark heading-ambedkar p-0 m-0">
+                  <p className="fw-medium lh-lg text-dark description-bio p-0 m-0">
                     Dr. Bhimrao Ramji Ambedkar (1891-1956), known as Babasaheb,
                     was a visionary leader, social reformer, and the principal
                     architect of the Indian Constitution, fighting caste
@@ -48,10 +48,10 @@ const Biography = () => {
               </div>
             </div>
             <div className="biography-component">
-              <ul className="timeline-1 text-black mt-4">
+              <ul className="timeline-1  mt-4">
                 {biographyData.map((event, index) => (
-                  <li className="event fs-4" key={index} data-date={event.date}>
-                    <p className="biography-text fs-5">{event.text}</p>
+                  <li className="event fs-4 " key={index} data-date={event.date}>
+                    <p className="biography-text fs-5 ">{event.text}</p>
                   </li>
                 ))}
               </ul>
