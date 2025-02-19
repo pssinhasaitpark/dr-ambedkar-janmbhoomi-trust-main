@@ -4,3 +4,18 @@
 * {
   font-family: 'Roboto', sans-serif;
 }
+input:focus{
+  box-shadow: none !important;
+  border-color: inherit !important;
+  outline: none !important;
+}
+button:focus{
+  box-shadow: none !important;
+  border-color: inherit !important;
+  outline: none !important;
+}
+.all-section-width {
+  width: 1522px;
+ margin-left: 199px;
+ margin-top:35px;
+}

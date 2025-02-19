@@ -6,8 +6,8 @@
   .book-slider .arrow-right { right: 55px; }
   .book-slider .arrow-left {left: 55px;}
   .book-slider.slick-slider {
-    width: 99%;
-    margin-left: 10px;}
+    width: 95%;
+    margin-left: 24px;}
   @media (min-width: 250px) and (max-width: 700px) {
   .book-slider .slick-list {
     margin-left: 0; 

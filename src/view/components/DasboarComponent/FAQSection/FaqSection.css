@@ -1,1 +1,16 @@
-.Faq-section {background-color:#F8F8F8}
+.Faq-section {background-color:#f8f8f8d7}
+.Faq-section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+  .faq-container {
+    max-width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  /* .faq-container h2,
+  .faq-container p {
+    margin-left: 0;
+    margin-right: 0;
+  } */
