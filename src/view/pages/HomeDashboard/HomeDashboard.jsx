@@ -5,7 +5,7 @@ const HomeDashboard = () => {
   return (
     <div className="all-section-width">
       <div className="img-banner  ">
-        <img src={image404} alt="about-image" className="mb-2" />
+        <img src={image404} alt="about-image" className="mb-2 all-image" />
       </div>
       <div className="mt-5 mb-4">
         <h2 className="text-uppercase fs-1  ">biography Dr Ambedkar</h2>
@@ -45,7 +45,7 @@ const HomeDashboard = () => {
           Indian Constitution. His major achievements include:
         </p>
         <p className="fw-medium fs-5 m-0 p-0"> 1. Champion of Social Justice</p>
-        <ul className="fs-5 lh-lg m-0">
+        <ul className="fs-5 m-0">
           <li >Fought against caste discrimination and untouchability.</li>
           <li>
             Led the Mahad Satyagraha (1927) to allow Dalits access to public
@@ -64,7 +64,7 @@ const HomeDashboard = () => {
           {" "}
           2. Architect of the Indian Constitution
         </p>
-        <ul className="fs-5 lh-lg ">
+        <ul className="fs-5  ">
           <li>
             As Chairman of the Drafting Committee, he played a pivotal role in
             shaping India’s Constitution.
@@ -120,7 +120,7 @@ const HomeDashboard = () => {
           ✅ 1923 – Earned Doctor of Science (D.Sc.) in Economics from London.
         </p>
         <h5 className="fs-3 m-3">Social and Political Reforms (1924–1947)</h5>
-        <p className="fs-5 lh-base mt-1">
+        <p className="fs-5 lh-base mt-1 p-0 m-0">
           {" "}
           ✅ April 14, 1891 – Born in Mhow, Madhya Pradesh, into the Mahar caste
           (considered untouchables).
