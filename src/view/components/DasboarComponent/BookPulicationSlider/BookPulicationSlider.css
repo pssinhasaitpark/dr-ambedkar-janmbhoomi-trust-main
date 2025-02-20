@@ -1,0 +1,24 @@
+.book-publish .slick-slide img {max-height: 283px;}
+.book-image{ width:100%;
+margin-left: 2%;}
+.book-publish .slick-list {
+    margin-left: 140px; 
+    margin-right: 140px;}
+  .book-publish .arrow-right { right: 30px; }
+  .book-publish .arrow-left {left: 30px;}
+  /* .book-publish.slick-slider {
+    width: 95%;
+    margin-left: 24px;} */
+    .book-publish.slick-slider {
+      width: 119%;
+      margin-left: -150px;
+  }
+  @media (min-width: 250px) and (max-width: 700px) {
+  .book-publish .slick-list {
+    margin-left: 0; 
+    margin-right: 0;}
+    .book-publish.slick-slider {
+      width: 100%;
+      margin-left: 0px;
+  }}
+

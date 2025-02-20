@@ -10,16 +10,17 @@ import {
   museum7,
 } from "../../../assests";
 import { Link } from "react-router-dom";
+import './Museum.css'
 const Museum = () => {
   return (
     <div className="all-section-width">
       <div className="img-banner  ">
-        <div className="row mt-5 m-0">
+        <div className="row m-0">
           <div className="col-sm-6 p-0 m-0">
-            <img src={museum} alt="birth-image" className="museum-image" />
+            <img src={museum} alt="birth-image" className="museum-images" />
           </div>
           <div className="col-sm-6 p-0 m-0">
-            <img src={museum2} alt="birth-image" className=".museum-image" />
+            <img src={museum2} alt="birth-image" className="museum-images" />
           </div>
         </div>
       </div>
@@ -116,30 +117,28 @@ const Museum = () => {
 
           <ol className="fs-5">
             <li> Graphic Novel:</li>
-            <ul>
-              <li className="fs-5 lh-base  ">
-                Bhimayana: Incidents in the Life of Bhimrao Ramji Ambedkar: This
+            <ul className="card-child-lists">
+              <li className=" fs-5 lh-base bullet-class ">
+               Bhimayana: Incidents in the Life of Bhimrao Ramji Ambedkar: This
                 graphic novel offers a visually engaging portrayal of Dr.
                 Ambedkar's experiences with caste discrimination and his fight
                 for social justice. It's suitable for both adults and younger
                 readers seeking an accessible introduction to his life.
               </li>
               <li className="fs-5 lh-base  ">
-              <Link className="text-dark">en.wikipedia.org</Link>
+                <Link className="text-dark">en.wikipedia.org</Link>
               </li>
             </ul>
-          </ol>
 
-          <ol className="fs-5">
             <li> Scholarly Articles and Papers:</li>
-            <ul>
+            <ul className="card-child-lists">
               <li className="fs-5 lh-base  ">
                 An Overview of Dr. B.R. Ambedkar's Educational Philosophy and
                 Vision": This paper delves into Dr. Ambedkar's contributions to
                 education and their relevance in contemporary Indian society.
               </li>
               <li className="fs-5 lh-base  ">
-              <Link className="text-dark">gapbodhitaru.org</Link>
+                <Link className="text-dark">gapbodhitaru.org</Link>
               </li>
               <li className="fs-5 lh-base  ">
                 Dr. B.R. Ambedkar's Educational Thoughts for Modern India": This
@@ -147,13 +146,12 @@ const Museum = () => {
                 their application in modern times.
               </li>
               <li className="fs-5 lh-base  ">
-              <Link className="text-dark">researchgate.net</Link>
+                <Link className="text-dark">researchgate.net</Link>
               </li>
             </ul>
-          </ol>
-          <ol className="fs-5">
+
             <li> Open Educational Resources (OER):</li>
-            <ul>
+            <ul className="card-child-lists">
               <li className="fs-5 lh-base  ">
                 Dr. B.R. Ambedkar University Delhi: The university provides a
                 compilation of open educational resources, including links to
@@ -162,7 +160,7 @@ const Museum = () => {
                 and humanities.
               </li>
               <li className="fs-5 lh-base  ">
-              <Link className="text-dark">aud.delhi.gov.in</Link>
+                <Link className="text-dark">aud.delhi.gov.in</Link>
               </li>
               <li className="fs-5 lh-base  ">
                 Dr. B.R. Ambedkar Open University Online Learning Portal: This
@@ -174,20 +172,18 @@ const Museum = () => {
                 <Link className="text-dark">lms.braou.ac.in</Link>
               </li>
             </ul>
-          </ol>
-          <ol className="fs-5">
+
             <li> Multimedia Resources:</li>
-            <ul>
+            <ul className="card-child-lists">
               <li className="fs-5 lh-base  ">
                 Dr. Babasaheb Ambedkar Coloring Page: For younger audiences,
                 this resource provides an engaging way to learn about Dr.
                 Ambedkar's legacy through ar
               </li>
             </ul>
-          </ol>
-          <ol className="fs-5">
+
             <li> Graphic Novel:</li>
-            <ul>
+            <ul className="card-child-lists">
               <li className="fs-5 lh-base  ">
                 Bhimayana: Incidents in the Life of Bhimrao Ramji Ambedkar: This
                 graphic novel offers a visually engaging portrayal of Dr.
@@ -196,7 +192,7 @@ const Museum = () => {
                 readers seeking an accessible introduction to his life.
               </li>
               <li className="fs-5 lh-base  ">
-              <Link className="text-dark">en.wikipedia.org</Link>
+                <Link className="text-dark">en.wikipedia.org</Link>
               </li>
             </ul>
           </ol>

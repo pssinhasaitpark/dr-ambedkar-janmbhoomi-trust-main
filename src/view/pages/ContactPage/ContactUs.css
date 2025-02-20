@@ -27,3 +27,8 @@
 .asx-map-container  {
     padding: 0 !important;
 }
+@media (min-width: 250px) and (max-width: 700px) {
+.justify-content-center.align-items-center.h-100.shadow.p-0.row {
+    width: 103%;
+}
+}
