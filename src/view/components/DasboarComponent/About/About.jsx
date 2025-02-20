@@ -66,7 +66,7 @@ const About = () => {
               <Card.Body className="card-style mt-4">
                 <h5 className="badge-ambedkar badge bg-primary text-white mb-3">{name}</h5>
 
-                <h3 className="fw-bold heading-ambedkar lh-base fs-1">
+                <h3 className="fw-bold heading-ambedkar p-1 lh-base fs-1">
                   {heading.split(",")[0]},
                   <span className="text-primary">{heading.split(",")[1]}</span>
                 </h3>

@@ -9,14 +9,14 @@ import "leaflet/dist/leaflet.css";
 const ContactPage =() => {
   const position = [22.7196, 75.8577]; 
   return (
-    <div className="container text-center my-5">
+    <div className="all-section-width  text-center my-5">
       <h2 className="fw-bold my-4">CONTACT US/JOIN US</h2>
       <p className="mx-auto mb-5 fs-6 w-50 text-center lh-lg">
         Dr. B.R. Ambedkar’s birthplace in Mhow, Madhya Pradesh. Whether you
         wish <br /> to volunteer, donate, or collaborate, your support is invaluable.
       </p>
       <div className="row mt-4">
-        <div className="col-md-4 mb-3 position-relative">
+        <div className="col-md-4 mb-3 position-relative p-0 m-0">
           <div className="contact-card shadow border-0 p-4 rounded-4">
             <div className="card-body">
               <div className="card-contact-imgs p-3 mb-3">
@@ -29,7 +29,7 @@ const ContactPage =() => {
             </div>
           </div>
         </div>
-        <div className="col-md-4 mb-3 position-relative">
+         <div className="col-md-4 mb-3 position-relative p-0 m-0">
           <div className="contact-card shadow border-0 p-4 rounded-4">
             <div className="card-body">
               <div className=" card-contact-imgs p-3 mb-3">
@@ -41,7 +41,7 @@ const ContactPage =() => {
             </div>
           </div>
         </div>
-        <div className="col-md-4 mb-3 position-relative">
+        <div className="col-md-4 mb-3 position-relative m-0 p-0">
           <div className="contact-card shadow border-0 p-4 rounded-4">
             <div className="card-body">
               <div className="card-contact-imgs p-3 mb-3">
@@ -51,7 +51,7 @@ const ContactPage =() => {
               <p className=" fw-light mb-0">DrAmbedkartrust@gmail.com</p>
             </div>
           </div>
-        </div>
+        </div> 
       </div>
       <div className="position-relative" style={{ height: "120vh" }}>
         <div
@@ -63,7 +63,7 @@ const ContactPage =() => {
         <Row className="justify-content-center align-items-center h-100 shadow p-0">
           <Col md={8} lg={6} xl={5} className="bg-white p-4 shadow shadow w-75">
             <Row>
-              {/* Map Section */}
+           
               <Col md={6} className="p-0">
                 <MapContainer center={position} zoom={13} style={{ height: "100%", width: "100%" }}>
                   <TileLayer
@@ -75,7 +75,7 @@ const ContactPage =() => {
                 </MapContainer>
               </Col>
 
-              {/* Form Section */}
+          
               <Col md={6} className="p-5">
                 <h4 className="mb-2 text-start">GET A QUOTE NOW</h4>
                 <p className="text-muted text-start fw-light fs-6">
