@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Footer.css';
 import { Link } from 'react-router-dom';
 import FooterBottom from "./FooterBottom.jsx";
 import { yt, fb, app, insta } from "../../../../assests/index.js";
+import { useSubscribes } from "../../../hooks/index.js"; 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const { mutate: subscribe, isLoading, isError, error, isSuccess } = useSubscribes();
   const quickLinks1 = ["Home", "About", "History", "Books"];
   const quickLinks2 = ["News", "Gallery", "Contact"];
+  const handleSubscribe = () => {
+    if (!email) {
+      alert("Please enter a valid email address.");
+      return;
+    }
 
+    const subscribeData = { email };
+    subscribe(subscribeData);
+  };
   return (
     <>
       <div className="footer bg-dark text-light py-5">
@@ -54,31 +65,45 @@ const Footer = () => {
                   </div>
               </div>
             </div>
-            <div className="col-md-4 mt-5  footer-section footer-middle">
-              <h5 className="mb-4 fs-4 fw-medium mt-2 ">Sign up for our newsletter</h5>
+            <div className="col-md-4 mt-5 footer-section footer-middle">
+              <h5 className="mb-4 fs-4 fw-medium mt-2">Sign up for our newsletter</h5>
               <div className="d-flex newsletter-container d-flex align-items-center">
                 <input
                   type="email"
                   className="form-control newsletter-email border rounded-start"
                   placeholder="Enter Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <button
-                  className="btn btn-primary px-5 rounded-end text-light fs-5 fw-bolder "
+                  className="btn btn-primary px-5 rounded-end text-light fs-5 fw-bolder"
+                  onClick={handleSubscribe} 
+                  disabled={isLoading} 
                 >
-                  Subscribe
+                  {isLoading ? 'Subscribing...' : 'Subscribe'}
                 </button>
               </div>
+              {isError && <p className="text-danger">Error: {error.message}</p>}
+              {isSuccess && <p className="text-success">Successfully subscribed!</p>}
               <div className="d-flex social-icons-container">
-                <img src={app} alt="WhatsApp" className='me-2 footer-icons' />
-                <img src={fb} alt="Facebook" className='me-2 footer-icons' />
-                <img src={insta} alt="Instagram" className='me-2 footer-icons' />
-                <img src={yt} alt="YouTube" className='me-2 footer-icons' />
-
+                <Link to="/">
+                  <img src={app} alt="WhatsApp" className="me-2 footer-icons" />
+                </Link>
+                <Link to="/">
+                  <img src={fb} alt="Facebook" className="me-2 footer-icons" />
+                </Link>
+                <Link to="/">
+                  <img src={insta} alt="Instagram" className="me-2 footer-icons" />
+                </Link>
+                <Link to="/">
+                  <img src={yt} alt="YouTube" className="me-2 footer-icons" />
+                </Link>
               </div>
+            </div>
             </div>
           </div>
         </div>
-      </div>
+    
       <FooterBottom />
     </>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import { logo, Search, yt, fb, app, phone, insta } from "../../../../assests/index.js";
 import './HeaderTop.css'
+import { Link } from "react-router-dom";
 const HeaderTop = () => {
   return (
     <div className="container-fluid
@@ -21,7 +22,8 @@ const HeaderTop = () => {
           </div>
         </div>
         <div className="col-12 col-md-4 text-center mt-1">
-          <img src={logo} alt="Company Logo" className="img-fluid logo-image" />
+          <Link to="/">
+          <img src={logo} alt="Company Logo" className="img-fluid logo-image" /></Link>
         </div>
         <div className="col-12 col-md-4 phone-icons">
           <div className="d-flex ">
@@ -29,10 +31,10 @@ const HeaderTop = () => {
             <p className="mb-0 fs-5">91+1234567891</p>
           </div>
           <div className="mt-3 d-flex ">
-            <img src={app} alt="WhatsApp" className="header-icons "  />
-            <img src={fb} alt="Facebook" className=" header-icons"  />
-            <img src={insta} alt="Instagram" className=" header-icons"  />
-            <img src={yt} alt="YouTube " className="header-icons"/>
+          <Link to="/"> <img src={app} alt="WhatsApp" className="header-icons "  /></Link>
+          <Link to="/">  <img src={fb} alt="Facebook" className=" header-icons"  /></Link>
+          <Link to="/">  <img src={insta} alt="Instagram" className=" header-icons"  /></Link>
+          <Link to="/"> <img src={yt} alt="YouTube " className="header-icons"/></Link>
           </div>
         </div>
         

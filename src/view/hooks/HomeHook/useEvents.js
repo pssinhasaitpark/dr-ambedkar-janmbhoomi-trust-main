@@ -5,7 +5,6 @@ import { setEvents, setError, setLoading, setStatusSucceeded, setStatusFailed } 
 
 const useEvents = () => {
   const dispatch = useDispatch();
-
   const { data, error, isLoading } = useQuery({
     queryKey: ['events'],
     queryFn: async () => {
@@ -13,11 +12,6 @@ const useEvents = () => {
       return response.data; 
     }
   });
-
-  console.log('sLoading:', isLoading);
-  console.log('error:', error);
-  console.log('data:', data);
-
   if (isLoading) {
     dispatch(setLoading());
   }

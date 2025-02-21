@@ -1,12 +1,9 @@
 import React from "react";
-import useEvents from "../../hooks/HomeHook/useEvents";
+import { useEvents } from "../../hooks/index";
 
 const EventCelebration = () => {
   const { data, isLoading, error } = useEvents();
-  console.log("sLoading:", isLoading);
-  console.log("error:", error);
-  console.log("data:", data);
-
+ 
   if (isLoading) {
     return <div className="spinner"></div>;
   }
@@ -30,9 +27,13 @@ const EventCelebration = () => {
                    src={img}
                    alt={"event-image"} 
                    className="event-image"
+                   loading="lazy"
                    style={{
-                    width:"1495PX"
-                   }}
+                    width: "1495px",
+                    maxHeight: "500px",
+                    overflow: "hidden"
+                  }}
+                   
                  />
                ))}
              </div>

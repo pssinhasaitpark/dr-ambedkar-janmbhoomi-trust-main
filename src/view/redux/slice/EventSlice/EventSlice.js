@@ -1,9 +1,9 @@
-// EventSlice.js
+
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  events: [],  // Change this from 'images' to 'events' to store event data
-  status: 'idle',  // idle | loading | succeeded | failed
+  events: [],  
+  status: 'idle',  
   error: null,
 };
 
@@ -12,28 +12,26 @@ const EventSlice = createSlice({
   initialState,
   reducers: {
     setEvents: (state, action) => {
-      console.log('Dispatching setEvents with data:', action.payload); // Log data
-      state.events = action.payload;  // Store events in state
+      state.events = action.payload; 
     },
     setImage: (state, action) => {
-      state.images = action.payload;  // You can leave this for storing images if needed
+      state.images = action.payload; 
     },
     setError: (state, action) => {
-      state.error = action.payload;  // Store error message in state
+      state.error = action.payload;  
     },
     setLoading: (state) => {
-      state.status = 'loading';  // Set status to loading
+      state.status = 'loading';  
     },
     setStatusSucceeded: (state) => {
-      state.status = 'succeeded';  // Set status to succeeded
+      state.status = 'succeeded';  
     },
     setStatusFailed: (state) => {
-      state.status = 'failed';  // Set status to failed
+      state.status = 'failed'; 
     },
   },
 });
 
-// Export actions
 export const { setEvents, setImage, setError, setLoading, setStatusSucceeded, setStatusFailed } = EventSlice.actions;
 
 export default EventSlice.reducer;
