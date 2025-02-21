@@ -22,7 +22,7 @@ const biographyData = [
 
 const Biography = () => {
   return (
-    <div className="container-fluid mb-5">
+    <div className="all-section-width mb-5">
       <div className="row">
         <div className="col-sm-12 mt-4">
           <div className="p-3 border biography-container">

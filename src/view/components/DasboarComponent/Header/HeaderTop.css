@@ -6,6 +6,16 @@
     left:104px;
  
   }
+  input:focus{
+    box-shadow: none !important;
+    border-color: inherit !important;
+    outline: none !important;
+  }
+  button:focus{
+    box-shadow: none !important;
+    border-color: inherit !important;
+    outline: none !important;
+  }
   .header-icons{
     width:35.92;
     height: 33.92;

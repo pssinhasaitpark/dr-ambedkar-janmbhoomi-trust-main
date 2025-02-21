@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const About = () => {
   const { data, status, error } = useBanners();
-  if (status === 'loading') return <div>Loading...</div>;
+  if (status === 'loading') return <div className="spinner"></div>;
   if (status === 'failed') return <div>Error: {error}</div>;
   if (!data || data.length === 0) {
     return <div>No banners available.</div>;

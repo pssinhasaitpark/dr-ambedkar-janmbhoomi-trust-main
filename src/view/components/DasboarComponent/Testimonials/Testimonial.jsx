@@ -80,7 +80,7 @@ const Testimonial = () => {
         <p className="mb-4 text-center font-monospace">Dr. Bhimrao Ambedkar</p>
       </div>
       <Slider {...settings} className="testimonial-publish mb-4">
-        <div className="testimonial-item">
+        <div className="testimonial-item ">
           <Card className="testimonial-card d-flex justify-content-between p-3 shadow-sm border">
             <Card.Body>
               <Card.Title className="fw-bold text-center">

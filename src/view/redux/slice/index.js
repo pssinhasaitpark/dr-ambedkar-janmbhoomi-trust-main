@@ -1,2 +1,3 @@
 import HomeSlice from "./HomeSlice/HomeSlice";
-export {HomeSlice}
+import EventSlice from './EventSlice/EventSlice'
+export {HomeSlice,EventSlice}
