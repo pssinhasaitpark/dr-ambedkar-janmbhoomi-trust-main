@@ -1,5 +1,6 @@
 import React from "react";
-import useBanners from "../../../hooks/HomeHook/useBanners";
+// import useBanners from "../../../hooks/HomeHook/useBanners";
+import { useBanners } from "../../../hooks/index";
 import "./About.css";
 import { Card } from "react-bootstrap";
 import Slider from "react-slick";
@@ -7,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const About = () => {
   const { data, status, error } = useBanners();
-  if (status === 'loading') return <div>Loading...</div>;
+  if (status === 'loading') return <div className="spinner"></div>;
   if (status === 'failed') return <div>Error: {error}</div>;
   if (!data || data.length === 0) {
     return <div>No banners available.</div>;
@@ -61,7 +62,7 @@ const About = () => {
     <div className="container-fluid px-0 mb-4" id="about">
       <div className="row g-0">
         <div className="col-sm-12 col-md-6 p-0">
-          <div className="text-white background-image h-100 position-relative">
+          <div loading="lazy"  className= "text-white background-image h-100 position-relative ">
             <Card className="custom-card bg-transparent border-0">
               <Card.Body className="card-style mt-4">
                 <h5 className="badge-ambedkar badge bg-primary text-white mb-3">{name}</h5>
@@ -106,7 +107,7 @@ const About = () => {
           <Slider {...settings} className="about-slider">
             {sliderImages.map((image, index) => (
               <div key={index} className="border-0">
-                <img className="card-img-top" src={image.src} alt={image.alt} />
+                <img  className="card-img-top" src={image.src} alt={image.alt} />
               </div>
             ))}
           </Slider>

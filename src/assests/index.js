@@ -69,5 +69,6 @@ import publication1 from './images/publication1.png'
 import legacyy from './images/legacyy.png'
 import legacy from './images/legacy.png'
 import education from './images/education.png'
+import visitor from './images/visitor.png'
 
-export {app,fb,insta,logo,phone,Search,yt,abouta,aboutb,aboutc,aboutd,slick,slick1,slick2,slick3,slick4,photo,photo1,photo2,photo3,photo4,achieve,achieve1,achieve2,achieve3,achieve4,image404,birth,birth1,birth2,birth3,dajt,museum,museum2,museum1,museum3,museum4,museum5,museum6,museum7,book1,contact,contact1,contact3,mapping,event,event1,event2,pgallery,pgallery1,pgallery2,pgallery3,pgallery4,pgallery5,pgallery6,pgallery7,pgallery8,award1,newsimg,news1,achievementimg,achievementimg1,achievementimg2,donation,donationImgs1,donationImgs2,donationImgs3,publication1,education,legacy,legacyy}
+export {app,fb,insta,logo,phone,Search,yt,abouta,aboutb,aboutc,aboutd,slick,slick1,slick2,slick3,slick4,photo,photo1,photo2,photo3,photo4,achieve,achieve1,achieve2,achieve3,achieve4,image404,birth,birth1,birth2,birth3,dajt,museum,museum2,museum1,museum3,museum4,museum5,museum6,museum7,book1,contact,contact1,contact3,mapping,event,event1,event2,pgallery,pgallery1,pgallery2,pgallery3,pgallery4,pgallery5,pgallery6,pgallery7,pgallery8,award1,newsimg,news1,achievementimg,achievementimg1,achievementimg2,donation,donationImgs1,donationImgs2,donationImgs3,publication1,education,legacy,legacyy,visitor}

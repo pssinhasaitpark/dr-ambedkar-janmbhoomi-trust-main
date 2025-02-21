@@ -6,15 +6,6 @@
   width: 150%;
   margin-left: -49%;
 }
-.textarea-submit {
-  padding-left: 40px; 
-}
-.upload-icon,
-.share-icon {
-  cursor: pointer;
-  color: #f7fbff;
-  transition: color 0.3s;
-}
 .uploaded-image {
   max-width: 100px;
   max-height: 100px;
@@ -25,7 +16,6 @@
   cursor: pointer;
 }
 @media (min-width: 250px) and (max-width: 700px) {
-
   .textarea-submit {
     width: 297px;
     height: 253px;

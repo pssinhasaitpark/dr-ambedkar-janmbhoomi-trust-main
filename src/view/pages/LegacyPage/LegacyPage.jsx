@@ -181,12 +181,11 @@ const LegacyPage = () => {
               <Form.Control
                 as="textarea"
                 rows={8}
-                className="mx-auto textarea-submit"
+                className="mx-auto textarea-submit "
                 placeholder="Write your testimonial..."
               />
-            </Form.Group>
-            <div className="d-flex justify-content-around ">
-              <div className="d-flex fs-4 text-light fw-medium">
+              <div className="d-flex justify-content-between p-1 ">
+              <div className="d-flex fs-4 text-light fw-medium ms-lg-5 cursor-pointer">
                 <IoIosCloudUpload
                   size={35}
                   className="upload-icon cursor-pointer p-1"
@@ -194,7 +193,7 @@ const LegacyPage = () => {
                 />
                 <p>uploaded case studies</p>
               </div>
-              <div className="d-flex fs-4 text-light fw-medium">
+              <div className="d-flex fs-4 text-light fw-medium me-lg-5 cursor-pointer">
                 <IoIosCloudUpload
                   size={35}
                   className="share-icon cursor-pointer p-1"
@@ -203,12 +202,14 @@ const LegacyPage = () => {
                 <p>uploaded stories</p>
               </div>
             </div>
+            </Form.Group>
+            
 
             <div className="text-center mt-3">
               <Button
                 variant="light"
                 size="lg"
-                className="px-5 rounded-1 text-primary fw-bolder font-monospace"
+                className="px-5 rounded-1 text-primary fw-bolder font-monospace p6-5" 
               >
                 Submit Testimonial
               </Button>
