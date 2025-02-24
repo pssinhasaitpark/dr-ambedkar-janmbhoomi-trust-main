@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import { ToastContainer } from "react-toastify";
 import * as yup from "yup";
@@ -52,10 +52,10 @@ const ContactPage = () => {
         Dr. B.R. Ambedkar’s birthplace in Mhow, Madhya Pradesh. Whether you wish
         to volunteer, donate, or collaborate, your support is invaluable.
       </p>
-      <div className="row mt-4">
-        <div className="col-md-4 mb-3 position-relative p-0 m-0">
-          <div className="contact-card shadow border-0 p-4 rounded-4">
-            <div className="card-body">
+      <div className="row mt-4 mb-5">
+        <div className="col-md-4 mb-3 position-relative p-lg-5 m-0 ">
+          <div className="contact-card shadow border-0 p-4 rounded-4  ">
+            <div className="card-body ">
               <div className="card-contact-imgs p-3 mb-3">
                 <img src={contact} alt="" />
               </div>
@@ -66,8 +66,8 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-4 mb-3 position-relative p-0 m-0">
-          <div className="contact-card shadow border-0 p-4 rounded-4">
+        <div className="col-md-4 mb-3 position-relative p-lg-5 m-0">
+          <div className="contact-card shadow border-0 p-4 rounded-4 ">
             <div className="card-body">
               <div className=" card-contact-imgs p-3 mb-3">
                 <img src={contact1} alt="" />
@@ -77,8 +77,8 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-4 mb-3 position-relative m-0 p-0">
-          <div className="contact-card shadow border-0 p-4 rounded-4">
+        <div className="col-md-4 mb-3 position-relative m-0 p-lg-5">
+          <div className="contact-card shadow border-0 p-4 rounded-4 ">
             <div className="card-body">
               <div className="card-contact-imgs p-3 mb-3">
                 <img src={contact3} alt="" />
@@ -89,7 +89,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-      <div className="position-relative" style={{ height: "120vh" }}>
+      <div className="position-relative mt-5" style={{ height: "120vh" }}>
         <div
           className="bg-img position-absolute w-100 h-100 object-fit-fill"
           style={{
@@ -200,15 +200,14 @@ const ContactPage = () => {
                       </div>
                     )}
                   </Form.Group>
-                  <Link to="/">
-                    <Button
-                      type="submit"
-                      variant="primary rounded-0"
-                      className="w-100 fw-bold font-monospace"
-                    >
-                      Send
-                    </Button>
-                  </Link>
+                  <Button
+                    type="submit"
+                    variant="primary rounded-0"
+                    className="w-100 fs-4 fw-bold font-monospace"
+                  >
+                    Send
+                  </Button>
+
                 </Form>
               </Col>
             </Row>

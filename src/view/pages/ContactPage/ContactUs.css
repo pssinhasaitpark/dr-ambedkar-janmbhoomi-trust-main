@@ -4,14 +4,13 @@
 .contact-card:after {
     content: "";
     position: absolute;
-    width: 89%;
+    width: 76%;
     height: 2px;
     bottom: 0;
-    left: 6%;
-    top: 99%;
+    left: 11%;
+    top: 87%;
     background-color: #0160D8;
-    visibility: visible;
-}
+    visibility: visible;}
 .bg-img-map{
     z-index: -1;
 }
@@ -31,9 +30,10 @@
 .justify-content-center.align-items-center.h-100.shadow.p-0.row {
     width: 103%;
 }
+.contact-card:after {
+    top: 99%;
 }
-
-
+}
 
 
 

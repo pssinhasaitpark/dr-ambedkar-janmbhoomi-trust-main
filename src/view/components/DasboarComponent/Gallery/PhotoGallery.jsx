@@ -7,7 +7,7 @@ const PhotoGallery = () => {
         <div>
             <div className='container-fluid mt-4 mb-4'>
                 <div className=''>
-                    <h1 className='text-center fw-bold text-uppercase biography-header'>Photo Gallery</h1>
+                    <h2 className='text-center fw-bold text-uppercase biography-header'>Photo Gallery</h2>
                     <p className='mb-4 text-center font-monospace '>Dr. Bhimrao Ambedkar</p>
                 </div>
                 <div className='start-gallery'>

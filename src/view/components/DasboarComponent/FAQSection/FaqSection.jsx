@@ -76,10 +76,10 @@ const FaqSection = () => {
                 const isOpen = openIndex === `${sectionIndex}-${index}`;
                 return (
                   <div key={index} className="FAQ-Section">
-                    <div className="accordion-item border-bottom border-0 border-2 rounded-0">
+                    <div className="accordion-item border-bottom border-0 border-1 rounded-0  border-dark ">
                       <h2 className="accordion-header">
                         <button
-                          className={`accordion-button fs-3 mt-3 ${
+                          className={`accordion-button fs-3 font-weight-light mt-3 ${
                             isOpen ? "" : "collapsed"
                           }`}
                           type="button"

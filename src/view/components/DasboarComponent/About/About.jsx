@@ -1,5 +1,4 @@
 import React from "react";
-// import useBanners from "../../../hooks/HomeHook/useBanners";
 import { useBanners } from "../../../hooks/index";
 import "./About.css";
 import { Card } from "react-bootstrap";
@@ -8,12 +7,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const About = () => {
   const { data, status, error } = useBanners();
-  if (status === 'loading') return <div className="spinner"></div>;
-  if (status === 'failed') return <div>Error: {error}</div>;
+  if (status === "loading") return <div className="spinner"></div>;
+  if (status === "failed") return <div>Error: {error}</div>;
   if (!data || data.length === 0) {
     return <div>No banners available.</div>;
   }
-  const { name, heading, beginning_date, completion_date, opening_date, location, image_urls } = data[0];
+  const {
+    name,
+    heading,
+    beginning_date,
+    completion_date,
+    opening_date,
+    location,
+    image_urls,
+  } = data[0];
 
   const sliderImages = image_urls.map((url, index) => ({
     src: url,
@@ -62,10 +69,15 @@ const About = () => {
     <div className="container-fluid px-0 mb-4" id="about">
       <div className="row g-0">
         <div className="col-sm-12 col-md-6 p-0">
-          <div loading="lazy"  className= "text-white background-image h-100 position-relative ">
+          <div
+            loading="lazy"
+            className="text-white background-image h-100 position-relative "
+          >
             <Card className="custom-card bg-transparent border-0">
               <Card.Body className="card-style mt-4">
-                <h5 className="badge-ambedkar badge bg-primary text-white mb-3">{name}</h5>
+                <h5 className="badge-ambedkar badge bg-primary text-white mb-3">
+                  {name}
+                </h5>
 
                 <h3 className="fw-bold heading-ambedkar p-1 lh-base fs-1">
                   {heading.split(",")[0]},
@@ -75,31 +87,37 @@ const About = () => {
                 <table className="table table-borderless no-background-table ">
                   <tbody>
                     <tr>
-                      <td className="fw-medium fs-4 heading-ambedkar">Beginning date:</td>
+                      <td className="fw-medium fs-4 heading-ambedkar">
+                        Beginning date:
+                      </td>
                       <td className="fw-normal fs-4">{beginning_date}</td>
                     </tr>
                     <tr>
-                      <td className="fw-medium fs-4 heading-ambedkar" >Completion date:</td>
+                      <td className="fw-medium fs-4 heading-ambedkar">
+                        Completion date:
+                      </td>
                       <td className="fw-normal fs-4">{completion_date}</td>
                     </tr>
                     <tr>
-                      <td className="fw-medium fs-4 heading-ambedkar">Opening date:</td>
+                      <td className="fw-medium fs-4 heading-ambedkar">
+                        Opening date:
+                      </td>
                       <td className="fw-normal fs-4">{opening_date}</td>
                     </tr>
-                 
-                    </tbody>
-                    </table>
-                    <hr />
+                  </tbody>
+                </table>
+                <hr />
                 <table className="table table-borderless no-background-table">
                   <tbody>
                     <tr>
-                      <td className="fw-medium fs-4 heading-ambedkar">Location:</td>
+                      <td className="fw-medium fs-4 heading-ambedkar">
+                        Location:
+                      </td>
                       <td className="fw-normal p-0 fs-4 lh-lg">{location}</td>
                     </tr>
                   </tbody>
                 </table>
               </Card.Body>
-
             </Card>
           </div>
         </div>
@@ -107,7 +125,12 @@ const About = () => {
           <Slider {...settings} className="about-slider">
             {sliderImages.map((image, index) => (
               <div key={index} className="border-0">
-                <img  className="card-img-top" src={image.src} alt={image.alt} />
+                <img
+                  loading="lazy"
+                  className="card-img-top"
+                  src={image.src}
+                  alt={image.alt}
+                />
               </div>
             ))}
           </Slider>
