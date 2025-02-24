@@ -77,7 +77,7 @@ const GalleryPage = () => {
             <img src={pgallery5} alt="birth-image" className="h-100 museum-image" />
           </div>
         </div>
-        <div className="border border-2 mt-5">
+        <div className="border border-2 mt-5 pe-1">
           <div className="mt-4 mb-4 ms-4">
             <p className="m-0 fs-4 fw-medium">
               Photo and video galleries of the birthplace, events, and

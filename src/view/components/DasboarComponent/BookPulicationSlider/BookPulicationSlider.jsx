@@ -76,19 +76,19 @@ const BookPulicationSlider= () => {
       <div className="all-section-width mt-4 mb-4">
         <Slider {...settings} className="book-publish">
           <div className="position-relative book-image">
-            <img className="book-image p-2" src={slick} alt="View of the memorial" />
+            <img className="book-image" src={slick} alt="View of the memorial" />
           </div>
           <div>
-            <img className="book-image p-2" src={slick1} alt="Exterior shot of the Bhimrao Ambedkar Memorial" />
+            <img className="book-image" src={slick1} alt="Exterior shot of the Bhimrao Ambedkar Memorial" />
           </div>
           <div>
-            <img className="book-image p-2" src={slick2} alt="Another angle of the Bhimrao Ambedkar Memorial" />
+            <img className="book-image " src={slick2} alt="Another angle of the Bhimrao Ambedkar Memorial" />
           </div>
           <div>
-            <img className=" book-image p-2" src={slick3} alt="Aerial view of the Bhimrao Ambedkar Memorial" />
+            <img className=" book-image " src={slick3} alt="Aerial view of the Bhimrao Ambedkar Memorial" />
           </div>
           <div>
-            <img className="book-image p-2" src={slick4} alt="Aerial view of the Bhimrao Ambedkar Memorial" />
+            <img className="book-image " src={slick4} alt="Aerial view of the Bhimrao Ambedkar Memorial" />
           </div>
         </Slider>
       </div>

@@ -18,7 +18,7 @@ const BookPage = () => {
           economics, and Buddhism. Here are some of his most notable works:
         </p>
       </div>
-      <div className="border border-2 mt-5">
+      <div className="border border-2 mt-5 p-2">
         <div className="mt-4 mb-4 ms-4">
           <p className="m-0 fs-4 fw-medium">Books by Dr. B.R. Ambedkar:</p>
           <ol type="I" className="m-0">
@@ -68,9 +68,10 @@ const BookPage = () => {
             </li>
           </ol>
         </div>
-      </div>
-     
-      <div className="border border-2 mt-5">
+      </div>   </div>
+      <div>   <BookPulicationSlider/></div>
+      <div className="all-section-width">
+      <div className="border border-2 mt-5 p-2">
         <div className="mt-5 mb-4">
           <p className="m-0 fs-4 ms-4 fw-medium">
             List of academic publications and research papers on his work.
@@ -146,7 +147,7 @@ const BookPage = () => {
           </p>
         </div>
       </div>
-      <div className="border border-2 mt-5">
+      <div className="border border-2 mt-5 p-2">
         <div className="mt-5 ">
           <p className="m-0 fs-4 ms-4 fw-medium">
             Links to buy or access materials online.
@@ -199,7 +200,7 @@ const BookPage = () => {
           </div>
         </div>
       </div>
-      <div className="border border-2 mt-5">
+      <div className="border border-2 mt-5 p-2">
         <div className="mt-5 ">
           <p className="m-0 fs-4 ms-4 fw-medium">
             A segment to list not listed books, research papers or publications.
@@ -258,8 +259,8 @@ const BookPage = () => {
           </ol>
         </div>
       </div>
-    </div>
-     <BookPulicationSlider />
+ 
+      </div>
     </>
   );
 };

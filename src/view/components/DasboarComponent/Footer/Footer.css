@@ -1,6 +1,7 @@
 
  .quick-links-container {
-  margin-right: 22%;
+  margin-left: 2%;
+  margin-right: 18%;
     border-left: 1px solid rgba(255, 255, 255, 0.082);
     border-right:1px solid rgba(255, 255, 255, 0.082);
     padding: 0 0px;
@@ -11,7 +12,7 @@
     height: 40px;
   }
 .quick-links {
-    margin-left: 20%;
+    margin-left: 8%;
 }
   .social-icons-container{
     margin-top: 8%;
@@ -46,3 +47,10 @@
       width:100%;
     }
   }
+
+
+
+
+
+
+  

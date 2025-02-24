@@ -1,6 +1,8 @@
-.book-publish .slick-slide img {max-height: 283px;}
+.book-publish .slick-slide img {max-height: 283px;
+}
 .book-image{ width:100%;
-margin-left: 2%;}
+  padding: 1%;
+ }
 .book-publish .slick-list {
     margin-left: 140px; 
     margin-right: 140px;}
