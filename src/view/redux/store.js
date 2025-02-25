@@ -1,14 +1,16 @@
-import { configureStore } from '@reduxjs/toolkit';
-import HomeReducer from '../redux/slice/HomeSlice/HomeSlice';  
-// import EventReducer from '../redux/slice/EventSlice/EventSlice'
-import { EventSlice,ContactSlice,SubscribeSlice } from './slice/index';
+import { configureStore } from '@reduxjs/toolkit'; 
+import { EventSlice,ContactSlice,SubscribeSlice,AboutSlice,GallerySlice,DonationSlice,HomeSlice,BookSlice } from './slice/index';
 
 const store = configureStore({
   reducer: {
-    Home: HomeReducer,
+    Home: HomeSlice,
    Event: EventSlice,
    contact:ContactSlice,
    Subscribe:SubscribeSlice,
+   About:AboutSlice,
+   Gallery:GallerySlice,
+   Donation:DonationSlice,
+   Book:BookSlice,
   },
 });
 

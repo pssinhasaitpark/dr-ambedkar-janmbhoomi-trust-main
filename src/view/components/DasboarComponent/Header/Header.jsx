@@ -20,7 +20,7 @@ const Header = () => {
             <Nav.Link href="/about" className=" header-nav pe-3 ms-3 text-light">
               About
             </Nav.Link>
-            <Nav.Link href="/museum" className="header-nav pe-2 ms-3  text-light">
+            <Nav.Link href="/history" className="header-nav pe-2 ms-3  text-light">
               History
             </Nav.Link>
             <Nav.Link href="/book" className="header-nav pe-2 ms-3  text-light">

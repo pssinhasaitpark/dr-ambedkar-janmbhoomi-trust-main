@@ -23,21 +23,21 @@ const HeaderTop = () => {
         </div>
         <div className="col-12 col-md-4 text-center mt-1">
           <Link to="/">
-          <img src={logo} alt="Company Logo" className="img-fluid logo-image" /></Link>
+            <img src={logo} alt="Company Logo" className="img-fluid logo-image" /></Link>
         </div>
         <div className="col-12 col-md-4 phone-icons">
           <div className="d-flex ">
-            <img src={phone} alt="Phone Icon" className="me-2 header-icons"  />
+            <img src={phone} alt="Phone Icon" className="me-2 header-icons" />
             <p className="mb-0 fs-5">91+1234567891</p>
           </div>
           <div className="mt-3 d-flex ">
-          <Link to="/"> <img src={app} alt="WhatsApp" className="header-icons "  /></Link>
-          <Link to="/">  <img src={fb} alt="Facebook" className=" header-icons"  /></Link>
-          <Link to="/">  <img src={insta} alt="Instagram" className=" header-icons"  /></Link>
-          <Link to="/"> <img src={yt} alt="YouTube " className="header-icons"/></Link>
+            <Link to="https://web.whatsapp.com/"> <img src={app} alt="WhatsApp" className="header-icons " /></Link>
+            <Link to="https://www.facebook.com/"> <img src={fb} alt="Facebook" className=" header-icons" /></Link>
+            <Link to="https://www.instagram.com/?hl=en"> <img src={insta} alt="Instagram" className=" header-icons" /></Link>
+            <Link to="https://www.youtube.com/"> <img src={yt} alt="YouTube " className="header-icons" /></Link>
           </div>
         </div>
-        
+
       </div>
     </div>
   );

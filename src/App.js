@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { PageLayout,AboutPage,BirthPlace,MuseumLayout,EventCelebrationLayout,GalleryLayout,AwardLayout, BookLayout, LegacyLayout, EducationLayout,AchievementLayout, NewsLayout, ContactLayout,DonationLayout, VisitorLayout  } from "./view/layouts";
+import { PageLayout,AboutPage,BirthPlace,MuseumLayout,EventCelebrationLayout,GalleryLayout,AwardLayout, BookLayout, LegacyLayout, EducationLayout,AchievementLayout, NewsLayout, ContactLayout,DonationLayout, VisitorLayout,TrusteeLayout,HistoryLayout } from "./view/layouts";
+
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
         <Route path="/contact" element={<ContactLayout />} />  
         <Route path="/donation" element={<DonationLayout />} />  
         <Route path="/visit" element={<VisitorLayout/>} />  
+        <Route path="/trustee" element={<TrusteeLayout/>} />  
+        <Route path="/history" element={<HistoryLayout/>} />  
       </Routes>
     </div>
   );

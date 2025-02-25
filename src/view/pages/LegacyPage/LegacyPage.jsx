@@ -166,11 +166,11 @@ const LegacyPage = () => {
       </div>
       <Testimonial />
       <div className="all-background py-4">
-        <div className="">
-          <h1 className="text-center fw-bold text-uppercase biography-header text-light">
-            Achievements Awards
+        <div className="mb-5 mt-4">
+          <h1 className="text-center text-uppercase biography-header text-light">
+            Submit Testimonials
           </h1>
-          <p className="mb-4 text-center font-monospace text-light">
+          <p className="mb-4 fs-5 text-center text-light">
             Dr. Bhimrao Ambedkar
           </p>
         </div>
@@ -182,34 +182,47 @@ const LegacyPage = () => {
                 as="textarea"
                 rows={8}
                 className="mx-auto textarea-submit "
-                placeholder="Write your testimonial..."
               />
-              <div className="d-flex justify-content-between p-1 ">
-              <div className="d-flex fs-4 text-light fw-medium ms-lg-5 cursor-pointer">
-                <IoIosCloudUpload
-                  size={35}
-                  className="upload-icon cursor-pointer p-1"
+              <div className="d-flex justify-content-between p-1">
+                <div
+                  className="d-flex fs-4 text-light fw-medium ms-lg-5 cursor-pointer mt-3"
                   onClick={handleModalShow}
-                />
-                <p>uploaded case studies</p>
-              </div>
-              <div className="d-flex fs-4 text-light fw-medium me-lg-5 cursor-pointer">
-                <IoIosCloudUpload
-                  size={35}
-                  className="share-icon cursor-pointer p-1"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    cursor: "pointer",
+                  }}
+                >
+                  <IoIosCloudUpload
+                    size={35}
+                    className="upload-image cursor-pointer p-1"
+                  />
+                  <span className="ms-2">Uploaded Stories</span>
+                </div>
+
+                <div
+                  className="d-flex fs-4 text-light fw-medium me-lg-5 cursor-pointer mt-3"
                   onClick={handleModalShow}
-                />
-                <p>uploaded stories</p>
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    cursor: "pointer",
+                  }}
+                >
+                  <IoIosCloudUpload
+                    size={35}
+                    className="share-icon cursor-pointer p-1"
+                  />
+                  <span className="ms-2">Uploaded Stories</span>
+                </div>
               </div>
-            </div>
             </Form.Group>
-            
 
             <div className="text-center mt-3">
               <Button
                 variant="light"
                 size="lg"
-                className="px-5 rounded-1 text-primary fw-bolder font-monospace p6-5" 
+                className="px-5 text-uppercase rounded-1 text-primary fw-bold fs-4  mb-4"
               >
                 Submit Testimonial
               </Button>

@@ -1,41 +1,44 @@
+
+
 .contact-card{
     height: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .contact-card:after {
     content: "";
     position: absolute;
-    width: 76%;
+    width: 89%;
     height: 2px;
     bottom: 0;
-    left: 11%;
-    top: 87%;
+    left: 6%;
+    top: 99%;
     background-color: #0160D8;
-    visibility: visible;}
-.bg-img-map{
-    z-index: -1;
+    visibility: visible;
 }
+
 .bg-img{
     padding: 0 !important;
     background-image: url(../../../assests/images/mapping.jpeg);
+
+    background-size: cover;
+}
+.contact-section-minidescription{
+    font-size: smaller;
+}
+.contact-section-title{
+    letter-spacing: 0.4rem;
 }
 .input-contact-fields::placeholder{
     font-weight: 400;
     color: lightgray !important;
     font-size: small;
 }
-.asx-map-container  {
-    padding: 0 !important;
-}
+
 @media (min-width: 250px) and (max-width: 700px) {
-.justify-content-center.align-items-center.h-100.shadow.p-0.row {
-    width: 103%;
-}
-.contact-card:after {
-    top: 99%;
+p.contact-page-maindescription{
+    width: 100% !important;
 }
 }
-
-
 
 
 

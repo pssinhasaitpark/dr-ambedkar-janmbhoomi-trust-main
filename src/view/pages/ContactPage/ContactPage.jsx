@@ -1,14 +1,22 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import { ToastContainer } from "react-toastify";
 import * as yup from "yup";
 import { Row, Col, Form, Button } from "react-bootstrap";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
 import { useContacts } from "../../hooks/index";
-import { contact, contact1, contact3 } from "../../../assests";
+import { contact, contact1, contact3, contact2 } from "../../../assests";
 import "./ContactUs.css";
+import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+const mapIconLogo = new L.Icon({
+  iconUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png", 
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
 const phoneRegExp =
   /^(\+?\d{0-9})?\s?-?\s?(\(?\d{7}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
@@ -16,7 +24,10 @@ const phoneRegExp =
 const FormSchema = yup.object().shape({
   first_name: yup.string().max(15, "Must be 15 characters or less"),
   last_name: yup.string().max(15, "Must be 15 characters or less"),
-  location: yup.string().max(15, "Must be 15 characters or less"),
+  location: yup
+    .string(2, "Must be 2 words or more")
+    .min(2, "Must be 2 words or more")
+    .max(50, "Must be 50 words or less"),
   email: yup
     .string()
     .matches(
@@ -25,7 +36,35 @@ const FormSchema = yup.object().shape({
     ),
   phone_no: yup.string().matches(phoneRegExp, "Phone number is not valid"),
 });
+const ContactCard = ({ image, title, content, type }) => {
+  const handleClick = () => {
+    if (type === "location") {
+      window.open(
+        `https://www.google.com/maps/search/?q=${encodeURIComponent(content)}`,
+        "_blank"
+      );
+    } else if (type === "phone") {
+      window.location.href = `tel:${content}`;
+    } else if (type === "email") {
+      window.location.href = `mailto:${content}`;
 
+    }
+  };
+
+  return (
+    <div className="col-md-4 mb-3 position-relative" onClick={handleClick}>
+      <div className="contact-card border-0 p-4 rounded-4 cursor-pointer">
+        <div className="card-body">
+          <div className="card-contact-imgs p-3 mb-3">
+            <img loading="lazy" src={image} alt={title} />
+          </div>
+          <h5 className="fw-normal">{title}</h5>
+          <p className="fw-light mb-0">{content}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 const ContactPage = () => {
   const { mutate } = useContacts();
 
@@ -43,51 +82,46 @@ const ContactPage = () => {
     },
   });
 
-  const position = [22.7196, 75.8577];
+  const position = [22.5505, 75.7625];
 
   return (
-    <div className="all-section-width text-center my-5">
-      <h2 className="fw-bold my-4">CONTACT US/JOIN US</h2>
-      <p className="mx-auto mb-5 fs-6 w-50 text-center lh-lg">
-        Dr. B.R. Ambedkar’s birthplace in Mhow, Madhya Pradesh. Whether you wish
-        to volunteer, donate, or collaborate, your support is invaluable.
-      </p>
-      <div className="row mt-4 mb-5">
-        <div className="col-md-4 mb-3 position-relative p-lg-5 m-0 ">
-          <div className="contact-card shadow border-0 p-4 rounded-4  ">
-            <div className="card-body ">
-              <div className="card-contact-imgs p-3 mb-3">
-                <img src={contact} alt="" />
-              </div>
-              <h5 className="fw-normal">OUR LOCATION</h5>
-              <p className="fw-light mb-0">
-                Dr. B.R. Ambedkar Memorial, Mhow, Madhya Pradesh, India
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 mb-3 position-relative p-lg-5 m-0">
-          <div className="contact-card shadow border-0 p-4 rounded-4 ">
-            <div className="card-body">
-              <div className=" card-contact-imgs p-3 mb-3">
-                <img src={contact1} alt="" />
-              </div>
-              <h5 className="fw-normal">PHONE NUMBER</h5>
-              <p className="fw-light mb-0">91+123-1123-1234</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 mb-3 position-relative m-0 p-lg-5">
-          <div className="contact-card shadow border-0 p-4 rounded-4 ">
-            <div className="card-body">
-              <div className="card-contact-imgs p-3 mb-3">
-                <img src={contact3} alt="" />
-              </div>
-              <h5 className="fw-normal">EMAIL ADDRESS</h5>
-              <p className=" fw-light mb-0">DrAmbedkartrust@gmail.com</p>
-            </div>
-          </div>
-        </div>
+    <div className="all-section-width">
+      <div className="img-banner ">
+        <img src={contact2} alt="about-image" className="mb-2 all-image" />
+      </div>
+      <div className="mt-5 mb-4">
+        <h2 className="text-uppercase fs-1  ">CONTACT US/JOIN US</h2>
+        <p className=" fs-5">Dr. Bhimrao Ambedkar</p>
+        <p className=" fw-normal  mt-2 paragraph-birth ">
+          <span className="fs-3">
+            Latest news on events related to Dr. Ambedkar's birthplace :{" "}
+          </span>{" "}
+          Political Leaders' Homage: In late December 2024, Defence Minister
+          Rajnath Singh, accompanied by Chief of Army Staff General Upendra
+          Dwivedi, paid floral tributes at Dr. Ambedkar's memorial in Mhow,
+          Madhya Pradesh.
+        </p>
+      </div>
+
+      <div className="row mt-5 container  text-center mx-auto mb-5">
+        <ContactCard
+          image={contact}
+          title="OUR LOCATION"
+          content="Dr. B.R. Ambedkar Memorial, Mhow, Madhya Pradesh, India"
+          type="location"
+        />
+        <ContactCard
+          image={contact1}
+          title="PHONE NUMBER"
+          content="91+123-1123-1234"
+          type="phone"
+        />
+        <ContactCard
+          image={contact3}
+          title="EMAIL ADDRESS"
+          content="Dr Ambedkartrust@.gmail.com"
+          type="email"
+        />
       </div>
       <div className="position-relative mt-5" style={{ height: "120vh" }}>
         <div
@@ -96,7 +130,7 @@ const ContactPage = () => {
             zIndex: -1,
           }}
         ></div>
-        <Row className="justify-content-center align-items-center h-100 shadow p-0">
+        <Row className="justify-content-center align-items-center h-100 shadow p-0 mx-0">
           <Col md={8} lg={6} xl={5} className="bg-white p-4 shadow shadow w-75">
             <Row>
               <Col md={6} className="p-0">
@@ -104,9 +138,10 @@ const ContactPage = () => {
                   center={position}
                   zoom={13}
                   style={{ height: "100%", width: "100%" }}
+                  key={position}
                 >
                   <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                  <Marker position={position}>
+                  <Marker position={position} icon={mapIconLogo}>
                     <Popup>Our Location</Popup>
                   </Marker>
                 </MapContainer>
@@ -207,7 +242,6 @@ const ContactPage = () => {
                   >
                     Send
                   </Button>
-
                 </Form>
               </Col>
             </Row>
