@@ -104,7 +104,7 @@ const AccordianSection = () => {
                     <GoChevronRight size={30} className="text-dark" />
                   </li>{" "}
                 </Link>
-                <Link to="/museum" className="text-dark text-decoration-none" onClick={scrollToTop}>
+                <Link to="/trustee" className="text-dark text-decoration-none" onClick={scrollToTop}>
                   {" "}
                   <li className="border-bottom fs-4 justify-content-between d-flex  accordian-list hover-li fw-normal border-2">
                     Social Media Integration

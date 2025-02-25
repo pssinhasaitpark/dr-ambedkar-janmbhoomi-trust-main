@@ -31,3 +31,9 @@ const ContactSlice = createSlice({
 export const { setContact, setContactError, setContactLoading, setStatusSucceeded, setStatusFailed } = ContactSlice.actions;
 
 export default ContactSlice.reducer;
+
+
+
+
+
+

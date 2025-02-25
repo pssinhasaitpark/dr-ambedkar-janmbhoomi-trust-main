@@ -8,12 +8,12 @@ import { yt, fb, app, insta } from "../../../../assests/index.js";
 import { useSubscribes } from "../../../hooks/index.js";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-    const scrollToTop = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
   const { mutate: subscribe, isLoading } = useSubscribes();
-  const [subscribed, setSubscribed] = useState(false); 
+  const [subscribed, setSubscribed] = useState(false);
 
   const quickLinks1 = [
     { name: "Home", path: "/" },
@@ -29,12 +29,12 @@ const Footer = () => {
   ];
 
   const FormSchema = yup.object().shape({
- email: yup
-     .string()
-     .matches(
-       /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-       "Invalid email address"
-     ),
+    email: yup
+      .string()
+      .matches(
+        /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+        "Invalid email address"
+      ),
   });
 
   const formik = useFormik({
@@ -47,11 +47,10 @@ const Footer = () => {
       subscribe(subscribeData, {
         onSuccess: () => {
           setSubscribed(true);
-          resetForm(); 
-       
+          resetForm();
         },
         onError: (error) => {
-        error("There was an error subscribing: " + error.message); 
+          console.error("Subscription error:", error.message);
         }
       });
     },
@@ -61,8 +60,7 @@ const Footer = () => {
     <>
       <div className="footer bg-dark text-light py-5">
         <div className="p-0 m-0">
-          <div className="row  m-0 mb-5 ">
-
+          <div className="row m-0 mb-5">
             <div className="col-md-4 footer-section w-25 ms-5 mt-2">
               <span className="ms-4 badge-ambedkar badge bg-primary mb-3">Dr Bhimrao Ambedkar</span>
               <h5 className="mb-4 ms-4 fs-4 lh-base">Bhim Janmabhoomi, Dr. Bhimrao Ambedkar Memorial Mhow</h5>
@@ -79,11 +77,11 @@ const Footer = () => {
                 <div className="quick-links">
                   <p className="mb-3 fs-4 mt-5 ms-5">Quick Links</p>
                 </div>
-                <div className="row  ms-5">
+                <div className="row ms-5">
                   <div className="col-6 p-0 pe-5 right-footer">
                     <div className="ms-5">
                       {quickLinks1.map((link, index) => (
-                        <div key={index} className="">
+                        <div key={index}>
                           <Link to={link.path} className="text-light text-decoration-none fs-5 lh-lg" onClick={scrollToTop}>
                             {link.name}
                           </Link>
@@ -93,7 +91,7 @@ const Footer = () => {
                   </div>
                   <div className="col-6 ps-4 left-footer">
                     {quickLinks2.map((link, index) => (
-                      <div key={index} className="">
+                      <div key={index}>
                         <Link to={link.path} className="text-light text-decoration-none fs-5 lh-lg" onClick={scrollToTop}>
                           {link.name}
                         </Link>
@@ -119,35 +117,33 @@ const Footer = () => {
                   />
                   <button
                     type="submit"
-                    className="btn btn-primary px-5 rounded-end text-light fs-5 fw-bolder "
+                    className="btn btn-primary footer-button px-5 rounded-end text-light fs-5 fw-bolder"
                     disabled={isLoading || !formik.isValid || formik.isSubmitting}
                   >
                     {subscribed ? 'Subscribed' : isLoading ? 'Subscribing...' : 'Subscribe'}
                   </button>
                 </div>
 
-      
                 {formik.touched.email && formik.errors.email && (
                   <div className="text-danger">{formik.errors.email}</div>
                 )}
               </form>
 
               <div className="d-flex social-icons-container">
-                <Link to="/">
+                <Link to="https://web.whatsapp.com/">
                   <img src={app} alt="WhatsApp" className="me-2 footer-icons" />
                 </Link>
-                <Link to="/">
+                <Link to="https://www.facebook.com/">
                   <img src={fb} alt="Facebook" className="me-2 footer-icons" />
                 </Link>
-                <Link to="/">
+                <Link to="https://www.instagram.com/?hl=en">
                   <img src={insta} alt="Instagram" className="me-2 footer-icons" />
                 </Link>
-                <Link to="/">
+                <Link to="https://www.youtube.com/">
                   <img src={yt} alt="YouTube" className="me-2 footer-icons" />
                 </Link>
               </div>
             </div>
-
           </div>
         </div>
       </div>

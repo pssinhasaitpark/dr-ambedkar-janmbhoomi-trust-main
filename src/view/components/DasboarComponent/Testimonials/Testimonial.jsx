@@ -72,11 +72,11 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="testimonial-container py-4">
+    <div className="testimonial-container py-4 mt-3">
       <div className="heading-all">
-        <h1 className="text-center fw-bold text-uppercase biography-header">
-          Testimonial
-        </h1>
+      <h2 className="text-center text-uppercase biography-header display-6 fw-medium">
+          Testimonials
+        </h2>
         <p className="mb-4 text-center font-monospace">Dr. Bhimrao Ambedkar</p>
       </div>
       <Slider {...settings} className="testimonial-publish mb-4">
@@ -122,7 +122,26 @@ const Testimonial = () => {
             </Card.Body>
           </Card>
         </div>
-
+ <div className="testimonial-item">
+          <Card className="testimonial-card p-3 shadow-sm border">
+            <Card.Body>
+              <Card.Title className="fw-bold text-center">
+                Educational Impact:
+              </Card.Title>
+              <Card.Text className="text-center fs-5 lh-lg">
+                Dr. Ambedkar's focus on education led to the establishment of
+                many institutions in his name, promoting learning and social
+                reform. Notably, Dr. B. R. Ambedkar NIT Jalandhar stands 
+                hub of technical education in India.
+              </Card.Text>
+              <div className="text-center fw-bold fs-5 lh-lg">
+                These examples underscore how Dr. Ambedkar's ideals continue to
+                influence modern India, promoting social justice, political
+                empowerment, and educational advancement.
+                </div>
+            </Card.Body>
+          </Card>
+        </div>
       </Slider>
     </div>
   );

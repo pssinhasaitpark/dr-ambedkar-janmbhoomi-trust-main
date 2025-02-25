@@ -12,18 +12,19 @@
   height: 2px;
   background-color: black;
 }
-.custom-tabs {
-  margin-top: -1%;
+.gallery-page-0,.gallery-page-1{
+  height: 350px;
+}
+.gallery-images img{
+  height:100%;
+  width: 100%;
+ 
 }
 .nav-tabs {
   border: none !important;
 }
 .nav-tabs .nav-link {
   border: none !important;
-}
-.museum-image {
-  width: 98%;
-  height: 100%;
 }
 .custom-tabs .nav-link {
   color: rgb(0, 0, 0) !important;
@@ -40,8 +41,7 @@
   background-color: #ffffff !important;
   color: rgb(0, 0, 0) !important;
 }
+
 @media (min-width: 250px) and (max-width: 700px) {
-  .museum-image {
-    width: 100% !important;
-  }
+
 }
