@@ -13,8 +13,8 @@ const Achievment = () => {
     <div>
       <div className="container-fluid mt-5 mb-4 ">
         <div className="">
-          <h2 className="text-center text-uppercase biography-header display-6 fw-medium">Achievements Awards</h2>
-          <p className="mb-4 text-center font-monospace ">Dr. Bhimrao Ambedkar</p>
+          <h2 className="text-center text-uppercase biography-header display-6 fw-medium p-0 m-0">Achievements Awards</h2>
+          <p className=" text-center">Dr. Bhimrao Ambedkar</p>
         </div>
         <div className="start-gallery">
           <div className="gallery-row d-flex flex-wrap justify-content-center">

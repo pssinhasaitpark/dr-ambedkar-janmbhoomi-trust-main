@@ -79,7 +79,7 @@ const About = () => {
                   {name}
                 </h5>
 
-                <h3 className="fw-bold heading-ambedkar p-1 lh-base fs-1">
+                <h3 className="fw-medium  p-1 display-6 lh-base ">
                   {heading.split(",")[0]},
                   <span className="text-primary">{heading.split(",")[1]}</span>
                 </h3>

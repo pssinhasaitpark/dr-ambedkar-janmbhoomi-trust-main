@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import FooterBottom from "./FooterBottom.jsx";
 import { yt, fb, app, insta } from "../../../../assests/index.js";
 import { useSubscribes } from "../../../hooks/index.js";
+// import { MdHeight } from 'react-icons/md';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -18,7 +19,7 @@ const Footer = () => {
   const quickLinks1 = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "History", path: "/museum" },
+    { name: "History", path: "/history" },
     { name: "Books", path: "/book" }
   ];
 
@@ -61,7 +62,7 @@ const Footer = () => {
       <div className="footer bg-dark text-light py-5">
         <div className="p-0 m-0">
           <div className="row m-0 mb-5">
-            <div className="col-md-4 footer-section w-25 ms-5 mt-2">
+            <div className="col-md-4 footer-section w-25 ms-5 mt-2 p-0 mx-0">
               <span className="ms-4 badge-ambedkar badge bg-primary mb-3">Dr Bhimrao Ambedkar</span>
               <h5 className="mb-4 ms-4 fs-4 lh-base">Bhim Janmabhoomi, Dr. Bhimrao Ambedkar Memorial Mhow</h5>
               <div>
@@ -74,12 +75,12 @@ const Footer = () => {
 
             <div className="col-md-4 footer-section mt-2">
               <div className="quick-links-container">
-                <div className="quick-links">
-                  <p className="mb-3 fs-4 mt-5 ms-5">Quick Links</p>
+                <div className="quick-links ms-5">
+                  <p className="mb-3 fs-4 mt-5 ms-lg-5">Quick Links</p>
                 </div>
                 <div className="row ms-5">
-                  <div className="col-6 p-0 pe-5 right-footer">
-                    <div className="ms-5">
+                  <div className="col-6 p-0 pe-lg-5 right-footer">
+                    <div className="ms-lg-5">
                       {quickLinks1.map((link, index) => (
                         <div key={index}>
                           <Link to={link.path} className="text-light text-decoration-none fs-5 lh-lg" onClick={scrollToTop}>
@@ -89,7 +90,7 @@ const Footer = () => {
                       ))}
                     </div>
                   </div>
-                  <div className="col-6 ps-4 left-footer">
+                  <div className="col-6 ps-lg-4 left-footer">
                     {quickLinks2.map((link, index) => (
                       <div key={index}>
                         <Link to={link.path} className="text-light text-decoration-none fs-5 lh-lg" onClick={scrollToTop}>
@@ -102,14 +103,18 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-md-4 mt-5 footer-section footer-middle">
-              <h5 className="mb-3 fs-4 fw-medium mt-2">Sign up for our newsletter</h5>
+            <div className="col-md-4 mt-5 footer-section p-lg-0 m-0 p-2">
+            <h5 className="mb-3 fs-4 fw-medium mt-3 ps-lg-0 ps-5">Sign up for our newsletter</h5>
+
               <form onSubmit={formik.handleSubmit}>
-                <div className="d-flex newsletter-container align-items-center">
+                <div className="d-flex mt-4 mb-4 " style={{
+                  height:"60px",
+                  width:"103%"
+                }}>
                   <input
                     type="email"
                     name="email"
-                    className="form-control newsletter-email border rounded-start"
+                    className="form-control newsletter-email border rounded-start rounded-0"
                     placeholder="Enter Email"
                     value={formik.values.email}
                     onChange={formik.handleChange}
@@ -117,7 +122,7 @@ const Footer = () => {
                   />
                   <button
                     type="submit"
-                    className="btn btn-primary footer-button px-5 rounded-end text-light fs-5 fw-bolder"
+                    className="btn btn-primary  px-5 text-light fs-5 fw-bold rounded-end rounded-0"
                     disabled={isLoading || !formik.isValid || formik.isSubmitting}
                   >
                     {subscribed ? 'Subscribed' : isLoading ? 'Subscribing...' : 'Subscribe'}
@@ -129,18 +134,18 @@ const Footer = () => {
                 )}
               </form>
 
-              <div className="d-flex social-icons-container">
+              <div className="d-flex social-icons-container ">
                 <Link to="https://web.whatsapp.com/">
-                  <img src={app} alt="WhatsApp" className="me-2 footer-icons" />
+                  <img src={app} alt="WhatsApp" className="me-3 w-100 pe-2" />
                 </Link>
                 <Link to="https://www.facebook.com/">
-                  <img src={fb} alt="Facebook" className="me-2 footer-icons" />
+                  <img src={fb} alt="Facebook" className="me-3 w-100 pe-2" />
                 </Link>
                 <Link to="https://www.instagram.com/?hl=en">
-                  <img src={insta} alt="Instagram" className="me-2 footer-icons" />
+                  <img src={insta} alt="Instagram" className="me-3 w-100 pe-2" />
                 </Link>
                 <Link to="https://www.youtube.com/">
-                  <img src={yt} alt="YouTube" className="me-2 footer-icons" />
+                  <img src={yt} alt="YouTube" className="me-3 w-100 pe-2" />
                 </Link>
               </div>
             </div>

@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  donation,
-  donationImgs1,
-  donationImgs2,
-  donationImgs3,
-} from "../../../assests/index";
-
+import { Link } from "react-router-dom";
 import { useDonations } from "../../hooks/index";
 import "./Donation.css";
 const DonationPage = () => {
@@ -48,7 +42,7 @@ const DonationPage = () => {
               ) : (
                 <p>No images available</p>
               )}
-              <h2 className="text-uppercase fs-1 mt-5 ">{donation.title}</h2>
+              <h2 className="text-uppercase fs-1 mt-5 m-0 p-0">{donation.title}</h2>
               <p className="mb-3 fs-5">{donation.name}</p>
               <div className="border border-2 mt-3 p-3">
               <div
@@ -64,6 +58,9 @@ const DonationPage = () => {
           <p>No events found</p>
         )}
       </div>
+      
+      <button className="btn btn-primary" ><Link to="/donate" className="text-light fs-4 text-decoration-none">Donate</Link></button>
+
     </div>
     
   );

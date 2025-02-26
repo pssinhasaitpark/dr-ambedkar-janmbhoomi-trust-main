@@ -9,7 +9,7 @@ const VisitorPage = () => {
         <img src={visitor} alt="visitor-image" className="mb-2 all-image" />
       </div>
         <div className="mt-5 mb-4">
-        <h2 className="text-uppercase fs-1  "> VISITOR INFORMATION</h2>
+        <h2 className="text-uppercase fs-1 m-0 p-0 "> VISITOR INFORMATION</h2>
         <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
         <p className=" fw-medium  mt-2 paragraph-birth ">
           <span className="fs-3">Visitor Information :</span> Dr. B.R. Ambedkar's birthplace

@@ -7,7 +7,7 @@ const Education = () => {
         <img src={education} alt="about-image" className="mb-2 all-image" />
       </div>
       <div className="mt-5 mb-4">
-        <h2 className="text-uppercase fs-1  ">Education and Research</h2>
+        <h2 className="text-uppercase fs-1  m-0 p-0">Education and Research</h2>
         <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
         <p className=" fw-medium  mt-2 paragraph-birth ">
           <span className="fs-3">Education and Research: </span>  Dr. B.R. Ambedkar emphasized education as the key to social empowerment and progress. His vision led to the establishment of several institutions and research initiatives that continue to shape modern India.

@@ -24,7 +24,7 @@ const LegacyPage = () => {
         <img src={legacyy} alt="legacy-image" className="mb-2 legacy-image" />
       </div>
       <div className="mt-5 mb-4">
-        <h2 className="text-uppercase fs-1  ">Dr.Ambedkar's Legacy</h2>
+        <h2 className="text-uppercase fs-1 m-0 p-0 ">Dr.Ambedkar's Legacy</h2>
         <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
         <p className=" fw-medium  mt-2 paragraph-birth ">
           <span className="fs-3"> Ambedkar's Legacy : </span> Dr. Bhimrao Ramji
@@ -158,14 +158,14 @@ const LegacyPage = () => {
           </p>
         </div>
       </div>
-      <div className="fs-4 fw-medium lh-base mt-5">
+      <div className="paragraph-birth fw-medium  mt-5">
         Dr. B.R. Ambedkar's contributions continue to resonate in contemporary
         India, influencing various facets of society. Here are some
         testimonials, case studies, and stories that highlight the enduring
         relevance of his work:
       </div>
       <Testimonial />
-      <div className="all-background py-4">
+      <div className="all-background py-4 mt-4">
         <div className="mb-5 mt-4">
           <h1 className="text-center text-uppercase biography-header text-light">
             Submit Testimonials
@@ -182,6 +182,7 @@ const LegacyPage = () => {
                 as="textarea"
                 rows={8}
                 className="mx-auto textarea-submit "
+                placeholder="A section to submit testimonials about Dr Ambedkar...."
               />
               <div className="d-flex justify-content-between p-1">
                 <div
@@ -197,7 +198,7 @@ const LegacyPage = () => {
                     size={35}
                     className="upload-image cursor-pointer p-1"
                   />
-                  <span className="ms-2">Uploaded Stories</span>
+                  <span className="ms-2">Uploaded Case Studies</span>
                 </div>
 
                 <div

@@ -12,7 +12,7 @@ const AchievementPage = () => {
         <div className="row m-0">
           <div className="col-sm-4 p-0 m-0">
             <img
-              src={achievementimg}
+              src={achievementimg2}
               alt="achievement-image"
               className="museum-image"
             />
@@ -26,7 +26,7 @@ const AchievementPage = () => {
           </div>
           <div className="col-sm-4 p-0 m-0">
             <img
-              src={achievementimg2}
+              src={achievementimg}
               alt="achievement-image"
               className="museum-image"
             />
@@ -34,13 +34,13 @@ const AchievementPage = () => {
         </div>
       </div>
       <div className="mt-5 mb-4">
-        <h2 className="text-uppercase fs-1  ">Acheivements</h2>
-        <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
-        <p className=" fw-medium  mt-2 paragraph-birth ">
+        <h2 className="text-uppercase fs-1 p-0 m-0 ">Achievements</h2>
+        <p className="mb-3 fs-5 ">Dr. Bhimrao Ambedkar</p>
+        <p className=" fw-medium  mt-4 paragraph-birth ">
           <span className="fs-3">Achievements : </span> Dr. B.R. Ambedkar, one
           of India's most transformative leaders, made remarkable contributions
           in the fields of law, politics, and social reform. Here are some of
-          his key achievements
+          his key achievements:
         </p>
       </div>
 

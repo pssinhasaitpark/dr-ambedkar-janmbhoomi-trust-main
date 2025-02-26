@@ -1,5 +1,10 @@
 import React from "react";
-import { award1 } from "../../../assests/index";
+import {
+  award1,
+  achievementimg,
+  achievementimg1,
+  achievementimg2,
+} from "../../../assests";
 import "../../components/DasboarComponent/Biography/Biography.css";
 const AwardPage = () => {
   return (
@@ -8,7 +13,7 @@ const AwardPage = () => {
         <img src={award1} alt="about-image" className="mb-2 all-image" />
       </div>
       <div className="mt-5 mb-4">
-        <h2 className="text-uppercase fs-1 biography-header ">Awards</h2>
+        <h2 className="text-uppercase fs-1 biography-header m-0 p-0 ">Awards</h2>
         <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
         <p className=" fw-medium  mt-2 paragraph-birth ">
           <span className="fs-3">Awards : </span> Dr. B.R. Ambedkar received
@@ -16,7 +21,7 @@ const AwardPage = () => {
           social justice, and nation-building.
         </p>
       </div>
-      <div className="border border-2 mt-5">
+      <div className="border border-2 mt-4">
         <div className="mt-4 mb-4 ms-4">
           <p className="fs-3 p-0 m-0 fw-medium ms-1">Major Awards and Honors</p>
           <ol type="a" className="ms-4">
@@ -41,7 +46,36 @@ const AwardPage = () => {
               honorary doctorates.
             </li>
           </ol>
-          <p className="ms-5 fs-5 mt-5 mb-5">    Dr. Ambedkar's work continues to inspire movements for equality and human rights worldwide.</p>
+          <p className="ms-5 fs-5 mt-5 mb-5">
+            {" "}
+            Dr. Ambedkar's work continues to inspire movements for equality and
+            human rights worldwide.
+          </p>
+        </div>
+      </div>
+      <div className="img-banner  mt-5">
+        <div className="row m-0">
+          <div className="col-sm-4 p-0 m-0">
+            <img
+              src={achievementimg2}
+              alt="achievement-image"
+              className="museum-image"
+            />
+          </div>
+          <div className="col-sm-4 p-0 m-0">
+            <img
+              src={achievementimg1}
+              alt="achievement-image"
+              className="museum-image"
+            />
+          </div>
+          <div className="col-sm-4 p-0 m-0">
+            <img
+              src={achievementimg}
+              alt="achievement-image"
+              className="museum-image"
+            />
+          </div>
         </div>
       </div>
     </div>
