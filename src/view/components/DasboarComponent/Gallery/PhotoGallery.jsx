@@ -7,8 +7,8 @@ const PhotoGallery = () => {
         <div>
             <div className='container-fluid mt-4 mb-4'>
                 <div className=''>
-                    <h2 className='text-center fw-bold text-uppercase biography-header'>Photo Gallery</h2>
-                    <p className='mb-4 text-center font-monospace '>Dr. Bhimrao Ambedkar</p>
+                    <h2 className='text-center fw-bold text-uppercase biography-header p-0 m-0'>Photo Gallery</h2>
+                    <p className="text-center">Dr. Bhimrao Ambedkar</p>
                 </div>
                 <div className='start-gallery'>
                     <div className='gallery-row d-lg-flex flex-wrap justify-content-center'>

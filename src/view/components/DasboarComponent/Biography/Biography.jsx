@@ -33,11 +33,11 @@ const Biography = () => {
                     Biography
                   </h2>
                   <p className="side-line mb-4 ms-5 font-monospace position-relative">
-                    Dr. Bhimrao Ambedkar
+                    Dr.Bhimrao Ambedkar
                   </p>
                 </div>
                 <div className="col-sm-9 biography-head">
-                  <p className="fw-medium lh-lg text-dark description-bio p-0 m-0">
+                  <p className="fw-medium fs-5 lh-lg text-dark description-bio p-0 m-0">
                     Dr. Bhimrao Ramji Ambedkar (1891-1956), known as Babasaheb,
                     was a visionary leader, social reformer, and the principal
                     architect of the Indian Constitution, fighting caste
@@ -51,7 +51,8 @@ const Biography = () => {
               <ul className="timeline-1  mt-4">
                 {biographyData.map((event, index) => (
                   <li className="event fs-4 " key={index} data-date={event.date}>
-                    <p className="biography-text fs-5 ">{event.text}</p>
+                    <p className="biography-text fs-5 ms-lg-5 ps-lg-5 py-lg-0 py-3
+                    ">{event.text}</p>
                   </li>
                 ))}
               </ul>

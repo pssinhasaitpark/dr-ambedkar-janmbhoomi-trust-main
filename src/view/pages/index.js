@@ -14,4 +14,6 @@ import DonationPage from "./DonationPage/DonationPage";
 import VisitorPage from "./VisitorPage/VisitorPage";
 import Trustee from "./Trustee/Trustee";
 import HistoryPage from "./HistoryPage/HistoryPage";
-export { HomeDashboard,BirthPlacePage,Museum,EventCelebration,GalleryPage,AwardPage,BookPage,LegacyPage,Education,AchievementPage,NewsPage,ContactPage,DonationPage,VisitorPage,Trustee,HistoryPage}
+import DonationDonate from "./DonationPage/DonationDonate";
+import BookLIstPage from "./BookPage/BookLIstPage";
+export { HomeDashboard,BirthPlacePage,Museum,EventCelebration,GalleryPage,AwardPage,BookPage,LegacyPage,Education,AchievementPage,NewsPage,ContactPage,DonationPage,VisitorPage,Trustee,HistoryPage,DonationDonate,BookLIstPage}

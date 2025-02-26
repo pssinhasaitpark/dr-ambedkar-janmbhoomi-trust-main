@@ -74,6 +74,7 @@ const BookPulicationSlider= () => {
   return (
     <>
       <div className="all-section-width mt-4 mb-4">
+        
         <Slider {...settings} className="book-publish">
           <div className="position-relative book-image">
             <img className="book-image" src={slick} alt="View of the memorial" />

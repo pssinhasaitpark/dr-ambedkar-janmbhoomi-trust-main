@@ -11,7 +11,7 @@ const NewsPage = () => {
             </div>
      
         <div className="mt-5 mb-4">
-        <h2 className="text-uppercase fs-1  ">News and Updates</h2>
+        <h2 className="text-uppercase fs-1 m-0 p-0 ">News and Updates</h2>
         <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
         <p className=" fw-medium  mt-2 paragraph-birth ">
           <span className="fs-3">Latest news on events related to Dr. Ambedkar's birthplace :</span> Political Leaders' Homage: In late December 2024, Defence Minister

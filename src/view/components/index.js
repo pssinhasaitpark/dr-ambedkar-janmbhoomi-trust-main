@@ -9,5 +9,7 @@ import FaqSection from "./DasboarComponent/FAQSection/FaqSection.jsx";
 import Biography from "./DasboarComponent/Biography/Biography.jsx";
 import AccordianSection from "./DasboarComponent/AccordianSection/AccordianSection.jsx";
 import BookPulicationSlider from "./DasboarComponent/BookPulicationSlider/BookPulicationSlider.jsx";
-import Testimonial from "./DasboarComponent/Testimonials/Testimonial.jsx";
-export { HeaderTop,Header, FooterBottom, Footer,About,PhotoGallery,Achievment,FaqSection,Biography,AccordianSection,BookPulicationSlider,Testimonial}
+import Testimonial from "./DasboarComponent/BookPulicationSlider/Testimonial.jsx";
+import HistoryComponent from "./DasboarComponent/HistoryComponent/HistoryComponent.jsx";
+import TrusteeSlider from "./DasboarComponent/BookPulicationSlider/TrusteeSlider.jsx";
+export { HeaderTop,Header, FooterBottom, Footer,About,PhotoGallery,Achievment,FaqSection,Biography,AccordianSection,BookPulicationSlider,Testimonial,HistoryComponent,TrusteeSlider}
