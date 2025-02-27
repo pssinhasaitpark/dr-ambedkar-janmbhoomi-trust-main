@@ -77,11 +77,13 @@ const ContactPage = () => {
       location: "",
     },
     validationSchema: FormSchema,
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       mutate(values);
+      setTimeout(() => {
+        resetForm();
+      }, 6000); 
     },
   });
-
   const position = [22.5505, 75.7625];
 
   return (
@@ -90,7 +92,7 @@ const ContactPage = () => {
         <img src={contact2} alt="about-image" className="mb-2 all-image" />
       </div>
       <div className="mt-5 mb-4">
-        <h2 className="text-uppercase fs-1  ">CONTACT US/JOIN US</h2>
+        <h2 className="text-uppercase fs-1 p-0 m-0  ">CONTACT US/JOIN US</h2>
         <p className=" fs-5">Dr. Bhimrao Ambedkar</p>
         <p className=" fw-normal  mt-2 paragraph-birth ">
           <span className="fs-3">
@@ -147,13 +149,13 @@ const ContactPage = () => {
                 </MapContainer>
               </Col>
               <Col md={6} className="p-5">
-                <h4 className="mb-2 text-start">GET A QUOTE NOW</h4>
-                <p className="text-muted text-start fw-light fs-6">
+                <h4 className="mb-2 text-center mb-3 fs-3 biography-header">GET A QUOTE NOW</h4>
+                <p className="text-muted text-start fw-light fs-6 mb-4">
                   We’d love to hear what you have in mind for your project and
                   how we can help out. contact us the from below
                 </p>
                 <Form onSubmit={formik.handleSubmit}>
-                  <Form.Group className="mb-2">
+                  <Form.Group className="mb-3">
                     <Form.Control
                       type="text"
                       placeholder="First name"
@@ -170,7 +172,7 @@ const ContactPage = () => {
                     )}
                   </Form.Group>
 
-                  <Form.Group className="mb-2">
+                  <Form.Group className="mb-3">
                     <Form.Control
                       type="text"
                       placeholder="Last name"
@@ -187,7 +189,7 @@ const ContactPage = () => {
                     )}
                   </Form.Group>
 
-                  <Form.Group className="mb-2">
+                  <Form.Group className="mb-3">
                     <Form.Control
                       type="text"
                       placeholder="Phone Number"
@@ -204,7 +206,7 @@ const ContactPage = () => {
                     )}
                   </Form.Group>
 
-                  <Form.Group className="mb-2">
+                  <Form.Group className="mb-3">
                     <Form.Control
                       type="email"
                       placeholder="Email Address"

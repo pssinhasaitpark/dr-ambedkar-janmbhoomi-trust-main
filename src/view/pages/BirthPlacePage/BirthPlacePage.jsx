@@ -1,7 +1,20 @@
 import React from "react";
 import "./BirthPlace.css";
-import { birth, birth1, birth2, birth3, dajt } from "../../../assests/index.js";
+import { birth, birth1, birth2, dajt } from "../../../assests/index.js";
+import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+const mapIconLogo = new L.Icon({
+  iconUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
+
 const BirthPlacePage = () => {
+  const position = [22.5505, 75.7625];
   return (
     <div className="all-section-width">
       <div className="img-banner ">
@@ -185,11 +198,19 @@ const BirthPlacePage = () => {
 
             </ol>
           </div>
-
-
         </div>
-        <div className="col-sm-6 p-0 mt-3 ">
-          <img src={birth3} alt="birth-image" className="map-image" />
+        <div className="col-sm-6 p-0 mt-3 mb-3 p-4 ">
+          <MapContainer
+            center={position}
+            zoom={13}
+            style={{ height: "100%", width: "100%" }}
+            key={position}
+          >
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <Marker position={position} icon={mapIconLogo}>
+              <Popup>Our Location</Popup>
+            </Marker>
+          </MapContainer>
         </div>
 
       </div>

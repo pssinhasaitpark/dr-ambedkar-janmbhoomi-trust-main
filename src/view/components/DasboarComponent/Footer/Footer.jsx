@@ -9,6 +9,7 @@ import { useSubscribes } from "../../../hooks/index.js";
 // import { MdHeight } from 'react-icons/md';
 
 const Footer = () => {
+  const [errorMessage, setErrorMessage] = useState("");
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -26,7 +27,8 @@ const Footer = () => {
   const quickLinks2 = [
     { name: "News", path: "/news" },
     { name: "Gallery", path: "/gallery" },
-    { name: "Contact", path: "/contact" }
+    { name: "Contact", path: "/contact" },
+    { name: "Trustee", path: "/trustee" }
   ];
 
   const FormSchema = yup.object().shape({
@@ -35,9 +37,12 @@ const Footer = () => {
       .matches(
         /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
         "Invalid email address"
-      ),
+      )
+      .required("Email is required"),
   });
+  
 
+  
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -48,21 +53,32 @@ const Footer = () => {
       subscribe(subscribeData, {
         onSuccess: () => {
           setSubscribed(true);
+          setErrorMessage(""); 
           resetForm();
         },
         onError: (error) => {
-          console.error("Subscription error:", error.message);
+          console.log("Error Response:", error?.response?.data);
+        
+          const errorMsg = error?.response?.data?.message?.toLowerCase();
+        
+          if (errorMsg?.includes("already subscribed")) {
+            setErrorMessage("This email is already subscribed.");
+          } else {
+            setErrorMessage("Something went wrong. Please try again.");
+          }
+          resetForm();
         }
+        
+        
       });
     },
   });
-
   return (
     <>
       <div className="footer bg-dark text-light py-5">
         <div className="p-0 m-0">
           <div className="row m-0 mb-5">
-            <div className="col-md-4 footer-section w-25 ms-5 mt-2 p-0 mx-0">
+            <div className="col-md-4 footer-section w-25 ms-5 mt-2 p-0 mx-0 ps-4">
               <span className="ms-4 badge-ambedkar badge bg-primary mb-3">Dr Bhimrao Ambedkar</span>
               <h5 className="mb-4 ms-4 fs-4 lh-base">Bhim Janmabhoomi, Dr. Bhimrao Ambedkar Memorial Mhow</h5>
               <div>
@@ -109,7 +125,7 @@ const Footer = () => {
               <form onSubmit={formik.handleSubmit}>
                 <div className="d-flex mt-4 mb-4 " style={{
                   height:"60px",
-                  width:"103%"
+                  width:"102%"
                 }}>
                   <input
                     type="email"
@@ -122,7 +138,7 @@ const Footer = () => {
                   />
                   <button
                     type="submit"
-                    className="btn btn-primary  px-5 text-light fs-5 fw-bold rounded-end rounded-0"
+                    className="btn btn-primary  px-5 text-light fs-4 fw-medium rounded-end rounded-0"
                     disabled={isLoading || !formik.isValid || formik.isSubmitting}
                   >
                     {subscribed ? 'Subscribed' : isLoading ? 'Subscribing...' : 'Subscribe'}
@@ -132,6 +148,7 @@ const Footer = () => {
                 {formik.touched.email && formik.errors.email && (
                   <div className="text-danger">{formik.errors.email}</div>
                 )}
+                {errorMessage && <div className="text-danger">{errorMessage}</div>}
               </form>
 
               <div className="d-flex social-icons-container ">

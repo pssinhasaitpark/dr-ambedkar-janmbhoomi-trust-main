@@ -12,7 +12,7 @@ const HeaderTop = () => {
         </Link>
       </div>
 
-      <div className="position-absolute top-50 end-0 translate-middle-y me-5 pe-5 d-none d-lg-block">
+      <div className="position-absolute top-50 end-0 translate-middle-y me-5 pe-4 d-none d-lg-block">
         <div className="d-flex align-items-center">
           <Link to ="tel:+911234567891">
             <img src={phone} alt="Phone Icon" className="me-2 header-icons" />

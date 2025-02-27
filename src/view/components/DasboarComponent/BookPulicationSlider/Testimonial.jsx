@@ -101,7 +101,7 @@ const Testimonial = () => {
         </h2>
         <p className="mb-4 text-center ">Dr. Bhimrao Ambedkar</p>
       </div>
-      <Slider {...settings} className="book-publish mb-4">
+      <Slider {...settings} className="book-publish testimonial mb-4">
         {testimonials.map((testimonial, index) => (
           <div className="testimonial-item" key={index}>
             <Card className="testimonial-card d-flex justify-content-between p-3 shadow-sm border rounded-0 ms-4">
