@@ -7,5 +7,8 @@ import useGallerys from './HomeHook/useGallerys'
 import useDonations from "./HomeHook/useDonations";
 import useBooks from "./HomeHook/useBooks";
 import useDonates from "./HomeHook/useDonates";
-
-export{useBanners,useContacts,useEvents,useSubscribes,useAbouts,useGallerys,useDonations,useBooks,useDonates}
+import useTrustees from "./HomeHook/useTrustees";
+import useTestimonials from "./HomeHook/useTestimonials";
+import useNews from "./HomeHook/useNews";
+import useNewsLists from "./HomeHook/useNewsLists";
+export{useBanners,useContacts,useEvents,useSubscribes,useAbouts,useGallerys,useDonations,useBooks,useDonates,useTrustees,useTestimonials,useNews,useNewsLists}

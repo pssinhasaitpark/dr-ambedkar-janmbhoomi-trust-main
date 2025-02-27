@@ -17,4 +17,5 @@ import TrusteeLayout from "./TrusteeLayout/TrusteeLayout";
 import HistoryLayout from "./HistoryLayout/HistoryLayout";
 import BookListLayout from "./BookLayout/BookListLayout";
 import DonationDonateLayout from "./DonationLayout/DonationDonateLayout";
-export { PageLayout, AboutPage, BirthPlace, MuseumLayout, EventCelebrationLayout,GalleryLayout,AwardLayout,BookLayout,LegacyLayout,EducationLayout,AchievementLayout,NewsLayout,ContactLayout,DonationLayout,VisitorLayout,TrusteeLayout,HistoryLayout,BookListLayout,DonationDonateLayout}
+import NewsListLayout from "./NewsLayout/NewsListLayout";
+export { PageLayout, AboutPage, BirthPlace, MuseumLayout, EventCelebrationLayout,GalleryLayout,AwardLayout,BookLayout,LegacyLayout,EducationLayout,AchievementLayout,NewsLayout,ContactLayout,DonationLayout,VisitorLayout,TrusteeLayout,HistoryLayout,BookListLayout,DonationDonateLayout,NewsListLayout}

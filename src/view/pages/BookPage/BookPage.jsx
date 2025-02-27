@@ -38,6 +38,7 @@ const BookPage = () => {
                 ) : (
                   <p>No images available</p>
                 )}
+                
                 <h2 className="text-uppercase fs-1 mt-5 m-0 p-0">{book.title}</h2>
                 <p className="mb-3 fs-5">{book.name}</p>
                 

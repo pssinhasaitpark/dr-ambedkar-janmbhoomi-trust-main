@@ -7,4 +7,8 @@ import GallerySlice from './GallerySlice/GallerySlice'
 import DonationSlice from './DonationSlice/DonationSlice'
 import BookSlice from './BookSlice/BookSlice'
 import DonateSlice from './DonateSlice/DonateSlice'
-export {HomeSlice,EventSlice,ContactSlice,SubscribeSlice,AboutSlice,GallerySlice,DonationSlice,BookSlice,DonateSlice}
+import TrusteeSlice from './TrusteeSlice/TrusteeSlice'
+import TestimonialSlice from './TestimonialSlice/TestimonialSlice'
+import NewsSlice from './NewsSlice/NewsSlice'
+import NewsListSlice from './NewsSlice/NewListSlice'
+export {HomeSlice,EventSlice,ContactSlice,SubscribeSlice,AboutSlice,GallerySlice,DonationSlice,BookSlice,DonateSlice,TrusteeSlice,TestimonialSlice,NewsSlice,NewsListSlice}

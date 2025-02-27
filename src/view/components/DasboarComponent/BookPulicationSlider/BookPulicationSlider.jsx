@@ -76,8 +76,8 @@ const BookPulicationSlider= () => {
       <div className="all-section-width mt-4 mb-4">
         
         <Slider {...settings} className="book-publish">
-          <div className="position-relative book-image">
-            <img className="book-image" src={slick} alt="View of the memorial" />
+        <div>
+            <img className="book-image" src={slick} alt="Exterior shot of the Bhimrao Ambedkar Memorial" />
           </div>
           <div>
             <img className="book-image" src={slick1} alt="Exterior shot of the Bhimrao Ambedkar Memorial" />

@@ -1,23 +1,65 @@
+
 import React, { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { IoIosCloudUpload } from "react-icons/io";
 import { legacyy } from "../../../assests/index";
 import "./Legacy.css";
 import { Testimonial } from "../../components/index";
+import { useTestimonials } from "../../hooks/index";
 const LegacyPage = () => {
   const [showUpload, setShowUpload] = useState(false);
   const [image, setImage] = useState(null);
+  const [imageType, setImageType] = useState(''); 
+  const [testimonial, setTestimonial] = useState({
+    description: '',
+    case_studies: [],
+    stories: []
+  });
 
+  const { mutate: submitTestimonial } = useTestimonials();
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setImage(URL.createObjectURL(file));
+      setImage(file); 
     }
   };
-
   const handleModalClose = () => setShowUpload(false);
-  const handleModalShow = () => setShowUpload(true);
+  const handleModalShow = (type) => {
+    setImageType(type);
+    setShowUpload(true);
+  };
+  const handleDescriptionChange = (e) => {
+    setTestimonial({
+      ...testimonial,
+      description: e.target.value,
+    });
+  };
 
+  const handleUploadImage = () => {
+    if (!image) return;
+  
+    const uploadedImageURL = URL.createObjectURL(image);
+    setTestimonial({
+      ...testimonial,
+      [imageType]: [...testimonial[imageType], uploadedImageURL],
+    });
+  
+    handleModalClose();
+    setImage(null);
+  };
+  
+
+
+  const handleSubmit = () => {
+
+    const data = {
+      description: testimonial.description,
+      case_studies: testimonial.case_studies,
+      stories: testimonial.stories,
+    };
+    
+    submitTestimonial(data); 
+  };
   return (
     <div className="all-section-width">
       <div className="img-banner ">
@@ -181,49 +223,40 @@ const LegacyPage = () => {
               <Form.Control
                 as="textarea"
                 rows={8}
-                className="mx-auto textarea-submit "
+                className="mx-auto textarea-submit"
                 placeholder="A section to submit testimonials about Dr Ambedkar...."
+                value={testimonial.description}
+                onChange={handleDescriptionChange}
               />
-              <div className="d-flex justify-content-between p-1">
-                <div
-                  className="d-flex fs-4 text-light fw-medium ms-lg-5 cursor-pointer mt-3"
-                  onClick={handleModalShow}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    cursor: "pointer",
-                  }}
-                >
-                  <IoIosCloudUpload
-                    size={35}
-                    className="upload-image cursor-pointer p-1"
-                  />
-                  <span className="ms-2">Uploaded Case Studies</span>
-                </div>
-
-                <div
-                  className="d-flex fs-4 text-light fw-medium me-lg-5 cursor-pointer mt-3"
-                  onClick={handleModalShow}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    cursor: "pointer",
-                  }}
-                >
-                  <IoIosCloudUpload
-                    size={35}
-                    className="share-icon cursor-pointer p-1"
-                  />
-                  <span className="ms-2">Uploaded Stories</span>
-                </div>
-              </div>
             </Form.Group>
-
+            <div className="d-flex justify-content-between p-1">
+              <div
+                className="d-flex fs-4 text-light fw-medium ms-lg-5 cursor-pointer mt-3"
+                onClick={() => handleModalShow('case_studies')}
+              >
+                <IoIosCloudUpload
+                  size={35}
+                  className="upload-image cursor-pointer p-1"
+                />
+                <span className="ms-2">Uploaded Case Studies</span>
+              </div>
+              <div
+                className="d-flex fs-4 text-light fw-medium me-lg-5 cursor-pointer mt-3"
+                onClick={() => handleModalShow('stories')}
+              >
+                <IoIosCloudUpload
+                  size={35}
+                  className="share-icon cursor-pointer p-1"
+                />
+                <span className="ms-2">Uploaded Stories</span>
+              </div>
+            </div>
             <div className="text-center mt-3">
               <Button
                 variant="light"
                 size="lg"
-                className="px-5 text-uppercase rounded-1 text-primary fw-bold fs-4  mb-4"
+                className="px-5 text-uppercase rounded-1 text-primary fw-bold fs-4 mb-4"
+                onClick={handleSubmit}
               >
                 Submit Testimonial
               </Button>
@@ -231,7 +264,7 @@ const LegacyPage = () => {
           </Form>
           <Modal show={showUpload} onHide={handleModalClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Upload Your Story Image</Modal.Title>
+              <Modal.Title>Upload Your Image</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <input
@@ -250,10 +283,7 @@ const LegacyPage = () => {
               <Button variant="secondary" onClick={handleModalClose}>
                 Close
               </Button>
-              <Button
-                variant="primary"
-                onClick={() => alert("Image uploaded!")}
-              >
+              <Button variant="primary" onClick={handleUploadImage}>
                 Upload Image
               </Button>
             </Modal.Footer>

@@ -2,12 +2,13 @@
 
 .contact-card{
     height: 100%;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width:95%;
+    box-shadow: rgba(99, 99, 99, 0.2) 1px 2px 8px 3px;
 }
 .contact-card:after {
     content: "";
     position: absolute;
-    width: 89%;
+    width: 84%;
     height: 2px;
     bottom: 0;
     left: 6%;

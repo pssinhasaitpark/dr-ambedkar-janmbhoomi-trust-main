@@ -1,11 +1,10 @@
-import { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
 import { useGallerys } from "../../hooks/index";
-import { Tab, Tabs } from "react-bootstrap";
 import "./GalleryPage.css";
 import { pgallery } from "../../../assests/index";
+
 const GalleryPage = () => {
-  const [key, setKey] = useState("birthplace");
+  const [activeTab, setActiveTab] = useState("birthplace"); // Track active tab
   const { data, isLoading, error } = useGallerys();
 
   if (isLoading) {
@@ -28,17 +27,17 @@ const GalleryPage = () => {
           <>
             {row[0] && (
               <div className={`col-sm-6 p-0 gallery-page-${rowIndex}`}>
-                <img src={row[0]} alt="gallery" className=" img-fluid p-1 " />
+                <img src={row[0]} alt="gallery" className=" img-fluid img-gallery p-1 " />
               </div>
             )}
             {row[1] && (
               <div className={`col-sm-3 p-0 gallery-page-${rowIndex}`}>
-                <img src={row[1]} alt="gallery" className=" img-fluid p-1" />
+                <img src={row[1]} alt="gallery" className=" img-fluid img-gallery p-1" />
               </div>
             )}
             {row[2] && (
               <div className={`col-sm-3 p-0 gallery-page-${rowIndex}`}>
-                <img src={row[2]} alt="gallery" className=" img-fluid p-1 p-0" />
+                <img src={row[2]} alt="gallery" className=" img-fluid img-gallery p-1 " />
               </div>
             )}
           </>
@@ -46,17 +45,17 @@ const GalleryPage = () => {
           <>
             {row[0] && (
               <div className={`col-sm-3 p-0 gallery-page-${rowIndex}`}>
-                <img src={row[0]} alt="gallery" className=" img-fluid p-1 p-0" />
+                <img src={row[0]} alt="gallery" className=" img-fluid img-gallery p-1 p-0" />
               </div>
             )}
             {row[1] && (
               <div className={`col-sm-3 p-0 gallery-page-${rowIndex}`}>
-                <img src={row[1]} alt="gallery" className=" img-fluid p-1 p-0 " />
+                <img src={row[1]} alt="gallery" className=" img-fluid img-gallery p-1 p-0 " />
               </div>
             )}
             {row[2] && (
               <div className={`col-sm-6 p-0 gallery-page-${rowIndex}`}>
-                <img src={row[2]} alt="gallery" className=" img-fluid p-1 p-0" />
+                <img src={row[2]} alt="gallery" className=" img-fluid img-gallery p-1 p-0" />
               </div>
             )}
           </>
@@ -64,8 +63,14 @@ const GalleryPage = () => {
       </div>
     ));
   };
+
   const galleryInfo = data?.[0]?.gallery_info;
   const galleryDescription = data?.[0]?.gallery_description;
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
     <div>
       <div className="all-section-width">
@@ -82,39 +87,49 @@ const GalleryPage = () => {
           </p>
         </div>
 
+        <div className="custom-tabs mb-2 ">
+          <div className="tab-nav d-flex justify-content-start fs-4">
+            <div
+              className={`tab-link p-0 me-3 ${activeTab === "birthplace" ? "active" : ""}`}
+              onClick={() => handleTabClick("birthplace")}
+            >
+              BIRTHPLACE
+            </div>
+            <div
+              className={`tab-link p-0 mx-3 ${activeTab === "events" ? "active" : ""}`}
+              onClick={() => handleTabClick("events")}
+            >
+              EVENTS AND CELEBRATIONS
+            </div>
+            <div
+              className={`tab-link p-0 mx-3 ${activeTab === "exhibitions" ? "active" : ""}`}
+              onClick={() => handleTabClick("exhibitions")}
+            >
+              EXHIBITIONS
+            </div>
+            <div
+              className={`tab-link p-0 mx-3 ${activeTab === "resources" ? "active" : ""}`}
+              onClick={() => handleTabClick("resources")}
+            >
+              ONLINE RESOURCES
+            </div>
+          </div>
 
-        <div className="all-wid gallery-images">
-          <Tabs
-            activeKey={key}
-            onSelect={(k) => setKey(k)}
-            className="mb-2 custom-tabs me-4 fw-normal fs-4"
-          >
-            <Tab eventKey="birthplace" title="BIRTHPLACE">
-              <div className="row mt-4 m-0  ">
-                {renderImages(data?.[0]?.birthplace_media || [])}
-              </div>
-            </Tab>
-
-            <Tab eventKey="events" title="EVENTS AND CELEBRATIONS">
-              <div className="row mt-4 m-0 ">
-                {renderImages(data?.[0]?.events_media || [])}
-              </div>
-            </Tab>
-
-            <Tab eventKey="exhibitions" title="EXHIBITIONS">
-              <div className="row mt-4 m-0 ">
-                {renderImages(data?.[0]?.exhibitions_media || [])}
-              </div>
-            </Tab>
-
-            <Tab eventKey="resources" title="ONLINE RESOURCES">
-              <div className="row mt-4 m-0 ">
-                {renderImages(data?.[0]?.online_media || [])}
-              </div>
-            </Tab>
-          </Tabs>
+          <div className="tab-content ">
+            {activeTab === "birthplace" && (
+              <div className="row mt-4 m-0">{renderImages(data?.[0]?.birthplace_media || [])}</div>
+            )}
+            {activeTab === "events" && (
+              <div className="row mt-4 m-0">{renderImages(data?.[0]?.events_media || [])}</div>
+            )}
+            {activeTab === "exhibitions" && (
+              <div className="row mt-4 m-0">{renderImages(data?.[0]?.exhibitions_media || [])}</div>
+            )}
+            {activeTab === "resources" && (
+              <div className="row mt-4 m-0">{renderImages(data?.[0]?.online_media || [])}</div>
+            )}
+          </div>
         </div>
-
 
         <div className="border border-2 mt-5 pe-1">
           {galleryInfo && (
@@ -125,13 +140,12 @@ const GalleryPage = () => {
               }}
             />
           )}
-           </div>
-
+        </div>
 
         <div className="border border-2 mt-5 pe-1">
           {galleryDescription && (
             <p
-            className="fs-5 px-3 mt-2"
+              className="fs-5 px-3 mt-2"
               dangerouslySetInnerHTML={{
                 __html: galleryDescription,
               }}

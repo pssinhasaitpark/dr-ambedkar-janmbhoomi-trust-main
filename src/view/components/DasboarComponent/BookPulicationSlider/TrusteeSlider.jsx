@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import { trustee1 } from "../../../../assests";
-
+import { Link } from "react-router-dom";
 function SampleNextArrow(props) {
   const { onClick } = props;
   return (
@@ -76,27 +76,29 @@ const TrusteeSlider = () => {
   };
 
   return (
-    <div className="all-section-width mt-5 mb-5">
+    <div className="" style={{marginBottom:"6rem"}}>
+    <div className="all-section-width mt-5 ">
       <div>
         <h2 className="text-center fw-bold text-uppercase biography-header p-0 m-0">
           Trustee of Janmabhoomi
         </h2>
         <p className="text-center">Dr. Bhimrao Ambedkar</p>
       </div>
-      <Slider {...settings} className="book-publish">
+      <Slider {...settings} className="book-publish ">
         {[...Array(6)].map((_, index) => (
-          <div key={index} className="position-relative book-image">
+          <div key={index} className="position-relative book-image"><Link to="/trustee">
             <img
               className="book-image position-relative"
               src={trustee1}
               alt="Bhimrao Ambedkar Memorial"
             />
-            <p className="border shadow-sm bg-light text-center py-2 pb-3 w-75 position-absolute start-50 translate-middle ">
+            <p className="border shadow-sm bg-light text-center py-2 pb-3 w-75 position-absolute start-50 translate-middle text-dark">
               Adv. Santosh Shukla
-            </p>
+            </p></Link>
           </div>
         ))}
       </Slider>
+    </div>
     </div>
   );
 };

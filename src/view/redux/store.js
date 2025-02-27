@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'; 
-import { EventSlice,ContactSlice,SubscribeSlice,AboutSlice,GallerySlice,DonationSlice,HomeSlice,BookSlice,DonateSlice } from './slice/index';
+import { EventSlice,ContactSlice,SubscribeSlice,AboutSlice,GallerySlice,DonationSlice,HomeSlice,BookSlice,DonateSlice,TrusteeSlice, TestimonialSlice, NewsSlice, NewsListSlice } from './slice/index';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +12,10 @@ const store = configureStore({
    Donation:DonationSlice,
    Book:BookSlice,
    donate:DonateSlice,
+   trustee:TrusteeSlice,
+   testimonial:TestimonialSlice,
+   news:NewsSlice,
+   lists:NewsListSlice
   },
 });
 

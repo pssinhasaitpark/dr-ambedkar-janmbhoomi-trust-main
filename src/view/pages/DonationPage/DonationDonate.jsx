@@ -5,18 +5,23 @@ import {  useSelector } from 'react-redux';
 import { useDonates } from '../../hooks/index';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+const phoneRegExp =
+  /^(\+?\d{0-9})?\s?-?\s?(\(?\d{7}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
 
 const DonationDonate = () => {
 
   const { status, data, message } = useSelector((state) => state.donate); 
-  // const dispatch = useDispatch();
   const mutation = useDonates();
-
   const validationSchema = Yup.object({
     amount: Yup.number().required('Amount is required').positive('Amount must be a positive number'),
-    fullName: Yup.string().required('Full name is required'),
-    email: Yup.string().email('Invalid email address').required('Email is required'),
-    phone: Yup.string().required('Phone is required'),
+    fullName: Yup.string().max(15, "Must be 15 characters or less"),
+   email: Yup
+       .string()
+       .matches(
+         /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+         "Invalid email address"
+       ),
+    phone: Yup.string().matches(phoneRegExp, "Phone number is not valid"),
   });
 
   const formik = useFormik({
@@ -60,6 +65,7 @@ const DonationDonate = () => {
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="py-2 shadow-sm"
+                              placeholder="Enter your Amount"
                         isInvalid={formik.touched.amount && formik.errors.amount}
                         required
                       />
