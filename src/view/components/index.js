@@ -12,4 +12,5 @@ import BookPulicationSlider from "./DasboarComponent/BookPulicationSlider/BookPu
 import Testimonial from "./DasboarComponent/BookPulicationSlider/Testimonial.jsx";
 import HistoryComponent from "./DasboarComponent/HistoryComponent/HistoryComponent.jsx";
 import TrusteeSlider from "./DasboarComponent/BookPulicationSlider/TrusteeSlider.jsx";
-export { HeaderTop,Header, FooterBottom, Footer,About,PhotoGallery,Achievment,FaqSection,Biography,AccordianSection,BookPulicationSlider,Testimonial,HistoryComponent,TrusteeSlider}
+import MediaFeed from "./DasboarComponent/MediaFeed/MediaFeed.jsx";
+export { HeaderTop,Header, FooterBottom, Footer,About,PhotoGallery,Achievment,FaqSection,Biography,AccordianSection,BookPulicationSlider,Testimonial,HistoryComponent,TrusteeSlider,MediaFeed}

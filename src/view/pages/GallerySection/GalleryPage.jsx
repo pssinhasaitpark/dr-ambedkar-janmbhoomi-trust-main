@@ -4,7 +4,7 @@ import "./GalleryPage.css";
 import { pgallery } from "../../../assests/index";
 
 const GalleryPage = () => {
-  const [activeTab, setActiveTab] = useState("birthplace"); // Track active tab
+  const [activeTab, setActiveTab] = useState("birthplace");
   const { data, isLoading, error } = useGallerys();
 
   if (isLoading) {

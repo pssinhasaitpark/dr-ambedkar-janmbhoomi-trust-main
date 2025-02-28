@@ -1,7 +1,7 @@
 import React from 'react';
 import './PhotoGallery.css'
 import { photo, photo1, photo2, photo3, photo4 } from "../../../../assests/index";
-
+import { Link } from 'react-router-dom';
 const PhotoGallery = () => {
     return (
         <div>
@@ -11,7 +11,9 @@ const PhotoGallery = () => {
                     <p className="text-center">Dr. Bhimrao Ambedkar</p>
                 </div>
                 <div className='start-gallery'>
+                <Link to="/gallery">
                     <div className='gallery-row d-lg-flex flex-wrap justify-content-center'>
+                     
                         <div className="gallery-item mb-3 ">
                             <img src={photo} alt="gallery-image" className="img-achieve w-100 h-auto" />
                         </div>
@@ -27,7 +29,9 @@ const PhotoGallery = () => {
                         <div className="gallery-item mb-3 ">
                             <img src={photo4} alt="gallery-image" className="img-achieve w-100 h-auto" />
                         </div>
+                       
                     </div>
+                    </Link>
                 </div>
             </div>
         </div>

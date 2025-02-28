@@ -11,4 +11,7 @@ import TrusteeSlice from './TrusteeSlice/TrusteeSlice'
 import TestimonialSlice from './TestimonialSlice/TestimonialSlice'
 import NewsSlice from './NewsSlice/NewsSlice'
 import NewsListSlice from './NewsSlice/NewListSlice'
-export {HomeSlice,EventSlice,ContactSlice,SubscribeSlice,AboutSlice,GallerySlice,DonationSlice,BookSlice,DonateSlice,TrusteeSlice,TestimonialSlice,NewsSlice,NewsListSlice}
+import BookSliderSlice from "./BookSlice/BookSliderSlice"
+import BookListSlider from './BookSlice/BookListSlice'
+import BookListSlice from './BookSlice/BookListSlice'
+export {HomeSlice,EventSlice,ContactSlice,SubscribeSlice,AboutSlice,GallerySlice,DonationSlice,BookSlice,DonateSlice,TrusteeSlice,TestimonialSlice,NewsSlice,NewsListSlice,BookSliderSlice,BookListSlider,BookListSlice}

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import FooterBottom from "./FooterBottom.jsx";
 import { yt, fb, app, insta } from "../../../../assests/index.js";
 import { useSubscribes } from "../../../hooks/index.js";
-// import { MdHeight } from 'react-icons/md';
 
 const Footer = () => {
   const [errorMessage, setErrorMessage] = useState("");
@@ -40,9 +39,9 @@ const Footer = () => {
       )
       .required("Email is required"),
   });
-  
 
-  
+
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -53,14 +52,14 @@ const Footer = () => {
       subscribe(subscribeData, {
         onSuccess: () => {
           setSubscribed(true);
-          setErrorMessage(""); 
+          setErrorMessage("");
           resetForm();
         },
         onError: (error) => {
           console.log("Error Response:", error?.response?.data);
-        
+
           const errorMsg = error?.response?.data?.message?.toLowerCase();
-        
+
           if (errorMsg?.includes("already subscribed")) {
             setErrorMessage("This email is already subscribed.");
           } else {
@@ -68,8 +67,8 @@ const Footer = () => {
           }
           resetForm();
         }
-        
-        
+
+
       });
     },
   });
@@ -120,12 +119,12 @@ const Footer = () => {
             </div>
 
             <div className="col-md-4 mt-5 footer-section p-lg-0 m-0 p-2">
-            <h5 className="mb-3 fs-4 fw-medium mt-3 ps-lg-0 ps-5">Sign up for our newsletter</h5>
+              <h5 className="mb-3 fs-4 fw-medium mt-3 ps-lg-0 ps-5">Sign up for our newsletter</h5>
 
               <form onSubmit={formik.handleSubmit}>
                 <div className="d-flex mt-4 mb-4 " style={{
-                  height:"60px",
-                  width:"102%"
+                  height: "60px",
+                  width: "102%"
                 }}>
                   <input
                     type="email"

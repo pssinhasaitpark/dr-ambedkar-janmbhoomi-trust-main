@@ -1,15 +1,15 @@
 import { useQuery } from '@tanstack/react-query';
 import axiosInstance from '../../redux/axios/axios';
 import { useDispatch } from 'react-redux';
-import { setListNews, setError, setLoading, setStatusSucceeded, setStatusFailed } from '../../redux/slice/NewsSlice/NewListSlice';
+import {  setBookdetails, setError, setLoading, setStatusSucceeded, setStatusFailed } from '../../redux/slice/BookSlice/BookListSlice';
 
 const useNewsLists = (id) => {
   const dispatch = useDispatch();
 
   const { data, error, isLoading } = useQuery({
-    queryKey: ['lists', id], 
+    queryKey: ['booklists', id],
     queryFn: async () => {
-      const response = await axiosInstance.get(`/news/get/${id}`);
+      const response = await axiosInstance.get(`/booklist/${id}`);
       return response.data;
     },
     onSettled: () => {
@@ -20,7 +20,7 @@ const useNewsLists = (id) => {
       dispatch(setStatusFailed());
     },
     onSuccess: (data) => {
-      dispatch(setListNews(data.data));
+      dispatch(setBookdetails(data.data));
       dispatch(setStatusSucceeded());
     },
   });

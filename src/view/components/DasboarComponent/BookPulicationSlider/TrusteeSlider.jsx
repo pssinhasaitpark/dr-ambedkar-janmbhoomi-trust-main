@@ -79,7 +79,7 @@ const TrusteeSlider = () => {
     <div className="" style={{marginBottom:"6rem"}}>
     <div className="all-section-width mt-5 ">
       <div>
-        <h2 className="text-center fw-bold text-uppercase biography-header p-0 m-0">
+        <h2 className="text-center fw-medium text-uppercase biography-header p-0 m-0 fs-1">
           Trustee of Janmabhoomi
         </h2>
         <p className="text-center">Dr. Bhimrao Ambedkar</p>

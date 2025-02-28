@@ -8,7 +8,7 @@ const NewsPage = () => {
   const { data, isLoading, error } = useNews();
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <div className="spinner"></div>;
   }
 
   if (error) {
@@ -56,7 +56,7 @@ const NewsPage = () => {
                       className="description"
                       dangerouslySetInnerHTML={{ __html: newsItem.description }}
                     />
-                    <Link to={`/news/get/${newsItem._id}`}>Read More</Link>
+                    <Link to={`/news/get/${newsItem._id}`} className='ms-lg-5 m-0'>Read More</Link>
                     {/* <p>
         {newsItem.description.length > 100
           ? `${newsItem.description.substring(0, 100)}...`
@@ -64,7 +64,7 @@ const NewsPage = () => {
       </p> */}
                     <ul className='lh-base'>
                       {newsItem.latest_news.split(':').slice(1).map((event, index) => (
-                        <li key={index} className='fs-5'>{event.trim()}</li>
+                        <li key={index} className='fs-6 ms-4'>{event.trim()}</li>
                       ))}
                     </ul>
                   </Col>

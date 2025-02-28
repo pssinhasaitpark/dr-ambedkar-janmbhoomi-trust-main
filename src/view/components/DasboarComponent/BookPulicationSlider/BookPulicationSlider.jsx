@@ -1,20 +1,22 @@
 import React from 'react';
 import Slider from "react-slick";
-import './BookPulicationSlider.css'
+import './BookPulicationSlider.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
-import { slick, slick1, slick2, slick3, slick4 } from '../../../../assests';
+import { useBookSlider } from '../../../hooks/index'; 
+import { useNavigate } from 'react-router-dom';
+
 
 function SampleNextArrow(props) {
   const { onClick } = props;
   return (
     <div
-      className="d-block position-absolute top-50 translate-middle-y arrow-right "
+      className="d-block position-absolute top-50 translate-middle-y arrow-right"
       onClick={onClick}
     >
       <IoIosArrowRoundForward
-        size={45} className='heading-ambedkar  border border-dark border rounded-circle' />
+        size={45} className='heading-ambedkar border border-dark border rounded-circle' />
     </div>
   );
 }
@@ -27,12 +29,17 @@ function SamplePrevArrow(props) {
       onClick={onClick}
     >
       <IoIosArrowRoundBack
-        size={45} className='heading-ambedkar  border border-dark border rounded-circle' />
+        size={45} className='heading-ambedkar border border-dark border rounded-circle' />
     </div>
   );
 }
 
-const BookPulicationSlider= () => {
+
+const BookPulicationSlider = () => {
+
+  const navigate = useNavigate()
+  const { data, isLoading, error } = useBookSlider();  
+
   const settings = {
     dots: true,
     infinite: true,
@@ -71,29 +78,35 @@ const BookPulicationSlider= () => {
     ],
   };
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+  const handleonclick = (id) => {
+    navigate(`/bookDetail/${id}`)
+
+  }
+
   return (
-    <>
-      <div className="all-section-width mt-4 mb-4">
-        
-        <Slider {...settings} className="book-publish">
-        <div>
-            <img className="book-image" src={slick} alt="Exterior shot of the Bhimrao Ambedkar Memorial" />
-          </div>
-          <div>
-            <img className="book-image" src={slick1} alt="Exterior shot of the Bhimrao Ambedkar Memorial" />
-          </div>
-          <div>
-            <img className="book-image " src={slick2} alt="Another angle of the Bhimrao Ambedkar Memorial" />
-          </div>
-          <div>
-            <img className=" book-image " src={slick3} alt="Aerial view of the Bhimrao Ambedkar Memorial" />
-          </div>
-          <div>
-            <img className="book-image " src={slick4} alt="Aerial view of the Bhimrao Ambedkar Memorial" />
-          </div>
-        </Slider>
-      </div>
-    </>
+    <div className="all-section-width mt-4 mb-4">
+      <Slider {...settings} className="book-publish">
+
+        {data?.map((item, i) => {
+          return (
+            <>
+              <div key={i}>
+                <img className="book-image" src={item.cover_image} alt={`Book cover ${i + 1}`}
+                  onClick={() => handleonclick(item._id)}
+                />
+              </div>
+            </>
+          )
+        })}
+      </Slider>
+    </div>
   );
 };
 

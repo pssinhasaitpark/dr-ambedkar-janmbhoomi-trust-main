@@ -47,7 +47,7 @@ const DonationDonate = () => {
       <Row className="justify-content-center">
         <Col md={10} lg={8}>
           <Card className="shadow-lg border-0 rounded-lg">
-            <Card.Header className="bg-gradient text-center py-4" style={{ backgroundColor: '#f8f9fa', borderBottom: '3px solid #e67e22' }}>
+            <Card.Header className="bg-gradient text-center py-4" style={{ backgroundColor: '#f8f9fa', borderBottom: '3px solid#0160D8' }}>
               <h3 className="font-weight-bold mb-0" style={{ color: '#2c3e50' }}>Bhim Janmabhoomi, Dr. Bhimrao Ambedkar Memorial Mhow</h3>
               <p className="text-muted mt-2 mb-0">Donation Form</p>
             </Card.Header>
@@ -134,8 +134,8 @@ const DonationDonate = () => {
                       type="submit"
                       className="py-3 fw-bold"
                       style={{
-                        backgroundColor: '#e67e22',
-                        borderColor: '#e67e22',
+                        backgroundColor: '#0160D8',
+                        borderColor: '#0160D8',
                         transition: 'all 0.3s ease',
                       }}
                     >
