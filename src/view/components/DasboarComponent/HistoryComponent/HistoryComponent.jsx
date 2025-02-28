@@ -19,7 +19,7 @@ const HistoryComponent = () => {
                   src={janam}
                   alt="Dr. Bhimrao Ambedkar"
                 
-                  className="ambedkar-image"
+                  className="ambedkar-image img-fluid"
                 />
               </div>
             </Col>

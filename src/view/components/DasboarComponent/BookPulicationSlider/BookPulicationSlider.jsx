@@ -36,12 +36,15 @@ function SamplePrevArrow(props) {
 
 
 const BookPulicationSlider = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const navigate = useNavigate()
   const { data, isLoading, error } = useBookSlider();  
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     slidesToShow: 6,
     slidesToScroll: 1,
@@ -79,13 +82,14 @@ const BookPulicationSlider = () => {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="spinner"></div>;
   }
 
   if (error) {
     return <div>Error: {error.message}</div>;
   }
   const handleonclick = (id) => {
+    scrollToTop()
     navigate(`/bookDetail/${id}`)
 
   }
@@ -99,7 +103,7 @@ const BookPulicationSlider = () => {
             <>
               <div key={i}>
                 <img className="book-image" src={item.cover_image} alt={`Book cover ${i + 1}`}
-                  onClick={() => handleonclick(item._id)}
+                  onClick={() => handleonclick(item._id) }
                 />
               </div>
             </>

@@ -6,7 +6,7 @@ const BookDetailPage = () => {
   const { id } = useParams();
   const { data, isLoading, error } = useBookLists(id);
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <div className="spinner"></div>;
   }
 
   if (error) {

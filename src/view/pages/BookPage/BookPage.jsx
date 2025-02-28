@@ -60,7 +60,7 @@ const BookPage = () => {
         
       </div>
    
-      <div className="">   <BookPulicationSlider/></div>
+      <div className=""><BookPulicationSlider/></div>
      
     </>
   );

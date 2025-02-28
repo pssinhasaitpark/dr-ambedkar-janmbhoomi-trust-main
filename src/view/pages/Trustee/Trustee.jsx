@@ -6,7 +6,7 @@ const Trustee = () => {
   const { data, isLoading, error } = useTrustees();
 
   if (isLoading) {
-    return <div>Loading...</div>;  
+    return <div className="spinner"></div>;
   }
 
   if (error) {
@@ -42,7 +42,7 @@ const Trustee = () => {
                       loading="lazy"
                       src={trustee.image || trustee1}  
                       alt={trustee.full_name}
-                      className="img-trustee"
+                      className="img-trustee w-100"
                     />
                   </div>
                   <div className="col-sm-8 px-4 py-3 mt-3 ">

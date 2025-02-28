@@ -133,7 +133,7 @@ const ContactPage = () => {
           }}
         ></div>
         <Row className="justify-content-center align-items-center h-100 shadow p-0 mx-0">
-          <Col md={8} lg={6} xl={5} className="bg-white p-4 shadow shadow w-75">
+          <Col md={8} lg={6} xl={5} className="bg-white p-4 shadow shadow w-75 container-contact">
             <Row>
               <Col md={6} className="p-0">
                 <MapContainer
