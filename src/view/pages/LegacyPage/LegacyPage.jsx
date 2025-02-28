@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { IoIosCloudUpload } from "react-icons/io";
@@ -6,28 +5,32 @@ import { legacyy } from "../../../assests/index";
 import "./Legacy.css";
 import { Testimonial } from "../../components/index";
 import { useTestimonials } from "../../hooks/index";
+import { toast } from "react-toastify";
 const LegacyPage = () => {
   const [showUpload, setShowUpload] = useState(false);
-  const [image, setImage] = useState(null);
-  const [imageType, setImageType] = useState(''); 
+  const [image, setImage] = useState(null); 
+  const [imageType, setImageType] = useState("");
   const [testimonial, setTestimonial] = useState({
-    description: '',
-    case_studies: [],
-    stories: []
+    description: "",
+    case_studies: null,
+    stories: null,
   });
 
   const { mutate: submitTestimonial } = useTestimonials();
+
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
       setImage(file); 
     }
   };
+
   const handleModalClose = () => setShowUpload(false);
   const handleModalShow = (type) => {
     setImageType(type);
     setShowUpload(true);
   };
+
   const handleDescriptionChange = (e) => {
     setTestimonial({
       ...testimonial,
@@ -37,29 +40,45 @@ const LegacyPage = () => {
 
   const handleUploadImage = () => {
     if (!image) return;
-  
-    const uploadedImageURL = URL.createObjectURL(image);
+
     setTestimonial({
       ...testimonial,
-      [imageType]: [...testimonial[imageType], uploadedImageURL],
+      [imageType]: image, 
     });
-  
+
     handleModalClose();
     setImage(null);
   };
-  
 
+  const handleSubmit = async () => {
+    const formData = new FormData();
+    formData.append("description", testimonial.description);
 
-  const handleSubmit = () => {
+    if (testimonial.case_studies) {
+      formData.append("case_studies", testimonial.case_studies);
+    }
 
-    const data = {
-      description: testimonial.description,
-      case_studies: testimonial.case_studies,
-      stories: testimonial.stories,
-    };
-    
-    submitTestimonial(data); 
+    if (testimonial.stories) {
+      formData.append("stories", testimonial.stories);
+    }
+
+    try {
+      await submitTestimonial(formData);
+      toast.success("Testimonial submitted successfully!");
+
+     
+      setTestimonial({
+        description: "",
+        case_studies: null,
+        stories: null,
+      });
+      setImage(null); 
+      setShowUpload(false); 
+    } catch (error) {
+      toast.error("There was an error submitting the testimonial.");
+    }
   };
+
   return (
     <div className="all-section-width">
       <div className="img-banner ">
@@ -232,23 +251,23 @@ const LegacyPage = () => {
             <div className="d-flex justify-content-between p-1">
               <div
                 className="d-flex fs-4 text-light fw-medium ms-lg-5 cursor-pointer mt-3"
-                onClick={() => handleModalShow('case_studies')}
+                onClick={() => handleModalShow("case_studies")}
               >
                 <IoIosCloudUpload
                   size={35}
                   className="upload-image cursor-pointer p-1"
                 />
-                <span className="ms-2">Uploaded Case Studies</span>
+                <span className="ms-2">upload Case Studies</span>
               </div>
               <div
                 className="d-flex fs-4 text-light fw-medium me-lg-5 cursor-pointer mt-3"
-                onClick={() => handleModalShow('stories')}
+                onClick={() => handleModalShow("stories")}
               >
                 <IoIosCloudUpload
                   size={35}
                   className="share-icon cursor-pointer p-1"
                 />
-                <span className="ms-2">Uploaded Stories</span>
+                <span className="ms-2">Upload Stories</span>
               </div>
             </div>
             <div className="text-center mt-3">
@@ -258,10 +277,13 @@ const LegacyPage = () => {
                 className="px-5 text-uppercase rounded-1 text-primary fw-bold fs-4 mb-4"
                 onClick={handleSubmit}
               >
+                
                 Submit Testimonial
               </Button>
             </div>
           </Form>
+
+          {/* Modal for image upload */}
           <Modal show={showUpload} onHide={handleModalClose}>
             <Modal.Header closeButton>
               <Modal.Title>Upload Your Image</Modal.Title>
@@ -273,11 +295,19 @@ const LegacyPage = () => {
                 onChange={handleImageUpload}
                 className="form-control"
               />
-              {image && (
+              {image || testimonial[imageType] ? (
                 <div className="mt-3">
-                  <img src={image} alt="Uploaded" className="uploaded-image" />
+                  <img
+                    src={
+                      image
+                        ? URL.createObjectURL(image)
+                        : URL.createObjectURL(testimonial[imageType])
+                    }
+                    alt="Uploaded"
+                    className="uploaded-image"
+                  />
                 </div>
-              )}
+              ) : null}
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleModalClose}>

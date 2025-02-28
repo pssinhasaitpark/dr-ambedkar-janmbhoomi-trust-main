@@ -1,20 +1,20 @@
 import React from 'react'
 import {
-    Header,
-    HeaderTop,
-    Footer,
-    Achievment,
-  } from "../../components/index.js";
-  import {BookLIstPage} from '../../pages/index.js';
+  Header,
+  HeaderTop,
+  Footer,
+  Achievment,
+} from "../../components/index.js";
+import { BookDetailPage } from '../../pages/index.js';
 const BookListLayout = () => {
   return (
     <>
-    <HeaderTop />
-    <Header />
-  <BookLIstPage/>
-    <Achievment />
-    <Footer />
-  </>
+      <HeaderTop />
+      <Header />
+      <BookDetailPage />
+      <Achievment />
+      <Footer />
+    </>
   )
 }
 

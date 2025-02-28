@@ -1,7 +1,6 @@
 import React from "react";
 import "./HomeDashboard.css";
 import { useAbouts } from "../../hooks/index.js";
-// import { image404 } from "../../../assests/index.js";
 const HomeDashboard = () => {
   const { data, isLoading, error } = useAbouts();
  

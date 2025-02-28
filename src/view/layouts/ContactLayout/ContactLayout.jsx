@@ -3,7 +3,7 @@ import {
     Header,
     HeaderTop,
     Footer,
-    Achievment,
+    MediaFeed,
   } from '../../components/index.js'
  import { ContactPage } from '../../pages/index.js'
 const ContactLayout = () => {
@@ -12,7 +12,7 @@ const ContactLayout = () => {
     <HeaderTop />
     <Header />
     <ContactPage/>
-    <Achievment />
+    <MediaFeed/>
     <Footer />
   </>
   )

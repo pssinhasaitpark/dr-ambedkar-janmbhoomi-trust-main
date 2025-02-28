@@ -73,5 +73,9 @@ import visitor from './images/visitor.png'
 import contact2 from './images/contact2.png'
 import trustee1 from './images/trustee1.png'
 import janam from './images/janam.png'
-
-export {app,fb,insta,logo,phone,Search,yt,abouta,aboutb,aboutc,aboutd,slick,slick1,slick2,slick3,slick4,photo,photo1,photo2,photo3,photo4,achieve,achieve1,achieve2,achieve3,achieve4,image404,birth,birth1,birth2,birth3,dajt,museum,museum2,museum1,museum3,museum4,museum5,museum6,museum7,book1,contact,contact1,contact3,mapping,event,event1,event2,pgallery,pgallery1,pgallery2,pgallery3,pgallery4,pgallery5,pgallery6,pgallery7,pgallery8,award1,newsimg,news1,achievementimg,achievementimg1,achievementimg2,donation,donationImgs1,donationImgs2,donationImgs3,publication1,education,legacy,legacyy,visitor,contact2,trustee1,janam}
+import social from './images/social.png'
+import social1 from './images/social1.png'
+import social2 from './images/social2.png'
+import social3 from './images/social3.png'
+import social4 from './images/social4.png'
+export {app,fb,insta,logo,phone,Search,yt,abouta,aboutb,aboutc,aboutd,slick,slick1,slick2,slick3,slick4,photo,photo1,photo2,photo3,photo4,achieve,achieve1,achieve2,achieve3,achieve4,image404,birth,birth1,birth2,birth3,dajt,museum,museum2,museum1,museum3,museum4,museum5,museum6,museum7,book1,contact,contact1,contact3,mapping,event,event1,event2,pgallery,pgallery1,pgallery2,pgallery3,pgallery4,pgallery5,pgallery6,pgallery7,pgallery8,award1,newsimg,news1,achievementimg,achievementimg1,achievementimg2,donation,donationImgs1,donationImgs2,donationImgs3,publication1,education,legacy,legacyy,visitor,contact2,trustee1,janam,social,social1,social2,social3,social4}
