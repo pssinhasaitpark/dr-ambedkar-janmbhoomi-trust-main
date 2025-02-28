@@ -9,37 +9,38 @@ const Header = () => {
     <Navbar
       expand="lg"
       sticky="top"
-      className="header-nav  all-background p-0"
+      className="header-nav all-background p-0"
     >
       <Container>
-        <Navbar.Toggle aria-controls="navbar" className=" bg-light fs-6 " />
+        <Navbar.Toggle aria-controls="navbar" className="bg-light fs-6" />
 
         <Navbar.Collapse id="navbar">
-          <Nav className="mx-auto ">
-            <Nav.Link href="/" className=" header-nav pe-3 ms-3 text-light">
+          <Nav className="mx-auto">
+            <Link to="/" className="header-nav pe-3 ms-3 text-light text-decoration-none">
               Home
-            </Nav.Link>
-            <Nav.Link href="/about" className=" header-nav pe-3 ms-3 text-light">
+            </Link>
+            <Link to="/about" className="header-nav pe-3 ms-3 text-light text-decoration-none">
               About
-            </Nav.Link>
-            <Nav.Link href="/history" className="header-nav pe-2 ms-3  text-light">
+            </Link>
+            <Link to="/history" className="header-nav pe-2 ms-3 text-light text-decoration-none">
               History
-            </Nav.Link>
-            <Nav.Link href="/book" className="header-nav pe-2 ms-3  text-light">
+            </Link>
+            <Link to="/book" className="header-nav pe-2 ms-3 text-light text-decoration-none">
               Books
-            </Nav.Link>
-            <Nav.Link href="/news" className=" header-nav pe-2 ms-3  text-light">
+            </Link>
+            <Link to="/news" className="header-nav pe-2 ms-3 text-light text-decoration-none">
               News
-            </Nav.Link>
-            <Nav.Link href="/gallery" className="header-nav pe-2 ms-3  text-light">
+            </Link>
+            <Link to="/gallery" className="header-nav pe-2 ms-3 text-light text-decoration-none">
               Gallery
-            </Nav.Link>
-            <Nav.Link href="/contact" className="header-nav pe-2 ms-3  text-light">
+            </Link>
+            <Link to="/contact" className="header-nav pe-2 ms-3 text-light text-decoration-none">
               Contact
-            </Nav.Link>
-            <div className=" d-lg-none d-block mt-3 ">
+            </Link>
+
+            <div className="d-lg-none d-block mt-3">
               <div>
-                <div className="d-flex align-items-center ">
+                <div className="d-flex align-items-center">
                   <Link to="tel:+911234567891">
                     <img src={phone} alt="Phone Icon" className="me-2 header-icons bg-light" />
                   </Link>
@@ -51,20 +52,19 @@ const Header = () => {
                 </div>
               </div>
               <div className="mt-3 mb-4">
-                <Link to="https://web.whatsapp.com/">
+                <Link to="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">
                   <img src={app} alt="WhatsApp" className="header-icons" />
                 </Link>
-                <Link to="https://www.facebook.com/">
+                <Link to="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
                   <img src={fb} alt="Facebook" className="header-icons" />
                 </Link>
-                <Link to="https://www.instagram.com/?hl=en">
+                <Link to="https://www.instagram.com/?hl=en" target="_blank" rel="noopener noreferrer">
                   <img src={insta} alt="Instagram" className="header-icons" />
                 </Link>
-                <Link to="https://www.youtube.com/">
+                <Link to="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
                   <img src={yt} alt="YouTube" className="header-icons" />
                 </Link>
               </div>
-
             </div>
           </Nav>
         </Navbar.Collapse>

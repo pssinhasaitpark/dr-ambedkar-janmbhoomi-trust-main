@@ -10,7 +10,7 @@ const About = () => {
   if (status === "loading") return <div className="spinner"></div>;
   if (status === "failed") return <div>Error: {error}</div>;
   if (!data || data.length === 0) {
-    return <div>No banners available.</div>;
+    return;
   }
   const {
     name,
