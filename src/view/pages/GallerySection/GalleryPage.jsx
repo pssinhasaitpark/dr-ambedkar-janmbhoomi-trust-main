@@ -90,7 +90,7 @@ const GalleryPage = () => {
         <div className="custom-tabs mb-2 ">
           <div className="tab-nav d-lg-flex  justify-content-start fs-4">
             <div
-              className={`tab-link p-0 me-3  ${activeTab === "birthplace" ? "active" : ""}`}
+              className={`tab-link p-0 me-lg-3 ms-lg-0 ms-3 ${activeTab === "birthplace" ? "active" : ""}`}
               onClick={() => handleTabClick("birthplace")}
             >
               BIRTHPLACE

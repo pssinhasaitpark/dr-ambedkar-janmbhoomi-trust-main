@@ -1,36 +1,98 @@
-.book-publish .slick-slide img {max-height: 283px;}
+.book-publish .slick-slide img {
+  max-height: 283px;
+}
 .testimonial-card {
   width: 94%;
-  max-height: 355px;}
+  max-height: 355px;
+}
 .book-publish .slick-dots li {
   margin: 0;
-  padding: 0; 
-  display: inline-block;}
-.book-publish  .slick-dots li button:before {
+  padding: 0;
+  display: inline-block;
+}
+.book-publish .slick-dots li button:before {
   font-size: 15px;
-  padding: 0; }
-  .book-publish  .slick-dots {
+  padding: 0;
+}
+.book-publish .slick-dots {
   display: flex !important;
   justify-content: center;
-  gap: 0px; }
+  gap: 0px;
+}
 .book-image {
   width: 98%;
-  padding: 4px;}
+  padding: 4px;
+}
 .book-publish .slick-list {
   margin-left: 100px;
-  margin-right: 100px;}
-.book-publish .arrow-right {right: 30px;}
-.book-publish .arrow-left {left: 30px;}
+  margin-right: 100px;
+}
+.book-publish .arrow-right {
+  right: 30px;
+}
+.book-publish .arrow-left {
+  left: 30px;
+}
 .book-publish.slick-slider {
   width: 114%;
-  margin-left: -104px;}
-.book-publish .slick-dots {top: 15rem;}
-.testimonial .slick-dots {top: 24rem;}
+  margin-left: -104px;
+}
+.book-publish .slick-dots {
+  top: 15rem;
+}
+.testimonial .slick-dots {
+  top: 24rem;
+}
 @media (min-width: 250px) and (max-width: 700px) {
   .book-publish .slick-list {
     margin-left: 0;
-    margin-right: 0;}
+    margin-right: 0;
+  }
   .book-publish.slick-slider {
     width: 100%;
-    margin-left: 0px;}
-    .book-publish .slick-dots {top: 10rem;}}
+    margin-left: 0px;
+  }
+  .testimonial-card {
+    width: 93%;
+    max-height: 726px;
+}
+  .book-publish .slick-dots {
+    top: 10rem;
+  }
+
+.testimonial .slick-dots {
+  top: 46rem;
+}}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .book-publish.slick-slider {
+    width: 114%;
+    margin-left: -4rem;
+  }
+  .book-publish .slick-dots {
+    top: 18rem;
+  }
+  .testimonial .slick-dots {
+    top: 33rem;
+  }
+  .testimonial-card {
+    width: 90%;
+    max-height: 60rem;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .book-publish.slick-slider {
+    width: 104%;
+    margin-left: 0rem;
+  }
+  .testimonial-card {
+    width: 90%;
+    max-height: 44rem;
+  }
+  .book-publish .slick-dots {
+    top: 10rem;
+  }
+  .testimonial .slick-dots {
+    top: 45rem;
+  }
+}

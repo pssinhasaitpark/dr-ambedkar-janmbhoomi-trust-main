@@ -16,25 +16,18 @@
     background-color: #0160D8;
     visibility: visible;
 }
-
 .bg-img{
     padding: 0 !important;
     background-image: url(../../../assests/images/mapping.jpeg);
-
     background-size: cover;
 }
-.contact-section-minidescription{
-    font-size: smaller;
-}
-.contact-section-title{
-    letter-spacing: 0.4rem;
-}
+.contact-section-minidescription{font-size: smaller;}
+.contact-section-title{letter-spacing: 0.4rem;}
 .input-contact-fields::placeholder{
     font-weight: 400;
     color: lightgray !important;
     font-size: small;
 }
-
 @media (min-width: 250px) and (max-width: 700px) {
 p.contact-page-maindescription{
     width: 100% !important;
@@ -43,8 +36,12 @@ p.contact-page-maindescription{
     width: 100% !important;
 }
 }
-
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait){
+    .contact-card {
+        margin-left: -6%;
+        width: 13.4rem;
+    }
+}
 
 
 

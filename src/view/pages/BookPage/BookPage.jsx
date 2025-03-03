@@ -25,7 +25,7 @@ const BookPage = () => {
                         key={index}
                         src={img}
                         alt={"event-image"}
-                        className="event-image"
+                        className="all-image"
                         loading="lazy"
                         style={{
                           width: "1495px",

@@ -67,8 +67,8 @@ const About = () => {
 
   return (
     <div className="container-fluid px-0 mb-4" id="about">
-      <div className="row g-0">
-        <div className="col-sm-12 col-md-6 p-0">
+      <div className="row g-0 responsive-about">
+        <div className="col-lg-6 col-sm-12 p-0 responsive-about-column">
           <div
             loading="lazy"
             className="text-white background-image h-100 position-relative "
@@ -121,7 +121,7 @@ const About = () => {
             </Card>
           </div>
         </div>
-        <div className="col-sm-12 col-md-6 p-0">
+        <div className="col-lg-6 col-sm-12 p-0 responsive-about-column">
           <Slider {...settings} className="about-slider">
             {sliderImages.map((image, index) => (
               <div key={index} className="border-0">

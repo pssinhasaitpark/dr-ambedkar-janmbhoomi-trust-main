@@ -63,7 +63,7 @@ const FaqSection = () => {
 
   return (
     <div className="Faq-section p-1 mt-5">
-      <div className="containeR my-5 faq-container">
+      <div className="container my-5 faq-container">
         <h2 className="text-center text-uppercase  fs-1 biography-header p-0 m-0">
           Frequently Asked Questions
         </h2>

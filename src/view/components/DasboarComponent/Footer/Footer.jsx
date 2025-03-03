@@ -12,6 +12,9 @@ const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const openExternalLink = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   const { mutate: subscribe, isLoading } = useSubscribes();
   const [subscribed, setSubscribed] = useState(false);
@@ -150,17 +153,17 @@ const Footer = () => {
                 {errorMessage && <div className="text-danger">{errorMessage}</div>}
               </form>
 
-              <div className="d-flex social-icons-container ">
-                <Link to="https://web.whatsapp.com/">
+              <div className="d-flex social-icons-container">
+                <Link to="#" onClick={() => openExternalLink('https://web.whatsapp.com/')}>
                   <img src={app} alt="WhatsApp" className="me-3 w-100 pe-2" />
                 </Link>
-                <Link to="https://www.facebook.com/">
+                <Link to="#" onClick={() => openExternalLink('https://www.facebook.com/')}>
                   <img src={fb} alt="Facebook" className="me-3 w-100 pe-2" />
                 </Link>
-                <Link to="https://www.instagram.com/?hl=en">
+                <Link to="#" onClick={() => openExternalLink('https://www.instagram.com/?hl=en')}>
                   <img src={insta} alt="Instagram" className="me-3 w-100 pe-2" />
                 </Link>
-                <Link to="https://www.youtube.com/">
+                <Link to="#" onClick={() => openExternalLink('https://www.youtube.com/')}>
                   <img src={yt} alt="YouTube" className="me-3 w-100 pe-2" />
                 </Link>
               </div>
