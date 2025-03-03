@@ -4,7 +4,7 @@ import './BookPulicationSlider.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
-import { useBookSlider } from '../../../hooks/index'; 
+import { useBookSlider } from '../../../hooks/index';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -41,7 +41,7 @@ const BookPulicationSlider = () => {
   };
 
   const navigate = useNavigate()
-  const { data, isLoading, error } = useBookSlider();  
+  const { data, isLoading, error } = useBookSlider();
 
   const settings = {
     dots: false,
@@ -98,17 +98,19 @@ const BookPulicationSlider = () => {
     <div className="all-section-width mt-4 mb-4">
       <Slider {...settings} className="book-publish">
 
-        {data?.map((item, i) => {
+        {data?.map((item) => {
           return (
-            <>
-              <div key={i}>
-                <img className="book-image" src={item.cover_image} alt={`Book cover ${i + 1}`}
-                  onClick={() => handleonclick(item._id) }
-                />
-              </div>
-            </>
-          )
+            <div key={item._id}>
+              <img
+                className="book-image"
+                src={item.cover_image}
+                alt={`Book cover ${item._id}`}
+                onClick={() => handleonclick(item._id)}
+              />
+            </div>
+          );
         })}
+
       </Slider>
     </div>
   );

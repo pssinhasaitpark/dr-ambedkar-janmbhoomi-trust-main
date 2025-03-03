@@ -9,10 +9,10 @@ const HistoryComponent = () => {
     <div className="all-section-width py-5 ">
       <Row className=" mt-5">
         <Col md={12}>
-          <Row>
+          <Row className="responsive-about">
             <Col
               md={6}
-              className="image-container position-relative mb-4 mb-md-0"
+              className="image-container position-relative mb-4 mb-md-0 responsive-about-column"
             >
               <div className="image-border">
                 <Image
@@ -24,8 +24,8 @@ const HistoryComponent = () => {
               </div>
             </Col>
 
-            <Col md={6} className="p-0 m-0">
-              <h3 className="text-uppercase biography-header p-0 m-0 mt-2  fw-medium fs-1">
+            <Col md={6} className="p-0 m-0 responsive-about-column">
+              <h3 className="text-uppercase biography-header p-0 m-0 mt-2  fw-medium fs-1 ">
                 Historyof Janmabhoomi
               </h3>
               <p className="side-line-side position-relative fw-normal fs-5 p-0 m-0">

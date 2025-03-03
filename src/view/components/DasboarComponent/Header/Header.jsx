@@ -5,6 +5,9 @@ import { yt, fb, app, phone, insta } from "../../../../assests/index.js";
 import "./Header.css";
 
 const Header = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <Navbar
       expand="lg"
@@ -16,25 +19,25 @@ const Header = () => {
 
         <Navbar.Collapse id="navbar">
           <Nav className="mx-auto">
-            <Link to="/" className="header-nav pe-3 ms-3 text-light text-decoration-none">
+            <Link to="/" className="header-nav pe-3 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
               Home
             </Link>
-            <Link to="/about" className="header-nav pe-3 ms-3 text-light text-decoration-none">
+            <Link to="/about" className="header-nav pe-3 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
               About
             </Link>
-            <Link to="/history" className="header-nav pe-2 ms-3 text-light text-decoration-none">
+            <Link to="/history" className="header-nav pe-2 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
               History
             </Link>
-            <Link to="/book" className="header-nav pe-2 ms-3 text-light text-decoration-none">
+            <Link to="/book" className="header-nav pe-2 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
               Books
             </Link>
-            <Link to="/news" className="header-nav pe-2 ms-3 text-light text-decoration-none">
+            <Link to="/news" className="header-nav pe-2 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
               News
             </Link>
-            <Link to="/gallery" className="header-nav pe-2 ms-3 text-light text-decoration-none">
+            <Link to="/gallery" className="header-nav pe-2 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
               Gallery
             </Link>
-            <Link to="/contact" className="header-nav pe-2 ms-3 text-light text-decoration-none">
+            <Link to="/contact" className="header-nav pe-2 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
               Contact
             </Link>
 

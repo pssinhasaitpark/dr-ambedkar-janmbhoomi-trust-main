@@ -20,13 +20,13 @@ const EventCelebration = () => {
           data.map((event, index) => (
             <div key={index} className="event-item ">
                 {event.images && event.images.length > 0 ? (
-               <div className="event-images">
+               <div className="all-images">
                {event.images.map((img, index) => (
                  <img
                    key={index}
                    src={img}
                    alt={"event-image"} 
-                   className="event-image"
+                   className="all-image"
                    loading="lazy"
                    style={{
                     width: "1495px",
