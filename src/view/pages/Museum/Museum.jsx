@@ -10,17 +10,16 @@ import {
   museum7,
 } from "../../../assests";
 import { Link } from "react-router-dom";
-import './Museum.css'
 const Museum = () => {
   return (
     <div className="all-section-width">
       <div className="img-banner  ">
         <div className="row m-0">
           <div className="col-sm-6 p-0 m-0">
-            <img src={museum} alt="birth-image" className="museum-images" />
+            <img src={museum} alt="birth-image" className="museum-images h-100 w-100" />
           </div>
           <div className="col-sm-6 p-0 m-0">
-            <img src={museum2} alt="birth-image" className="museum-images" />
+            <img src={museum2} alt="birth-image" className="museum-images h-100 w-100" />
           </div>
         </div>
       </div>

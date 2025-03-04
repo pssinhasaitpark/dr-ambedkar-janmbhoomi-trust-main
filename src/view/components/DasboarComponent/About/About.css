@@ -28,10 +28,10 @@
 .no-background-table th {background-color: transparent !important;}
 .no-background-table td:first-child { width: 30%;}
 
-@media (min-width: 250px) and (max-width: 700px) {
+@media (min-width: 250px) and (max-width: 768px) {
 .card-style {
     padding: 0%;}}
-    @media (min-width: 1025px) and (max-width: 1280px) {
+    @media (min-width: 1025px) and (max-width: 1440px) {
       .responsive-about{
         flex-direction: column !important;
       }

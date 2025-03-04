@@ -1,16 +1,20 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button, Card, Row, Col } from 'react-bootstrap';
-import {  useSelector } from 'react-redux';
 import { useDonates } from '../../hooks/index';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { ToastContainer } from "react-toastify";
 const phoneRegExp =
   /^(\+?\d{0-9})?\s?-?\s?(\(?\d{7}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
 
 const DonationDonate = () => {
-
-  const { status, data, message } = useSelector((state) => state.donate); 
+    const handleKeyPress = (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        formik.handleSubmit();
+      }
+    };
   const mutation = useDonates();
   const validationSchema = Yup.object({
     amount: Yup.number().required('Amount is required').positive('Amount must be a positive number'),
@@ -32,16 +36,18 @@ const DonationDonate = () => {
       phone: '',
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       mutation.mutate({
         amount: values.amount,
         full_name: values.fullName,
         email: values.email,
         phone: values.phone,
       });
+      setTimeout(() => {
+        resetForm();
+      }, 6000); 
     },
   });
-
   return (
     <Container className="py-5">
       <Row className="justify-content-center">
@@ -64,6 +70,7 @@ const DonationDonate = () => {
                         value={formik.values.amount}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
+                        onKeyPress={handleKeyPress}
                         className="py-2 shadow-sm"
                               placeholder="Enter your Amount"
                         isInvalid={formik.touched.amount && formik.errors.amount}
@@ -81,6 +88,7 @@ const DonationDonate = () => {
                         value={formik.values.fullName}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
+                        onKeyPress={handleKeyPress}
                         className="py-2 shadow-sm"
                         placeholder="Enter your full name"
                         isInvalid={formik.touched.fullName && formik.errors.fullName}
@@ -101,6 +109,7 @@ const DonationDonate = () => {
                         value={formik.values.email}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
+                        onKeyPress={handleKeyPress}
                         className="py-2 shadow-sm"
                         placeholder="Enter your email address"
                         isInvalid={formik.touched.email && formik.errors.email}
@@ -118,6 +127,7 @@ const DonationDonate = () => {
                         value={formik.values.phone}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
+                                 onKeyPress={handleKeyPress}
                         className="py-2 shadow-sm"
                         placeholder="Enter your phone number"
                         isInvalid={formik.touched.phone && formik.errors.phone}
@@ -146,22 +156,9 @@ const DonationDonate = () => {
                 </div>
               </Form>
 
-              {status === 201 && data && (
-                <div className="mt-4 alert alert-success">
-                  <h5>Donation Successful!</h5>
-                  <p><strong>Full Name:</strong> {data.full_name}</p>
-                  <p><strong>Amount Donated:</strong> ₹{data.amount}</p>
-                  <p><strong>Email:</strong> {data.email}</p>
-                  <p><strong>Phone:</strong> {data.phone}</p>
-                </div>
-              )}
-
-              {status !== 201 && message && (
-                <div className="mt-4 alert alert-danger">
-                  <p>{message}</p>
-                </div>
-              )}
+           
             </Card.Body>
+                  <ToastContainer />
             <Card.Footer className="text-center py-3 bg-light text-muted">
               <small>Secure payment processing • All information is encrypted</small>
             </Card.Footer>

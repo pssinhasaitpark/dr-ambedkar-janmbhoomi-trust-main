@@ -9,7 +9,7 @@
     top: 46%;
     visibility: visible;
 }
-@media (min-width: 250px) and (max-width: 700px),(min-device-width: 768px) and (max-device-width: 1024px)   {
+@media (min-width: 250px) and (max-width: 768px),(min-device-width: 768px) and (max-device-width: 1024px)   {
 .side-line-side::after {display: none;} .responsive-about{
     flex-direction: column !important;
   }

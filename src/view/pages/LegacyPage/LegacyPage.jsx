@@ -3,12 +3,16 @@ import { Form, Button, Modal } from "react-bootstrap";
 import { IoIosCloudUpload } from "react-icons/io";
 import { legacyy } from "../../../assests/index";
 import "./Legacy.css";
+import { useSelector } from "react-redux";
 import { Testimonial } from "../../components/index";
 import { useTestimonials } from "../../hooks/index";
 import { toast } from "react-toastify";
 const LegacyPage = () => {
   const [showUpload, setShowUpload] = useState(false);
-  const [image, setImage] = useState(null); 
+  const [image, setImage] = useState({
+    case_studies: null,
+    stories: null,
+  });
   const [imageType, setImageType] = useState("");
   const [testimonial, setTestimonial] = useState({
     description: "",
@@ -17,14 +21,16 @@ const LegacyPage = () => {
   });
 
   const { mutate: submitTestimonial } = useTestimonials();
-
+  const { status } = useSelector((state) => state.testimonial);
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setImage(file); 
+      setImage((prevImages) => ({
+        ...prevImages,
+        [imageType]: file,
+      }));
     }
   };
-
   const handleModalClose = () => setShowUpload(false);
   const handleModalShow = (type) => {
     setImageType(type);
@@ -39,15 +45,14 @@ const LegacyPage = () => {
   };
 
   const handleUploadImage = () => {
-    if (!image) return;
+    if (!image[imageType]) return;
 
     setTestimonial({
       ...testimonial,
-      [imageType]: image, 
+      [imageType]: image[imageType],
     });
 
     handleModalClose();
-    setImage(null);
   };
 
   const handleSubmit = async () => {
@@ -65,15 +70,16 @@ const LegacyPage = () => {
     try {
       await submitTestimonial(formData);
       toast.success("Testimonial submitted successfully!");
-
-     
       setTestimonial({
         description: "",
         case_studies: null,
         stories: null,
       });
-      setImage(null); 
-      setShowUpload(false); 
+      setImage({
+        case_studies: null,
+        stories: null,
+      });
+      setShowUpload(false);
     } catch (error) {
       toast.error("There was an error submitting the testimonial.");
     }
@@ -257,7 +263,7 @@ const LegacyPage = () => {
                   size={35}
                   className="upload-image cursor-pointer p-1"
                 />
-                <span className="ms-2">upload Case Studies</span>
+                <span className="ms-2">Upload Case Studies</span>
               </div>
               <div
                 className="d-flex fs-4 text-light fw-medium me-lg-5 cursor-pointer mt-3"
@@ -274,16 +280,17 @@ const LegacyPage = () => {
               <Button
                 variant="light"
                 size="lg"
-                className="px-5 text-uppercase rounded-1 text-primary fw-bold fs-4 mb-4"
+                className="px-3 px-lg-5 text-uppercase rounded-1 text-primary fw-bold fs-4 mb-4"
                 onClick={handleSubmit}
               >
-                
-                Submit Testimonial
+                {status === "succeeded"
+                  ? "Submitted Testimonial"
+                  : status === "loading"
+                    ? "Submiting..."
+                    : "Submit Testimonial"}
               </Button>
             </div>
           </Form>
-
-          {/* Modal for image upload */}
           <Modal show={showUpload} onHide={handleModalClose}>
             <Modal.Header closeButton>
               <Modal.Title>Upload Your Image</Modal.Title>
@@ -295,20 +302,18 @@ const LegacyPage = () => {
                 onChange={handleImageUpload}
                 className="form-control"
               />
-              {image || testimonial[imageType] ? (
+              {image[imageType] && (
                 <div className="mt-3">
                   <img
-                    src={
-                      image
-                        ? URL.createObjectURL(image)
-                        : URL.createObjectURL(testimonial[imageType])
-                    }
+                    src={URL.createObjectURL(image[imageType])}
                     alt="Uploaded"
-                    className="uploaded-image"
+                    className="uploaded-image rounded-2"
+                    style={{ maxWidth: "50%", maxHeight: "100px" }}
                   />
                 </div>
-              ) : null}
+              )}
             </Modal.Body>
+
             <Modal.Footer>
               <Button variant="secondary" onClick={handleModalClose}>
                 Close

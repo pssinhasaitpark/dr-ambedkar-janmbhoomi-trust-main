@@ -3,7 +3,7 @@ import axiosInstance from '../../redux/axios/axios';
 import { useDispatch } from 'react-redux';
 import { setAbouts, setError, setLoading, setStatusSucceeded, setStatusFailed } from '../../redux/slice/AboutSlice/AboutSlice';
 
-const useEvents = () => {
+const useAbouts = () => {
   const dispatch = useDispatch();
   const { data, error, isLoading } = useQuery({
     queryKey: ['abouts'],
@@ -29,4 +29,5 @@ const useEvents = () => {
   return { data: data?.data, isLoading, error }; 
 }
 
-export default useEvents;
+export default useAbouts;
+

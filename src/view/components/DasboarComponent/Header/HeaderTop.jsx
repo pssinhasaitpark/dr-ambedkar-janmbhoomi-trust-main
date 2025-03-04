@@ -2,8 +2,9 @@ import React from "react";
 import { logo, yt, fb, app, phone, insta } from "../../../../assests/index.js";
 import './HeaderTop.css'
 import { Link } from "react-router-dom";
-
+import { useSocials } from "../../../hooks/index.js";
 const HeaderTop = () => {
+    const { data: socialLinks, isLoading: socialLoading } = useSocials();
   const openExternalLink = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -27,18 +28,22 @@ const HeaderTop = () => {
           </p>
         </div>
         <div className="mt-3">
-          <Link to="#" onClick={() => openExternalLink('https://web.whatsapp.com/')}>
+        {!socialLoading && socialLinks && (
+          <>
+          <Link to="#" onClick={() => openExternalLink(socialLinks.whatsapp.link)}>
             <img src={app} alt="WhatsApp" className="header-icons" />
           </Link>
-          <Link to="#" onClick={() => openExternalLink('https://www.facebook.com/')}>
+         <Link to="#" onClick={() => openExternalLink(socialLinks.facebook.link)}>
             <img src={fb} alt="Facebook" className="header-icons" />
           </Link>
-          <Link to="#" onClick={() => openExternalLink('https://www.instagram.com/?hl=en')}>
+              <Link to="#" onClick={() => openExternalLink(socialLinks.instagram.link)}>
             <img src={insta} alt="Instagram" className="header-icons" />
           </Link>
-          <Link to="#" onClick={() => openExternalLink('https://www.youtube.com/')}>
+          <Link to="#" onClick={() => openExternalLink(socialLinks.youtube.link)}>
             <img src={yt} alt="YouTube" className="header-icons" />
           </Link>
+          </>
+            )}
         </div>
       </div>
     </div>

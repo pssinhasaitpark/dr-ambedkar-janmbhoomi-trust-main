@@ -15,7 +15,7 @@
     margin-right: 10px;
     margin-left: 5px;
   }}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait),(min-width: 1025px) and (max-width: 1280px){
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait),(min-width: 1025px) and (max-width: 1440px){
   .Accordian-width {
     width: 44%;
     height: 440px;

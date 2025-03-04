@@ -66,6 +66,13 @@ const ContactCard = ({ image, title, content, type }) => {
   );
 };
 const ContactPage = () => {
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      formik.handleSubmit();
+    }
+  };
+
   const { mutate } = useContacts();
 
   const formik = useFormik({
@@ -163,6 +170,7 @@ const ContactPage = () => {
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.first_name}
+                      onKeyPress={handleKeyPress}
                       required
                     />
                     {formik.touched.first_name && formik.errors.first_name && (
@@ -180,6 +188,7 @@ const ContactPage = () => {
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.last_name}
+                      onKeyPress={handleKeyPress}
                       required
                     />
                     {formik.touched.last_name && formik.errors.last_name && (
@@ -197,6 +206,7 @@ const ContactPage = () => {
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.phone_no}
+                      onKeyPress={handleKeyPress}
                       required
                     />
                     {formik.touched.phone_no && formik.errors.phone_no && (
@@ -214,6 +224,7 @@ const ContactPage = () => {
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.email}
+                      onKeyPress={handleKeyPress}
                       required
                     />
                     {formik.touched.email && formik.errors.email && (
@@ -229,6 +240,7 @@ const ContactPage = () => {
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.location}
+                      onKeyPress={handleKeyPress}
                       required
                     />
                     {formik.touched.location && formik.errors.location && (

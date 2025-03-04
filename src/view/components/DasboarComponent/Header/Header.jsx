@@ -14,8 +14,8 @@ const Header = () => {
       sticky="top"
       className="header-nav all-background p-0"
     >
-      <Container>
-        <Navbar.Toggle aria-controls="navbar" className="bg-light fs-6" />
+      <Container className="p-0 ">
+        <Navbar.Toggle aria-controls="navbar" className=" border-0  fs-6 rounded-0" />
 
         <Navbar.Collapse id="navbar">
           <Nav className="mx-auto">
@@ -41,7 +41,7 @@ const Header = () => {
               Contact
             </Link>
 
-            <div className="d-lg-none d-block mt-3">
+            <div className="d-lg-none d-block mt-3 ms-2">
               <div>
                 <div className="d-flex align-items-center">
                   <Link to="tel:+911234567891">

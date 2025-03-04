@@ -7,6 +7,8 @@ import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import { trustee1 } from "../../../../assests";
 import { Link } from "react-router-dom";
 function SampleNextArrow(props) {
+ 
+
   const { onClick } = props;
   return (
     <div
@@ -37,6 +39,9 @@ function SamplePrevArrow(props) {
 }
 
 const TrusteeSlider = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const settings = {
     dots: true, 
     infinite: true,
@@ -86,7 +91,9 @@ const TrusteeSlider = () => {
       </div>
       <Slider {...settings} className="book-publish ">
         {[...Array(6)].map((_, index) => (
-          <div key={index} className="position-relative book-image"><Link to="/trustee">
+          <div key={index} className="position-relative book-image"><Link to="/trustee"
+          onClick={scrollToTop}>
+          
             <img
               className="book-image position-relative"
               src={trustee1}

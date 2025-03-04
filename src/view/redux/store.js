@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'; 
-import { EventSlice,ContactSlice,SubscribeSlice,AboutSlice,GallerySlice,DonationSlice,HomeSlice,BookSlice,DonateSlice,TrusteeSlice, TestimonialSlice, NewsSlice, NewsListSlice, BookSliderSlice,BookListSlice } from './slice/index';
+import { EventSlice,ContactSlice,SubscribeSlice,AboutSlice,GallerySlice,DonationSlice,HomeSlice,BookSlice,DonateSlice,TrusteeSlice, TestimonialSlice, NewsSlice, NewsListSlice, BookSliderSlice,BookListSlice,SocialMediaSlice } from './slice/index';
 
 const store = configureStore({
   reducer: {
@@ -7,7 +7,7 @@ const store = configureStore({
    Event: EventSlice,
    contact:ContactSlice,
    Subscribe:SubscribeSlice,
-   About:AboutSlice,
+   abouts:AboutSlice,
    Gallery:GallerySlice,
    Donation:DonationSlice,
    Book:BookSlice,
@@ -18,6 +18,7 @@ const store = configureStore({
    lists:NewsListSlice,
    BookSlider:BookSliderSlice,
    booklists:BookListSlice,
+   socials:SocialMediaSlice,
   },
 });
 

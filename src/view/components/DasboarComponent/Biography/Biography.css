@@ -83,7 +83,7 @@
     margin-left: 0%;
   }
 }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait),(min-width: 1025px) and (max-width: 1280px){
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait),(min-width: 1025px) and (max-width: 1440px){
   .biography-head { width: 100%;}
   .side-line::after{ display: none;}
   .ipad-bio{
@@ -98,4 +98,4 @@
     font-size: 18px;
   
 }
-}
+} 

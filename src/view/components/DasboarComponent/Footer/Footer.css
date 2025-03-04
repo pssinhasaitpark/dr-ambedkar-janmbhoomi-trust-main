@@ -12,23 +12,17 @@
       margin:0 !important;
     }
   }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait){
+ @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait){
     .d-flex.mt-4.mb-4 {
       height: 60px;
       width: 100% !important;
   }}
-    /* /* span.ms-4.badge-ambedkar.footer-badge.badge.bg-primary.mb-3 {
-      width: 12rem;
-      font-size: 1rem;
-      margin-left: -4% !important;
-  }
-  .quick-links-container {
-    margin-left: 0%;
-    margin-right: 0%;}  */
-  
-
-
-
+  @media (min-width: 600px) and (max-width: 768px) {
+    .footer-section{
+      width:95%!important;
+      margin:0 !important;
+    }
+  } 
 
 
   
