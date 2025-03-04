@@ -13,4 +13,5 @@ import useNews from "./HomeHook/useNews";
 import useNewsLists from "./HomeHook/useNewsLists";
 import useBookSlider  from "./HomeHook/useBookSliders";
 import useBookLists from './HomeHook/useBookLists';
-export{useBanners,useContacts,useEvents,useSubscribes,useAbouts,useGallerys,useDonations,useBooks,useDonates,useTrustees,useTestimonials,useNews,useNewsLists,useBookSlider,useBookLists}
+import useSocials from "./HomeHook/useSocials";
+export{useBanners,useContacts,useEvents,useSubscribes,useAbouts,useGallerys,useDonations,useBooks,useDonates,useTrustees,useTestimonials,useNews,useNewsLists,useBookSlider,useBookLists,useSocials}

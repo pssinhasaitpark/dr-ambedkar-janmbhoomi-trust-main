@@ -15,7 +15,7 @@ const PhotoGallery = () => {
                         <div className="gallery-row d-flex flex-wrap justify-content-center">
 
                             <div className="gallery-item mb-3 ">
-                                <img src={photo} alt="gallery-image" className="img-achieve w-100 h-auto" />
+                                <img src={photo} alt="gallery-image" className="img-achieve w-100 h-auto " />
                             </div>
                             <div className="gallery-item mb-3 ">
                                 <img src={photo1} alt="gallery-image" className="img-achieve w-100 h-auto" />

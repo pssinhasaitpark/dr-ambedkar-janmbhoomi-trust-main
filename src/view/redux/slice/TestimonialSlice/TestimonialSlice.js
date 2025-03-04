@@ -30,3 +30,31 @@ const TestimonialSlice = createSlice({
 
 export const { setTestimonial, setTestimonialError, setTestimonialLoading, setStatusSucceeded, setStatusFailed } = TestimonialSlice.actions;
 export default TestimonialSlice.reducer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

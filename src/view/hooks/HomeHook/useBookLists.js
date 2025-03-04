@@ -3,7 +3,7 @@ import axiosInstance from '../../redux/axios/axios';
 import { useDispatch } from 'react-redux';
 import {  setBookdetails, setError, setLoading, setStatusSucceeded, setStatusFailed } from '../../redux/slice/BookSlice/BookListSlice';
 
-const useNewsLists = (id) => {
+const useBookLists= (id) => {
   const dispatch = useDispatch();
 
   const { data, error, isLoading } = useQuery({
@@ -28,4 +28,4 @@ const useNewsLists = (id) => {
   return { data: data?.data, isLoading, error };
 };
 
-export default useNewsLists;
+export default useBookLists;

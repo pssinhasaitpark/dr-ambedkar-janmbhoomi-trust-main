@@ -28,7 +28,7 @@
     color: lightgray !important;
     font-size: small;
 }
-@media (min-width: 250px) and (max-width: 700px) {
+@media (min-width: 250px) and (max-width: 768px) {
 p.contact-page-maindescription{
     width: 100% !important;
 }

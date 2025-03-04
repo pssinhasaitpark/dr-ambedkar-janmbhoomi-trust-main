@@ -1,6 +1,5 @@
 
 import { createSlice } from '@reduxjs/toolkit';
-
 const initialState = {
   donations: [],  
   status: 'idle',  
@@ -8,7 +7,7 @@ const initialState = {
 };
 
 const DonationSlice = createSlice({
-  name: 'events',
+  name: ' donations',
   initialState,
   reducers: {
     setDonations: (state, action) => {

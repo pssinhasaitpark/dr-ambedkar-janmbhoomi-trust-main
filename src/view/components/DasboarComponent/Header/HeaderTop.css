@@ -17,9 +17,9 @@ button:focus{
   border-color: inherit !important;
   outline: none !important;
 }
-@media (min-width: 250px) and (max-width: 700px) {
+ @media (min-width: 250px) and (max-width: 768px) {
   .header-icons{
     border-radius: 25%;
     padding-left: 0px;
   }}
-  
+   

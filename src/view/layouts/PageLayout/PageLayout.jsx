@@ -5,7 +5,7 @@ import { Header, Footer, About, HeaderTop,PhotoGallery,Achievment,FaqSection, Bi
 function PageLayout() {
   return (
     <div className="dashboard-container">
-      <HeaderTop/>
+     <HeaderTop/>
       <Header />
       <About />
       <BookPulicationSlider/>

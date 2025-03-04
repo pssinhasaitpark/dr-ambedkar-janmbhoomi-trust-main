@@ -84,7 +84,6 @@ const BookPulicationSlider = () => {
   if (isLoading) {
     return <div className="spinner"></div>;
   }
-
   if (error) {
     return <div>Error: {error.message}</div>;
   }

@@ -5,6 +5,9 @@ import { news1 } from "../../../assests/index";
 import { Row, Col, Card } from "react-bootstrap";
 import "./NewsPage.css";
 const NewsPage = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const { data, isLoading, error } = useNews();
 
   if (isLoading) {
@@ -19,7 +22,7 @@ const NewsPage = () => {
     return <p>No news available.</p>;
   }
 
-  const truncateDescription = (text, maxLength = 150) => {
+  const truncateDescription = (text, maxLength = 1000) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength) + "...";
     }
@@ -36,25 +39,25 @@ const NewsPage = () => {
         <h2 className="text-uppercase fs-1 m-0 p-0">News and Updates</h2>
         <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
       </div>
-      <Row className="mb-4 row-newspage">
-      <Col key={data[0]._id} lg={12} md={12} sm={12} className="p-0 m-3">
+      <Row className="mb-4 row-newspage responsive-about">
+      <Col key={data[0]._id} lg={12} md={12} sm={12} className="p-0 m-3 ">
       <h5 className="mb-3 fs-4">{data[0].headline}</h5>
           <Card className="border-1 rounded-0">
           <Card.Body>
               <Row>
-                <Col lg={5} md={12} className="mb-3 mb-lg-0">
+                <Col lg={5} md={12} className="mb-3 mb-lg-0 responsive-about-column">
                 <img
                   src={data[0].images[0]}
                   alt={data[0].headline}
                   className="w-100 h-100 object-fit-cover"
                 />
                 </Col>
-                <Col lg={7} md={12}>
-                <h5 className="mb-3 fs-4">{data[0].headline}</h5>
+                <Col lg={7} md={12} className="responsive-about-column" >
+                <h5 className="mb-3 fs-4 ">{data[0].headline}</h5>
                 <div
                   className="description"
                   dangerouslySetInnerHTML={{
-                    __html: (data[0].description),
+                    __html: truncateDescription(data[0].description),
                   }}
                 />
                 <ul className="lh-base">
@@ -77,34 +80,34 @@ const NewsPage = () => {
         {data.slice(1).map((newsItem, index) => {
           if (index % 2 === 0) {
             return (
-              <Row key={index} className="mb-4 p-0 m-0">
+              <Row key={index} className="mb-4 p-0 m-0 responsive-about">
                 {data.slice(index, index + 2).map((item) => (
                   <Col key={item._id} lg={6} md={6} sm={12} className="p-0 m-0">
                     {" "}
                     <Card className="border-0">
                     
-                      <Row>
-                        <Col xs={5}>
+                      <Row className="responsive-row">
+                        <Col xs={5} className="responsive-about-column">
                           <img
                             src={item.images[0]}
                             alt={item.headline}
                             className="newspage-image"
                           />
                         </Col>
-                        <Col xs={7}>
-                          <p className="fs-5 mb-3">{item.headline}</p>
+                        <Col xs={7} className="responsive-about-column">
+                          <p className="fs-5 m-0 p-0">{item.headline}</p>
                           <div
                             className=" description"
                             dangerouslySetInnerHTML={{
                               __html: truncateDescription(
                                 item.description,
-                                100
+                                110
                               ),
                             }}
                           />
                           <Link
                             to={`/news/get/${item._id}`}
-                            className="text-decoration-none text-dark fw-bold fs-5"
+                            className="text-decoration-none text-dark fw-bold fs-5" onClick={scrollToTop}
                           >
                             Read More
                           </Link>
@@ -119,22 +122,22 @@ const NewsPage = () => {
           return null;
         })}
       </div>
-      <Row className="mb-4 row-newspage">
+      <Row className="mb-4 row-newspage ">
         <Col  lg={12} md={12} sm={12} className="p-0 m-3">
         <h5 className="mb-3 fs-4">
                     {data[1]?.headline || data[0].headline}
                   </h5>
           <Card className="border-1 rounded-0">
             <Card.Body>
-              <Row>
-                <Col lg={5} md={12} className="mb-3 mb-lg-0">
+              <Row className="responsive-about ">
+                <Col lg={5} md={12} className="mb-3 mb-lg-0 responsive-about-column">
                   <img
                     src={data[1]?.images[0] || data[0].images[0]}
                     alt={data[1]?.headline || data[0].headline} 
                     className="w-100 h-100 object-fit-cover"
                   />
                 </Col>
-                <Col lg={7} md={12}>
+                <Col lg={7} md={12} className="responsive-about-column">
                   <h5 className="mb-3 fs-4">
                     {data[1]?.headline || data[0].headline}
                   </h5>{" "}
@@ -168,7 +171,7 @@ const NewsPage = () => {
         {data.slice(3).map((item, index) => (
           <Row key={item._id} className="mb-4">
              <h5 className="mb-3 fs-4">{item.headline}</h5>
-            <Col className="p-0 m-0">
+            <Col className="p-0 m-0 responsive-about-column">
               <Card className="">
                 <Card.Body>
                   <h5 className="mb-3 fs-4">{item.headline}</h5>
