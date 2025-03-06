@@ -57,33 +57,8 @@
   margin-left: 4%;
   width: 68.2%;
 }
-@media (max-width: 767px) {
-  .timeline-1 .event:after {
-    top: -3%;
-    left: -7.8px;
-  }
-  .timeline-1 {
-    max-width: 100%;
-    padding: 3px;
-    margin-left: 2%;
-  }
-  .timeline-1 .event:before {
-    left: 0;
-    padding: 4px;
-    text-align: left;
-    top: -7%;
-  }
-  .timeline-1 .event {padding-top: 12px;}
-  .biography-header { letter-spacing: 5px;}
-  .side-line::after{
-   display: none;
-  }
-  .biography-head {
-    width: 100%;
-    margin-left: 0%;
-  }
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait),(min-width: 1025px) and (max-width: 1440px){
+
+/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait),(min-width: 1025px) and (max-width: 1440px),(min-width: 900px) and (max-width: 1536px) {
   .biography-head { width: 100%;}
   .side-line::after{ display: none;}
   .ipad-bio{
@@ -98,4 +73,128 @@
     font-size: 18px;
   
 }
-} 
+}  */
+
+
+/* Existing styles here */
+
+@media (min-width: 800px) and (max-width: 2560px) {
+}
+.biography-head { width: 100%;}
+  .side-line::after{ display: none;}
+  .ipad-bio{
+    margin-left: -1rem;
+  }
+  .biography-text{
+    padding: 1%;
+  }
+  .timeline-1 .event:before {
+    left: -12rem;
+    top: 10%;
+    font-size: 18px;
+  
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  .timeline-1 .event:after {
+    top: -3%;
+    left: -7.8px;
+  }
+
+  .timeline-1 {
+    max-width: 100%;
+    padding: 3px;
+    margin-left: 2%;
+  }
+
+  .timeline-1 .event:before {
+    left: 0;
+    padding: 4px;
+    text-align: left;
+    top: -7%;
+  }
+
+  .timeline-1 .event {
+    padding-top: 12px;
+  }
+
+  .biography-header {
+    letter-spacing: 5px;
+  }
+
+  .side-line::after {
+    display: none;
+  }
+
+  .biography-head {
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  /* Ensure the events list is visible */
+  .timeline-1 li {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .timeline-1 .event {
+    padding-left: 0;
+    text-align: left;
+  }
+
+  .biography-text {
+    padding: 1% 10px; /* Ensure text doesn't go off the screen */
+  }
+}
+
+/* For devices between 768px and 1024px, portrait mode */
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .biography-head {
+    width: 100%;
+  }
+
+  .side-line::after {
+    display: none;
+  }
+
+  .ipad-bio {
+    margin-left: -1rem;
+  }
+
+  .biography-text {
+    padding: 1%;
+  }
+
+  .timeline-1 .event:before {
+    left: -12rem;
+    top: 10%;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 2560px) {
+  .biography-head {
+    width: 100%;
+  }
+
+  .side-line::after {
+    display: none;
+  }
+
+  .ipad-bio {
+    margin-left: -1rem;
+  }
+
+  .biography-text {
+    padding: 1%;
+  }
+
+  .timeline-1 .event:before {
+    left: -12rem;
+    top: 10%;
+    font-size: 18px;
+  }
+}

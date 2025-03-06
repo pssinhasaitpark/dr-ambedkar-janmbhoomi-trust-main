@@ -113,7 +113,7 @@ const About = () => {
                       <td className="fw-medium fs-4 heading-ambedkar">
                         Location:
                       </td>
-                      <td className="fw-normal p-0 fs-4 lh-lg">{location}</td>
+                      <td className="fw-normal p-0 fs-4 lh-lg ambedkar-responsive">{location}</td>
                     </tr>
                   </tbody>
                 </table>

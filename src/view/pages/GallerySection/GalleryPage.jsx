@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useGallerys } from "../../hooks/index";
 import "./GalleryPage.css";
 import { pgallery } from "../../../assests/index";
+import { initLightboxJS, SlideshowLightbox } from "lightbox.js-react";
 
 const GalleryPage = () => {
+  useEffect(() => {
+    initLightboxJS("Insert your License Key here", "Insert plan type here");
+  }, []);
+
   const [activeTab, setActiveTab] = useState("birthplace");
   const { data, isLoading, error } = useGallerys();
+  const [showAllImages, setShowAllImages] = useState(false);
 
   if (isLoading) {
     return <div className="spinner"></div>;
@@ -23,43 +29,17 @@ const GalleryPage = () => {
 
     return rows.map((row, rowIndex) => (
       <div key={rowIndex} className="row mt-4 m-0 p-0">
-        {rowIndex === 0 ? (
-          <>
-            {row[0] && (
-              <div className={`col-sm-6 p-0 gallery-page-${rowIndex}`}>
-                <img src={row[0]} alt="gallery" className=" img-fluid img-gallery p-1 " />
-              </div>
-            )}
-            {row[1] && (
-              <div className={`col-sm-3 p-0 gallery-page-${rowIndex}`}>
-                <img src={row[1]} alt="gallery" className=" img-fluid img-gallery p-1" />
-              </div>
-            )}
-            {row[2] && (
-              <div className={`col-sm-3 p-0 gallery-page-${rowIndex}`}>
-                <img src={row[2]} alt="gallery" className=" img-fluid img-gallery p-1 " />
-              </div>
-            )}
-          </>
-        ) : (
-          <>
-            {row[0] && (
-              <div className={`col-sm-3 p-0 gallery-page-${rowIndex}`}>
-                <img src={row[0]} alt="gallery" className=" img-fluid img-gallery p-1 p-0" />
-              </div>
-            )}
-            {row[1] && (
-              <div className={`col-sm-3 p-0 gallery-page-${rowIndex}`}>
-                <img src={row[1]} alt="gallery" className=" img-fluid img-gallery p-1 p-0 " />
-              </div>
-            )}
-            {row[2] && (
-              <div className={`col-sm-6 p-0 gallery-page-${rowIndex}`}>
-                <img src={row[2]} alt="gallery" className=" img-fluid img-gallery p-1 p-0" />
-              </div>
-            )}
-          </>
-        )}
+        {row.map((image, index) => (
+          <div key={index} className={`col-sm-${index === 0 ? 6 : 3} p-0`}>
+            <SlideshowLightbox>
+              <img
+                src={image}
+                alt="gallery"
+                className="img-fluid img-gallery p-1"
+              />
+            </SlideshowLightbox>
+          </div>
+        ))}
       </div>
     ));
   };
@@ -71,26 +51,31 @@ const GalleryPage = () => {
     setActiveTab(tab);
   };
 
+  const handleShowMore = () => {
+    setShowAllImages(!showAllImages);
+  };
+
   return (
     <div>
       <div className="all-section-width">
-        <div className="img-banner ">
+        <div className="img-banner">
           <img src={pgallery} alt="about-image" className="mb-2 all-image" />
         </div>
         <div className="mt-5 mb-4">
-          <h2 className="text-uppercase fs-1  p-0 m-0">Photo Gallery</h2>
-          <p className=" fs-5">Dr. Bhimrao Ambedkar</p>
-          <p className=" fw-medium fs-5 mt-2 paragraph-birth p-0 m-0">
+          <h2 className="text-uppercase fs-1 p-0 m-0">Photo Gallery</h2>
+          <p className="fs-5">Dr. Bhimrao Ambedkar</p>
+          <p className="fw-medium fs-5 mt-2 paragraph-birth p-0 m-0">
             Dr. B.R. Ambedkar's legacy is celebrated through various photo and
             video galleries that showcase his birthplace, significant events,
             and exhibitions dedicated to his life and work.
           </p>
         </div>
 
-        <div className="custom-tabs mb-2 ">
-          <div className="tab-nav d-lg-flex  justify-content-start fs-4">
+        <div className="custom-tabs mb-2">
+          <div className="tab-nav d-lg-flex justify-content-start fs-4">
             <div
-              className={`tab-link p-0 me-lg-3 ms-lg-0 ms-3 ${activeTab === "birthplace" ? "active" : ""}`}
+              className={`tab-link p-0 me-lg-3 ms-lg-0 ms-3 ${activeTab === "birthplace" ? "active" : ""
+                }`}
               onClick={() => handleTabClick("birthplace")}
             >
               BIRTHPLACE
@@ -115,20 +100,52 @@ const GalleryPage = () => {
             </div>
           </div>
 
-          <div className="tab-content ">
+          <div className="tab-content">
             {activeTab === "birthplace" && (
-              <div className="row mt-4 m-0">{renderImages(data?.[0]?.birthplace_media || [])}</div>
+              <div className="row mt-4 m-0">
+                {renderImages(
+                  showAllImages
+                    ? data?.[0]?.birthplace_media || []
+                    : data?.[0]?.birthplace_media?.slice(0, 6) || []
+                )}
+              </div>
             )}
             {activeTab === "events" && (
-              <div className="row mt-4 m-0">{renderImages(data?.[0]?.events_media || [])}</div>
+              <div className="row mt-4 m-0">
+                {renderImages(
+                  showAllImages
+                    ? data?.[0]?.events_media || []
+                    : data?.[0]?.events_media?.slice(0, 6) || []
+                )}
+              </div>
             )}
             {activeTab === "exhibitions" && (
-              <div className="row mt-4 m-0">{renderImages(data?.[0]?.exhibitions_media || [])}</div>
+              <div className="row mt-4 m-0">
+                {renderImages(
+                  showAllImages
+                    ? data?.[0]?.exhibitions_media || []
+                    : data?.[0]?.exhibitions_media?.slice(0, 6) || []
+                )}
+              </div>
             )}
             {activeTab === "resources" && (
-              <div className="row mt-4 m-0">{renderImages(data?.[0]?.online_media || [])}</div>
+              <div className="row mt-4 m-0">
+                {renderImages(
+                  showAllImages
+                    ? data?.[0]?.online_media || []
+                    : data?.[0]?.online_media?.slice(0, 6) || []
+                )}
+              </div>
             )}
           </div>
+
+          {data?.[0]?.birthplace_media?.length > 6 && (
+            <div className="text-center mt-4">
+              <button onClick={handleShowMore} className="btn btn-primary">
+                {showAllImages ? "Show Less" : "Read More"}
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="border border-2 mt-5 pe-1">
