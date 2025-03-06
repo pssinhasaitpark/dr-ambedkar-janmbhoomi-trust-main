@@ -79,7 +79,7 @@ const Testimonial = () => {
     {
       title: "Dr. Ambedkar National Memorial:",
       text: "The establishment of the Dr. Ambedkar National Memorial in India serves as a testament to his lasting impact. Harbir Singh, Managing Director of Pan Intellecom, emphasized the memorial's significance:",
-      quote: "\"It was long felt by the government of India that Dr. B. R. Ambedkar, the messiah of the downtrodden, can be portrayed as a model to instill a sense of achievement and pride for the deprived segment of the masses.\""
+      quote: "\"It was long felt by the government of India that Dr. B. R. Ambedkar, the messiah of the downtrodden, can be portrayed as a model to instills a sense of achievement and pride for the deprived segment of the masses.\""
     },
     {
       title: "Educational Impact:",
@@ -104,7 +104,7 @@ const Testimonial = () => {
       <Slider {...settings} className="book-publish testimonial mb-4">
         {testimonials.map((testimonial, index) => (
           <div className="testimonial-item" key={index}>
-            <Card className="testimonial-card d-flex justify-content-between p-3 shadow-sm border rounded-0 ms-4">
+            <Card className="testimonial-card d-flex justify-content-between p-3 shadow-sm border rounded-0 ms-4 ">
               <Card.Body>
                 <Card.Title className="fw-bold text-center">
                   {testimonial.title}
@@ -112,7 +112,7 @@ const Testimonial = () => {
                 <Card.Text className="text-center fs-5 lh-lg">
                   {testimonial.text}
                 </Card.Text>
-                <div className="text-center fw-bold fs-5 lh-lg">
+                <div className="text-center fw-bold fs-5 lh-lg ">
                   {testimonial.quote}
                 </div>
               </Card.Body>

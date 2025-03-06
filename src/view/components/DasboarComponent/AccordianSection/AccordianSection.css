@@ -1,4 +1,4 @@
-.Accordian-width {
+/* .Accordian-width {
   width: 31%;
   height: 420px; 
 }
@@ -9,19 +9,132 @@
 }
 .hover-li:hover {background-color: #d0d0d0;}
 .accordion-button:not(.collapsed) {background-color:#d0d0d0!important;}
-@media (min-width: 250px) and (max-width: 767px) {
-  .Accordian-width {width: 94%;}
-  .accordian-start {
-    margin-right: 10px;
-    margin-left: 5px;
-  }}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait),(min-width: 1025px) and (max-width: 1440px){
-  .Accordian-width {
-    width: 44%;
-    height: 440px;
-}
 .accordian-start {
-  margin-right: 0px;
-  margin-left: 0px;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  margin-right: 52px;
+  margin-left: 82px;
 }
+
+.Accordian-width {
+  flex: 1 1 31%; 
+  height: 420px;
+  margin: 10px;
 }
+
+.accordian-list {
+  padding: 20px;
+}
+
+.hover-li:hover {
+  background-color: #d0d0d0;
+} */
+/* Default styles for the accordion section */
+/* Default styles for the accordion section */
+.Accordian-width {
+  width: 5%;
+  height: 420px;
+
+  flex: 1 1 20%;
+}
+
+.accordian-list {
+  padding: 20px;
+}
+
+.accordian-start {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 80px;
+  margin-left: 82px;
+}
+
+.hover-li:hover {
+  background-color: #d0d0d0;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #d0d0d0 !important;
+}
+
+
+@media (max-width: 1200px) {
+
+  .Accordian-width {
+    width: 45%;
+    height: auto;
+  }
+
+  .accordian-start {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 24px;
+    margin-left: 35px;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .Accordian-width {
+    width: 48%;
+    height: auto; 
+    margin: 5px; 
+  }
+
+  .accordian-start {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .accordian-list {
+    padding: 10px; 
+  }
+}
+
+@media (max-width: 768px) {
+
+  .Accordian-width {
+    width: 100%; 
+    margin: 10px 0; 
+    height: auto;
+  }
+
+  .accordian-start {
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .accordian-list {
+    font-size: 1rem; 
+    padding: 8px;
+  }
+
+  .hover-li {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .Accordian-width {
+    width: 100%; 
+    height: auto; 
+  }
+
+  .accordian-list {
+    font-size: 0.9rem; 
+    padding: 8px; 
+  }
+
+  .accordian-start {
+    flex-direction: column; 
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1280px) and (max-height: 720px) {
+  .Accordian-width {
+    height: 475px;
+  }}

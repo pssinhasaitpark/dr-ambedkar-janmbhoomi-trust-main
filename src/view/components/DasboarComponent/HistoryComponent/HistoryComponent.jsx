@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import { janam } from "../../../../assests/index";
 import "./HistoryComponent.css";
 
@@ -7,12 +7,12 @@ const HistoryComponent = () => {
   return (
     <div className="bg-light">
     <div className="all-section-width py-5 ">
-      <Row className=" mt-5">
-        <Col md={12}>
-          <Row className="responsive-about">
-            <Col
-              md={6}
-              className="image-container position-relative mb-4 mb-md-0 responsive-about-column"
+      <div className=" row mt-5">
+        <div className="col-sm-12">
+          <div className="row responsive-history">
+            <div
+              
+              className=" image-container position-relative mb-4 mb-md-0 responsive-history-divumn col-lg-6 col-sm-12 "
             >
               <div className="image-border">
                 <Image
@@ -22,9 +22,9 @@ const HistoryComponent = () => {
                   className="ambedkar-image img-fluid"
                 />
               </div>
-            </Col>
+            </div>
 
-            <Col md={6} className="p-0 m-0 responsive-about-column">
+            <div className="p-0 m-0 responsive-history-divumn col-lg-6 col-sm-12 ">
               <h3 className="text-uppercase biography-header p-0 m-0 mt-2  fw-medium fs-1 ">
                 Historyof Janmabhoomi
               </h3>
@@ -57,10 +57,10 @@ const HistoryComponent = () => {
                   education for all.
                 </p>
               </div>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     </div>
   );

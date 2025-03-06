@@ -1,30 +1,44 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Form, Button, Card, Row, Col } from 'react-bootstrap';
 import { useDonates } from '../../hooks/index';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { ToastContainer } from "react-toastify";
+
 const phoneRegExp =
   /^(\+?\d{0-9})?\s?-?\s?(\(?\d{7}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
 
 const DonationDonate = () => {
-    const handleKeyPress = (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        formik.handleSubmit();
-      }
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.async = true;
+    script.onload = () => {
+      console.log("Razorpay script loaded successfully");
     };
+    script.onerror = () => {
+      console.error("Error loading Razorpay script");
+    };
+    document.body.appendChild(script);
+
+    // Clean up script when component unmounts
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const mutation = useDonates();
   const validationSchema = Yup.object({
     amount: Yup.number().required('Amount is required').positive('Amount must be a positive number'),
     fullName: Yup.string().max(15, "Must be 15 characters or less"),
-   email: Yup
-       .string()
-       .matches(
-         /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-         "Invalid email address"
-       ),
+    email: Yup
+      .string()
+      .matches(
+        /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+        "Invalid email address"
+      ),
     phone: Yup.string().matches(phoneRegExp, "Phone number is not valid"),
   });
 
@@ -36,18 +50,103 @@ const DonationDonate = () => {
       phone: '',
     },
     validationSchema: validationSchema,
-    onSubmit: (values, { resetForm }) => {
-      mutation.mutate({
-        amount: values.amount,
-        full_name: values.fullName,
-        email: values.email,
-        phone: values.phone,
-      });
-      setTimeout(() => {
-        resetForm();
-      }, 6000); 
+    onSubmit: async (values, { resetForm }) => {
+      try {
+        const donationResponse = await mutation.mutateAsync({
+          amount: values.amount,
+          full_name: values.fullName,
+          email: values.email,
+          phone: values.phone,
+        });
+
+        console.log('Donation Response:', donationResponse);
+        const razorpayOrderId = donationResponse?.data?.orderId;
+        console.log('razorpayOrderId:', razorpayOrderId);
+
+        if (razorpayOrderId) {
+          const options = {
+            key: 'rzp_test_o55kuxiGDRZxSG',  // Replace with your Razorpay key
+            amount: values.amount * 100,  // Convert to paise
+            currency: 'INR',
+            name: 'Dr Bhim Rao Ambedkar',
+            description: 'Test Transaction',
+            image: 'https://example.com/your_logo', // Update with your logo
+            order_id: razorpayOrderId,
+            callback_url: 'http://192.168.0.128:8080/api/collection/verify-payment', // Update with your server URL
+            prefill: {
+              name: values.fullName,
+              email: values.email,
+              contact: values.phone,
+            },
+            theme: {
+              color: '#3399cc',
+            },
+          };
+
+          if (window.Razorpay) {
+            const rzp1 = new window.Razorpay(options);
+            console.log('Razorpay object is available:', window.Razorpay);
+
+            rzp1.open();
+
+            rzp1.on('payment.success', async (paymentResponse) => {
+              console.log('Payment Success:', paymentResponse);
+
+              const paymentId = paymentResponse.razorpay_payment_id;  // Payment ID
+              const orderId = paymentResponse.order_id;      // Order ID
+              const signatureId = paymentResponse.razorpay_signature;   // Signature
+
+              console.log('Sending payment data:', {
+                payment_id: paymentId,
+                order_id: orderId,
+                signature_id: signatureId,
+              });
+
+              if (paymentId && orderId && signatureId) {
+                try {
+                  const response = await fetch('http://192.168.0.128:8080/api/collection/verify-payment', { // Update URL
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                      payment_id: paymentId,
+                      order_id: orderId,
+                      signature_id: signatureId,
+                    }),
+                  });
+
+                  const data = await response.json();
+                  console.log('Payment verification response:', data);
+
+                  if (data.success) {
+                    console.log('Payment verified successfully!');
+                  } else {
+                    console.error('Payment verification failed');
+                  }
+                } catch (error) {
+                  console.error('Error verifying payment:', error);
+                }
+              }
+            });
+
+            rzp1.on('payment.failed', (paymentError) => {
+              console.error('Payment Failed:', paymentError);
+            });
+          } else {
+            console.error("Razorpay object is not available. Please try again later.");
+          }
+        }
+
+        setTimeout(() => {
+          resetForm();
+        }, 6000);
+      } catch (error) {
+        console.error('Donation submission failed:', error);
+      }
     },
   });
+
   return (
     <Container className="py-5">
       <Row className="justify-content-center">
@@ -70,9 +169,8 @@ const DonationDonate = () => {
                         value={formik.values.amount}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        onKeyPress={handleKeyPress}
                         className="py-2 shadow-sm"
-                              placeholder="Enter your Amount"
+                        placeholder="Enter your Amount"
                         isInvalid={formik.touched.amount && formik.errors.amount}
                         required
                       />
@@ -88,7 +186,6 @@ const DonationDonate = () => {
                         value={formik.values.fullName}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        onKeyPress={handleKeyPress}
                         className="py-2 shadow-sm"
                         placeholder="Enter your full name"
                         isInvalid={formik.touched.fullName && formik.errors.fullName}
@@ -109,7 +206,6 @@ const DonationDonate = () => {
                         value={formik.values.email}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        onKeyPress={handleKeyPress}
                         className="py-2 shadow-sm"
                         placeholder="Enter your email address"
                         isInvalid={formik.touched.email && formik.errors.email}
@@ -127,7 +223,6 @@ const DonationDonate = () => {
                         value={formik.values.phone}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                                 onKeyPress={handleKeyPress}
                         className="py-2 shadow-sm"
                         placeholder="Enter your phone number"
                         isInvalid={formik.touched.phone && formik.errors.phone}
@@ -155,10 +250,8 @@ const DonationDonate = () => {
                   <p className="text-muted mt-3 small">Your donation is eligible for tax deduction under Section 80G</p>
                 </div>
               </Form>
-
-           
             </Card.Body>
-                  <ToastContainer />
+            <ToastContainer />
             <Card.Footer className="text-center py-3 bg-light text-muted">
               <small>Secure payment processing • All information is encrypted</small>
             </Card.Footer>

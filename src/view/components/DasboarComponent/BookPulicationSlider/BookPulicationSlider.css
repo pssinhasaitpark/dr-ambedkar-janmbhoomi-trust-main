@@ -5,7 +5,7 @@
 }
 .book-publish .slick-dots li button:before {
   font-size: 15px;
-  margin-top: 10px;
+  margin-top: 30px;
   padding: 0;
 }
 .book-image {
@@ -31,6 +31,7 @@
     width: 100%;
     margin-left: 0px;
   }
+
   .testimonial-card {
     width: 92%;
     max-height: 54rem;
@@ -40,22 +41,52 @@
     width: 100%;
     margin-left: 1rem;
   }
+
+
   .testimonial-card {
     width: 90%;
     max-height: 60rem;
   }}
-@media (min-width: 1025px) and (max-width: 1440px) {
+@media (min-width: 1025px) and (max-width: 1440px){
   .book-publish.slick-slider {
     width: 104%;
-    margin-left: 0rem;
+    margin-left: -2rem;
   }
   .testimonial-card {
     width: 90%;
-    max-height: 44rem;
+    max-height: 55rem;
   }}
-/* @media (min-width: 600px) and (max-width: 768px) {
-  .testimonial .slick-dots { display: none;}  .book-publish .slick-dots {
-    display: none;
+  @media (min-width: 900px) and (max-width: 1536px){
+   
+    .testimonial-card {
+      width: 90%;
+      max-height: 44rem;
+    }
   }
-}
-  */
+
+  @media (min-width: 800px) and (max-width: 1024px) {
+    .book-publish .slick-list {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  
+    .book-publish.slick-slider {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .book-image {
+      width: 100%;
+    }
+
+    .testimonial-card {
+      width: 92%;
+      max-height: 45rem;
+    }
+    .book-publish .arrow-right, .book-publish .arrow-left {
+      top: 50%;
+      font-size: 25px;
+    }
+    .book-publish .arrow-right {right:-30px;}
+.book-publish .arrow-left {left: -30px;}
+  }

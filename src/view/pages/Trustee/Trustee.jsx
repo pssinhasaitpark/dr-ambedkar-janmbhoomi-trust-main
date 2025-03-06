@@ -1,7 +1,7 @@
 import React from "react";
 import { award1, trustee1 } from "../../../assests/index";
 import { useTrustees } from "../../hooks"; 
-
+import './Trustee.css'
 const Trustee = () => {
   const { data, isLoading, error } = useTrustees();
 

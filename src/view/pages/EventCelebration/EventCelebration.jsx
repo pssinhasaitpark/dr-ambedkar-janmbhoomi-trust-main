@@ -43,7 +43,7 @@ const EventCelebration = () => {
               )}
               <h2 className="text-uppercase fs-1 mt-5 m-0 p-0 ">{event.title}</h2>
               <p className="mb-3 fs-5">{event.name}</p>
-              <div className="border border-2 mt-3 p-3">
+              <div className="border border-2 mt-3 px-3">
               <div
                 dangerouslySetInnerHTML={{
                   __html: event.description,
