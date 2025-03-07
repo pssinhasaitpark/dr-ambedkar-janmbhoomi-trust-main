@@ -24,7 +24,7 @@ const HistoryComponent = () => {
               </div>
             </div>
 
-            <div className="p-0 m-0 responsive-history-divumn col-lg-6 col-sm-12 ">
+            <div className="p-0 m-0 responsive-history-divumn col-lg-6 col-sm-12 p-lg-0 p-5">
               <h3 className="text-uppercase biography-header p-0 m-0 mt-2  fw-medium fs-1 ">
                 Historyof Janmabhoomi
               </h3>

@@ -58,45 +58,7 @@
   width: 68.2%;
 }
 
-/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait),(min-width: 1025px) and (max-width: 1440px),(min-width: 900px) and (max-width: 1536px) {
-  .biography-head { width: 100%;}
-  .side-line::after{ display: none;}
-  .ipad-bio{
-    margin-left: -1rem;
-  }
-  .biography-text{
-    padding: 1%;
-  }
-  .timeline-1 .event:before {
-    left: -12rem;
-    top: 10%;
-    font-size: 18px;
-  
-}
-}  */
 
-
-/* Existing styles here */
-
-@media (min-width: 800px) and (max-width: 2560px) {
-}
-.biography-head { width: 100%;}
-  .side-line::after{ display: none;}
-  .ipad-bio{
-    margin-left: -1rem;
-  }
-  .biography-text{
-    padding: 1%;
-  }
-  .timeline-1 .event:before {
-    left: -12rem;
-    top: 10%;
-    font-size: 18px;
-  
-}
-
-
-/* Mobile responsiveness */
 @media (max-width: 767px) {
   .timeline-1 .event:after {
     top: -3%;
@@ -132,8 +94,6 @@
     width: 100%;
     margin-left: 0%;
   }
-
-  /* Ensure the events list is visible */
   .timeline-1 li {
     margin-left: 0;
     padding-left: 0;
@@ -146,11 +106,10 @@
   }
 
   .biography-text {
-    padding: 1% 10px; /* Ensure text doesn't go off the screen */
+    padding: 1% 10px;
   }
 }
 
-/* For devices between 768px and 1024px, portrait mode */
 @media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .biography-head {
     width: 100%;
@@ -173,27 +132,14 @@
     top: 10%;
     font-size: 18px;
   }
+
 }
-
-@media (min-width: 800px) and (max-width: 2560px) {
-  .biography-head {
-    width: 100%;
-  }
-
+@media screen and (min-device-width:900px ) and (max-device-width: 1440px),(min-device-width:900px ) and (max-device-width: 1600px){
   .side-line::after {
     display: none;
   }
-
-  .ipad-bio {
-    margin-left: -1rem;
-  }
-
-  .biography-text {
-    padding: 1%;
-  }
-
   .timeline-1 .event:before {
-    left: -12rem;
+    left: -15rem;
     top: 10%;
     font-size: 18px;
   }

@@ -140,9 +140,9 @@ const GalleryPage = () => {
           </div>
 
           {data?.[0]?.birthplace_media?.length > 6 && (
-            <div className="text-center mt-4">
-              <button onClick={handleShowMore} className="btn btn-primary">
-                {showAllImages ? "Show Less" : "Read More"}
+            <div className="text-end mt-4">
+              <button onClick={handleShowMore} className="btn btn-primary ">
+                {showAllImages ? "Show Less" : "Load More..."}
               </button>
             </div>
           )}

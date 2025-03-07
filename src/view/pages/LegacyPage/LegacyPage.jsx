@@ -248,12 +248,13 @@ const LegacyPage = () => {
               <Form.Control
                 as="textarea"
                 rows={8}
-                className="mx-auto textarea-submit"
+                className="mx-auto textarea-submit form-control"
                 placeholder="A section to submit testimonials about Dr Ambedkar...."
                 value={testimonial.description}
                 onChange={handleDescriptionChange}
               />
             </Form.Group>
+
             <div className="d-flex justify-content-between p-1">
               <div
                 className="d-flex fs-4 text-light fw-medium ms-lg-5 cursor-pointer mt-3"
