@@ -9,11 +9,13 @@ import {
 const BookLayout = () => {
   return (
     <>
+          <div className='App'>
     <HeaderTop />
     <Header />
   <BookPage/>
     <Achievment />
     <Footer />
+    </div>
   </>
   )
 }

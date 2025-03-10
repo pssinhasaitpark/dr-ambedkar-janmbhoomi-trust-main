@@ -1,20 +1,22 @@
 import React from 'react'
 import {
-    Header,
-    HeaderTop,
-    Footer,
-    Achievment,
-  } from "../../components/index.js";
-  import { AwardPage } from '../../pages/index.js';
+  Header,
+  HeaderTop,
+  Footer,
+  Achievment,
+} from "../../components/index.js";
+import { AwardPage } from '../../pages/index.js';
 const AwardLayout = () => {
   return (
-<>
-    <HeaderTop />
-    <Header />
-    <AwardPage/> 
-    <Achievment />
-    <Footer />
-  </>
+    <>
+      <div className='App'>
+        <HeaderTop />
+        <Header />
+        <AwardPage />
+        <Achievment />
+        <Footer />
+      </div>
+    </>
   )
 }
 

@@ -54,6 +54,7 @@ const Testimonial = () => {
           dots: true,
         },
       },
+   
       {
         breakpoint: 768,
         settings: {

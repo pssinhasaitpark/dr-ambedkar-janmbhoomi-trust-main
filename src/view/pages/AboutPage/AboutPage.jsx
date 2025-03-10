@@ -1,5 +1,5 @@
 import React from "react";
-import "./HomeDashboard.css";
+import "./AboutPage.css";
 import { useAbouts } from "../../hooks/index.js";
 const HomeDashboard = () => {
   const { data, isLoading, error } = useAbouts();

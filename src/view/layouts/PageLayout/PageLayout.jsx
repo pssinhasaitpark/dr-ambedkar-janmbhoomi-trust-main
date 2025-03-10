@@ -4,7 +4,7 @@ import { Header, Footer, About, HeaderTop,PhotoGallery,Achievment,FaqSection, Bi
 
 function PageLayout() {
   return (
-    <div className="dashboard-container">
+    <div className="App">
      <HeaderTop/>
       <Header />
       <About />
@@ -14,7 +14,7 @@ function PageLayout() {
       <AccordianSection/>
       <HistoryComponent/>
       <TrusteeSlider/>
-    <FaqSection/>
+      <FaqSection/>
       <Achievment/>
       <Footer/>
 

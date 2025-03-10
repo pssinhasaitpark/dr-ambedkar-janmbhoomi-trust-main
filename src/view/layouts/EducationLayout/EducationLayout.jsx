@@ -9,11 +9,13 @@ import {
 const EducationLayout = () => {
   return (
     <>
+       <div className='App'>
     <HeaderTop />
     <Header />
     <Education />
     <Achievment />
     <Footer />
+    </div>
   </>
   )
 }

@@ -9,11 +9,13 @@ import {
 const TrusteeLayout = () => {
   return (
     <>
+     <div className="App">
     <HeaderTop />
     <Header />
   <Trustee/>
     <Achievment />
     <Footer />
+    </div>
   </>
   )
 }

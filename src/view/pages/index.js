@@ -1,4 +1,4 @@
-import HomeDashboard from "./HomeDashboard/HomeDashboard";
+import HomeDashboard from "./AboutPage/AboutPage";
 import BirthPlacePage from "./BirthPlacePage/BirthPlacePage";
 import Museum from "./Museum/Museum";
 import EventCelebration from "./EventCelebration/EventCelebration";

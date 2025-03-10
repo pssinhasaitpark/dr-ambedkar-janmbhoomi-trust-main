@@ -1,101 +1,51 @@
-.background-image{
-    background-image: url("../../../../assests//images/about.png");
+/* General Styles */
+.background-image {
+    background-image: url("../../../../assests/images/about.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%; 
-}
-.badge-ambedkar {
+  }
+  .badge-ambedkar {
     font-family: Inter;
     font-weight: 600;
     font-size: 20px;
-    width:233px;
-    height:32px;
+    width: 233px;
+    height: 32px;
     border-radius: 0; 
-}
-.heading-ambedkar{
+  }
+  .heading-ambedkar {
     font-size: 45px;
     font-weight: 500;
-    text-shadow:2px 2px rgba(0,0,0,0.15)
-}
-.card-style{padding:10%;}
-.about-slider .slick-list{
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+  }
+  .card-style {padding: 10%;}
+  .about-slider .slick-list {
     max-height: 700px;
     background-size: cover;
-}
-.no-background-table {background-color: transparent !important;}
-.no-background-table td { background-color: transparent !important; }
-.no-background-table th {background-color: transparent !important;}
-.no-background-table td:first-child { width: 30%;}
-
-@media (min-width: 250px) and (max-width: 768px) {
-.card-style {
-    padding: 0%;}
-  
-    .ambedkar-responsive {
+  }
+  .no-background-table {background-color: transparent !important;}
+  .no-background-table td,
+  .no-background-table th {
+    background-color: transparent !important;
+  }
+  .no-background-table td:first-child {width: 30%;}
+  @media (min-width: 250px) and (max-width: 768px) {.card-style {padding: 1%;}
+  .ambedkar-responsive {
       font-size: 1.1rem !important;
       font-weight: 500 !important;
-  }}
-
-
-    @media screen and (min-width: 1280px) and (max-height: 720px) {
-      img.card-img-top {
-        height: 664px;
-
-    }
-    .card-style {
-      padding: 0%;}
-    }
-    
-    @media screen and (min-width: 1336px) and (max-height: 768px) {
-     
-        img.card-img-top {
-          height: 664px;
-      
-      }
-      .card-style {
-        padding: 0%;}
-    }
-    
-    @media screen and (min-width: 1440px) and (max-height: 900px) {
-      img.card-img-top {
-        height: 664px;
-    
-    }
-    .card-style {
-      padding: 0%;}
-    }
-    
-    @media screen and (min-width: 1536px) and (max-height: 864px) {
-      img.card-img-top {
-        height: 664px;
-    
-    }
-    .card-style {
-      padding: 0%;}
-      
-    }
-    
-    @media screen and (min-width: 1600px) and (max-height: 900px),(min-width: 800px) and (max-height: 1280px),(min-width: 1024px) and (max-height: 1366px) {
-      img.card-img-top {
-        height: 664px;
-    
-    }
-
-    }
-    
-    @media screen and  (min-width: 1024px) and (max-height: 1366px){
-      img.card-img-top {
-        height: 780px;
-    
-    }
-
+    }}
+  @media (min-width: 1280px) and (max-height: 720px),
+  (min-width: 1336px) and (max-height: 768px),
+  (min-width: 1440px) and (max-height: 900px),
+  (min-width: 1536px) and (max-height: 864px),
+  (min-width: 1600px) and (max-height: 900px) {
+    img.card-img-top {height: 664px;}
+   .card-style {padding: 2%;}}
+  @media screen and (min-width: 1024px) and (max-height: 1366px) {
+    img.card-img-top {height: 880px;} }
+  @media screen and (max-height: 1280px),
+  (min-width: 1024px) and (max-height: 1366px) {
+    img.card-img-top {
+      height: 764px; } }
   
-    }
-    @media screen and (min-width: 1024px) and (max-height: 1366px) {
-      img.card-img-top {
-        height: 864px;
-    
-    }
-
-    }
