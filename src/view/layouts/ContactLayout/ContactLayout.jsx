@@ -9,11 +9,13 @@ import {
 const ContactLayout = () => {
   return (
     <>
+     <div className='App'>
     <HeaderTop />
     <Header />
     <ContactPage/>
     <MediaFeed/>
     <Footer />
+    </div>
   </>
   )
 }

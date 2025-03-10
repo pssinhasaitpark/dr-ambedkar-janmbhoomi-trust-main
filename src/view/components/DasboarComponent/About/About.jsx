@@ -127,7 +127,7 @@ const About = () => {
               <div key={index} className="border-0">
                 <img
                   loading="lazy"
-                  className="card-img-top"
+                  className="card-img-top w-100"
                   src={image.src}
                   alt={image.alt}
                 />

@@ -5,11 +5,13 @@ import { HomeDashboard } from '../../pages/index.js';
 const AboutPage = () => {
   return (
     <>
+    <div className='App'>
      <HeaderTop />
       <Header />
       <HomeDashboard/>
       <Achievment />
       <Footer />
+      </div>
     </>
   )
 }

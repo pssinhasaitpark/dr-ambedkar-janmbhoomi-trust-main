@@ -9,11 +9,13 @@ import {
 const VisitorLayout = () => {
   return (
     <>
+        <div className="App">
     <HeaderTop />
     <Header />
   <VisitorPage  />
     <Achievment />
     <Footer />
+    </div>
   </>
   )
 }

@@ -8,12 +8,14 @@ import {
 import { BookDetailPage } from '../../pages/index.js';
 const BookListLayout = () => {
   return (
-    <>
+    <>    
+      <div className='App'>
       <HeaderTop />
       <Header />
       <BookDetailPage />
       <Achievment />
       <Footer />
+      </div>
     </>
   )
 }

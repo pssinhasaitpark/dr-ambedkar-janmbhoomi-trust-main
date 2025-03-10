@@ -9,11 +9,13 @@ import { EventCelebration } from '../../pages/index.js'
 const EventCelebrationLayout = () => {
   return (
     <>
+      <div className='App'>
       <HeaderTop />
       <Header />
       <EventCelebration />
       <Achievment />
       <Footer />
+      </div>
     </>
   )
 }

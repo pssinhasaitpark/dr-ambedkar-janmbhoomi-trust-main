@@ -9,11 +9,13 @@ import {
 const NewsListLayout = () => {
   return (
     <>
+      <div className='App'>
     <HeaderTop />
     <Header />
   <NewsList/>
     <Achievment />
     <Footer />
+    </div>
   </>
   )
 }

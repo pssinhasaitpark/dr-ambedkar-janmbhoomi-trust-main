@@ -1,20 +1,22 @@
 import React from 'react'
 import {
-    Header,
-    HeaderTop,
-    Footer,
-    Achievment,
-  } from "../../components/index.js";
-  import { Museum} from "../../pages/index.js";
+  Header,
+  HeaderTop,
+  Footer,
+  Achievment,
+} from "../../components/index.js";
+import { Museum } from "../../pages/index.js";
 const MuseumLayout = () => {
   return (
     <>
-    <HeaderTop />
-    <Header />
-  <Museum/>
-    <Achievment />
-    <Footer />
-  </>
+      <div className='App'>
+        <HeaderTop />
+        <Header />
+        <Museum />
+        <Achievment />
+        <Footer />
+      </div>
+    </>
   )
 }
 

@@ -48,11 +48,14 @@ const Biography = () => {
               </div>
             </div>
             <div className="biography-component">
-              <ul className="timeline-1  mt-4">
+              <ul className="timeline-1 mt-5">
                 {biographyData.map((event, index) => (
-                  <li className="event fs-4 " key={index} data-date={event.date}>
-                    <p className="biography-text fs-5 ms-lg-5 ps-lg-5 py-lg-0 py-3
-                    ">{event.text}</p>
+                  <li className="event fs-4" key={index} data-date={event.date}>
+                    <div className="event-container">
+                      <p className="biography-text fs-5 ms-lg-5 ps-lg-5 py-lg-0 py-3 mb-5">
+                        {event.text}
+                      </p>
+                    </div>
                   </li>
                 ))}
               </ul>

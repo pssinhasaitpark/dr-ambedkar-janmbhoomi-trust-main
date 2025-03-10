@@ -1,20 +1,22 @@
 import React from 'react'
 import {
-    Header,
-    HeaderTop,
-    Footer,
-    Achievment,
-  } from "../../components/index.js";
-  import { LegacyPage } from '../../pages/index.js';
+  Header,
+  HeaderTop,
+  Footer,
+  Achievment,
+} from "../../components/index.js";
+import { LegacyPage } from '../../pages/index.js';
 const LegacyLayout = () => {
   return (
     <>
-    <HeaderTop />
-    <Header />
- <LegacyPage />
-    <Achievment />
-    <Footer />
-  </>
+      <div className='App'>
+        <HeaderTop />
+        <Header />
+        <LegacyPage />
+        <Achievment />
+        <Footer />
+      </div>
+    </>
   )
 }
 

@@ -10,11 +10,13 @@ import { BirthPlacePage } from "../../pages/index.js";
 const BirthPlace = () => {
   return (
     <>
+       <div className='App'>
       <HeaderTop />
       <Header />
     <BirthPlacePage/>
       <Achievment />
       <Footer />
+      </div>
     </>
   );
 };
