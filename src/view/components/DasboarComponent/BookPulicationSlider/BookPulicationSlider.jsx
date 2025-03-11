@@ -12,7 +12,7 @@ function SampleNextArrow(props) {
   const { onClick } = props;
   return (
     <div
-      className="d-block position-absolute top-50 translate-middle-y arrow-right"
+      className="d-block position-absolute top-50 translate-middle-y arrow-right cursor-pointer"
       onClick={onClick}
     >
       <IoIosArrowRoundForward
@@ -25,7 +25,7 @@ function SamplePrevArrow(props) {
   const { onClick } = props;
   return (
     <div
-      className="d-block position-absolute top-50 translate-middle-y arrow-left"
+      className="d-block position-absolute top-50 translate-middle-y arrow-left cursor-pointer"
       onClick={onClick}
     >
       <IoIosArrowRoundBack

@@ -75,7 +75,7 @@ const About = () => {
           >
             <Card className="custom-card bg-transparent border-0">
               <Card.Body className="card-style mt-4">
-                <h5 className="badge-ambedkar badge bg-primary text-white mb-3">
+                <h5 className="badge-ambedkar badge bg-primary text-white mb-3 ms-1">
                   {name}
                 </h5>
 

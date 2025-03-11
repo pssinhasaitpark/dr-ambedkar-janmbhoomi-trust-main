@@ -42,6 +42,7 @@ const Trustee = () => {
                       loading="lazy"
                       src={trustee.image || trustee1}  
                       alt={trustee.full_name}
+                      style={{ width: "100%", height: "12rem" }}
                       className="img-trustee w-100"
                     />
                   </div>
