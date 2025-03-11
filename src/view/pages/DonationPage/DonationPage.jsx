@@ -255,6 +255,9 @@ const DonationPage = () => {
       <div className=" text-center">
       <button className="btn btn-primary w-25" onClick={scrollToTop}><Link to="/donate" className="text-light fs-4 text-decoration-none w-50">Donate</Link></button></div>
     </div>
+
+    
+
   );
 };
 
