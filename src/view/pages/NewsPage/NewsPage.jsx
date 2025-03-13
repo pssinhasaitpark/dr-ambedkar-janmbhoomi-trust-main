@@ -53,7 +53,7 @@ const NewsPage = () => {
                 />
                 </Col>
                 <Col lg={7} md={12} className="responsive-about-column" >
-                <h5 className="mb-3 fs-4 ">{data[0].headline}</h5>
+                {/* <h5 className="mb-3 fs-4 ">{data[0].headline}</h5> */}
                 <div
                   className="description"
                   dangerouslySetInnerHTML={{
@@ -76,6 +76,7 @@ const NewsPage = () => {
           </Card>
         </Col>
       </Row>
+      {/* //////second section */}
       <div className=" border p-4 mb-3">
         {data.slice(1).map((newsItem, index) => {
           if (index % 2 === 0) {
@@ -138,9 +139,9 @@ const NewsPage = () => {
                   />
                 </Col>
                 <Col lg={7} md={12} className="responsive-about-column">
-                  <h5 className="mb-3 fs-4">
+                  {/* <h5 className="mb-3 fs-4">
                     {data[1]?.headline || data[0].headline}
-                  </h5>{" "}
+                  </h5>{" "} */}
                   <div
                     className="description"
                     dangerouslySetInnerHTML={{
@@ -174,7 +175,7 @@ const NewsPage = () => {
             <Col className="p-0 m-0 responsive-about-column">
               <Card className="">
                 <Card.Body>
-                  <h5 className="mb-3 fs-4">{item.headline}</h5>
+                  {/* <h5 className="mb-3 fs-4">{item.headline}</h5> */}
                   <div
                     className="description"
                     dangerouslySetInnerHTML={{
@@ -202,3 +203,34 @@ const NewsPage = () => {
 };
 
 export default NewsPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
