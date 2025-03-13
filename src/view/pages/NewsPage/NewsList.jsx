@@ -17,7 +17,10 @@ const NewsList = () => {
   }
   return (
     <div className='all-section-width '>
-      <img src={data.images[0]} alt={data.headline} className='news-image ms-lg-1 ms-0'/>      <div className='border border-dark mt-3 p-2'>
+         <div className="text-center">
+      <img src={data.images[0]} alt={data.headline} className='news-image ms-lg-1 ms-0'/>      
+      </div>
+      <div className='border border-dark mt-3 p-2'>
       <h5 className='p-0 m-0 ms-lg-1 ms-1 my-3 fs-4 '>{data.headline}</h5>
       <div dangerouslySetInnerHTML={{ __html: data.description }} className='fs-4 mt-3 ms-lg-2 ms-1 p-1'/>
       <p className='fs-4 p-0 m-0 ms-lg-1 ms-1 'style={{ marginLeft: 0 }}>{data.latest_news}</p>

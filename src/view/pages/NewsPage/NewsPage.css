@@ -10,6 +10,7 @@
     width: 50%;
     height: 30rem;
 }
+
 @media (min-width: 250px) and (max-width: 768px) {
     .responsive-about{
         flex-direction: column !important;

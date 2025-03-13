@@ -5,7 +5,7 @@ import { Container, Form, Button, Card, Row, Col } from 'react-bootstrap';
 import { useDonates } from '../../hooks/index';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { ToastContainer,toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import axios from 'axios'; 
 
 const phoneRegExp = /^(\+?\d{0-9})?\s?-?\s?(\(?\d{7}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
@@ -222,7 +222,7 @@ const DonationDonate = () => {
                 </div>
               </Form>
             </Card.Body>
-            <ToastContainer />
+            {/* <ToastContainer /> */}
             <Card.Footer className="text-center py-3 bg-light text-muted">
               <small>Secure payment processing • All information is encrypted</small>
             </Card.Footer>

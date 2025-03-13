@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const { mutate: subscribe, isLoading } = useSubscribes();
-  const [subscribed, setSubscribed] = useState(false);
+  const [subscribed, setSubscribed] = useState(false); 
   const { data: socialLinks, isLoading: socialLoading } = useSocials();
 
   const scrollToTop = () => {
@@ -76,7 +76,12 @@ const Footer = () => {
       });
     },
   });
-
+  const handleEmailChange = (e) => {
+    formik.handleChange(e);
+    if (subscribed) {
+      setSubscribed(false); // Reset to "Subscribe" when user types a new email
+    }
+  };
   return (
     <>
       <div className="footer bg-dark text-light py-5">
@@ -132,7 +137,7 @@ const Footer = () => {
                     className="form-control newsletter-email border rounded-start rounded-0"
                     placeholder="Enter Email"
                     value={formik.values.email}
-                    onChange={formik.handleChange}
+                    onChange={handleEmailChange}
                     onBlur={formik.handleBlur}
                     onKeyPress={handleKeyPress}
                   />
