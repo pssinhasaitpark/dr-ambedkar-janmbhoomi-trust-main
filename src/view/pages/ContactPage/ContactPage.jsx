@@ -11,7 +11,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 const mapIconLogo = new L.Icon({
   iconUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png", 
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -66,12 +66,12 @@ const ContactCard = ({ image, title, content, type }) => {
   );
 };
 const ContactPage = () => {
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      formik.handleSubmit();
-    }
-  };
+  // const handleKeyPress = (e) => {
+  //   if (e.key === 'Enter') {
+  //     e.preventDefault();
+  //     formik.handleSubmit();
+  //   }
+  // };
 
   const { mutate } = useContacts();
 
@@ -88,7 +88,7 @@ const ContactPage = () => {
       mutate(values);
       setTimeout(() => {
         resetForm();
-      }, 6000); 
+      }, 6000);
     },
   });
   const position = [22.5505, 75.7625];
@@ -170,7 +170,7 @@ const ContactPage = () => {
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.first_name}
-                      onKeyPress={handleKeyPress}
+                      // onKeyPress={handleKeyPress}
                       required
                     />
                     {formik.touched.first_name && formik.errors.first_name && (
@@ -188,7 +188,7 @@ const ContactPage = () => {
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.last_name}
-                      onKeyPress={handleKeyPress}
+                      // onKeyPress={handleKeyPress}
                       required
                     />
                     {formik.touched.last_name && formik.errors.last_name && (
@@ -206,7 +206,7 @@ const ContactPage = () => {
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.phone_no}
-                      onKeyPress={handleKeyPress}
+                      // onKeyPress={handleKeyPress}
                       required
                     />
                     {formik.touched.phone_no && formik.errors.phone_no && (
@@ -224,7 +224,7 @@ const ContactPage = () => {
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.email}
-                      onKeyPress={handleKeyPress}
+                      // onKeyPress={handleKeyPress}
                       required
                     />
                     {formik.touched.email && formik.errors.email && (
@@ -240,7 +240,7 @@ const ContactPage = () => {
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.location}
-                      onKeyPress={handleKeyPress}
+                      // onKeyPress={handleKeyPress}
                       required
                     />
                     {formik.touched.location && formik.errors.location && (

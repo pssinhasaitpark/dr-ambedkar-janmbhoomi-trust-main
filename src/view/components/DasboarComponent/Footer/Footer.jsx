@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
-import './Footer.css';
-import { useFormik } from 'formik';
-import * as yup from 'yup';
-import { useSubscribes,useSocials } from "../../../hooks/index.js";
-import { yt, fb, app, insta } from "../../../../assests/index.js";
+import React, { useState } from "react";
+import "./Footer.css";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import { useSubscribes, useSocials } from "../../../hooks/index.js";
+// import { yt, fb, app, insta } from "../../../../assests/index.js";
 import FooterBottom from "./FooterBottom.jsx";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
+import { RiFacebookCircleLine } from "react-icons/ri";
+import { FiInstagram } from "react-icons/fi";
+import { FiYoutube } from "react-icons/fi";
 const Footer = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const { mutate: subscribe, isLoading } = useSubscribes();
-  const [subscribed, setSubscribed] = useState(false); 
+  const [subscribed, setSubscribed] = useState(false);
   const { data: socialLinks, isLoading: socialLoading } = useSocials();
 
   const scrollToTop = () => {
@@ -18,10 +21,10 @@ const Footer = () => {
   };
 
   const openExternalLink = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
+    window.open(url, "_blank", "noopener,noreferrer");
   };
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
       formik.handleSubmit();
     }
@@ -48,7 +51,7 @@ const Footer = () => {
         /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
         "Invalid email address"
       )
-      .required("Email is required"),
+     
   });
 
   const formik = useFormik({
@@ -79,7 +82,7 @@ const Footer = () => {
   const handleEmailChange = (e) => {
     formik.handleChange(e);
     if (subscribed) {
-      setSubscribed(false); // Reset to "Subscribe" when user types a new email
+      setSubscribed(false);
     }
   };
   return (
@@ -88,12 +91,17 @@ const Footer = () => {
         <div className="p-0 m-0">
           <div className="row m-0 mb-5">
             <div className="col-md-4 footer-section w-25 ms-5 mt-2 p-0 mx-0 ps-4">
-              <span className="ms-4 badge-ambedkar badge bg-primary mb-3">Dr Bhimrao Ambedkar</span>
-              <h5 className="mb-4 ms-4 fs-4 lh-base">Bhim Janmabhoomi, Dr. Bhimrao Ambedkar Memorial Mhow</h5>
+              <span className="ms-4 badge-ambedkar badge bg-primary mb-3">
+                Dr Bhimrao Ambedkar
+              </span>
+              <h2 className="mb-4 ms-4 fs-4 lh-base">
+                Bhim Janmabhoomi, Dr. Bhimrao Ambedkar Memorial Mhow
+              </h2>
               <div>
-                <h6 className="ms-4 fs-4">Locate us</h6>
+                <h3 className="ms-4 fs-4">Locate us</h3>
                 <p className="text-light ms-4 fs-5 lh-lg">
-                  Dr. Ambedkar Nagar (Mhow), Indore district, Madhya Pradesh, India
+                  Dr. Ambedkar Nagar (Mhow), Indore district, Madhya Pradesh,
+                  India
                 </p>
               </div>
             </div>
@@ -107,7 +115,11 @@ const Footer = () => {
                     <div className="ms-lg-5">
                       {quickLinks1.map((link, index) => (
                         <div key={index}>
-                          <Link to={link.path} className="text-light text-decoration-none fs-5 lh-lg" onClick={scrollToTop}>
+                          <Link
+                            to={link.path}
+                            className="text-light text-decoration-none fs-5 lh-lg"
+                            onClick={scrollToTop}
+                          >
                             {link.name}
                           </Link>
                         </div>
@@ -117,7 +129,11 @@ const Footer = () => {
                   <div className="col-6 ps-lg-4 left-footer">
                     {quickLinks2.map((link, index) => (
                       <div key={index}>
-                        <Link to={link.path} className="text-light text-decoration-none fs-5 lh-lg" onClick={scrollToTop}>
+                        <Link
+                          to={link.path}
+                          className="text-light text-decoration-none fs-5 lh-lg"
+                          onClick={scrollToTop}
+                        >
                           {link.name}
                         </Link>
                       </div>
@@ -127,10 +143,15 @@ const Footer = () => {
               </div>
             </div>
             <div className="col-md-4 mt-5 footer-section p-lg-0 m-0 p-2">
-              <h5 className="mb-3 fs-4 fw-medium mt-3 ps-lg-0 ps-5">Sign up for our newsletter</h5>
+              <h3 className="mb-3 fs-4 fw-medium mt-3 ps-lg-0 ps-5">
+                Sign up for our newsletter
+              </h3>
 
               <form onSubmit={formik.handleSubmit}>
-                <div className="d-flex mt-4 mb-4 " style={{ height: "60px", width: "102%" }}>
+                <div
+                  className="d-flex mt-4 "
+                  style={{ height: "60px", width: "102%" }}
+                >
                   <input
                     type="email"
                     name="email"
@@ -144,29 +165,69 @@ const Footer = () => {
                   <button
                     type="submit"
                     className="btn btn-primary  px-5 text-light fs-4 fw-medium rounded-end rounded-0"
-                    disabled={isLoading || !formik.isValid || formik.isSubmitting}
+                    disabled={
+                      isLoading || !formik.isValid || formik.isSubmitting
+                    }
                   >
-                    {subscribed ? 'Subscribed' : isLoading ? 'Subscribing...' : 'Subscribe'}
+                    {subscribed
+                      ? "Subscribed"
+                      : isLoading
+                      ? "Subscribing..."
+                      : "Subscribe"}
                   </button>
                 </div>
 
-                {formik.touched.email && formik.errors.email && <div className="text-danger">{formik.errors.email}</div>}
-                {errorMessage && <div className="text-danger">{errorMessage}</div>}
+                {formik.touched.email && formik.errors.email && (
+                  <div className="text-danger">{formik.errors.email}</div>
+                )}
+                {errorMessage && (
+                  <div className="text-danger">{errorMessage}</div>
+                )}
               </form>
-              <div className="d-flex social-icons-container">
+              <div className="d-flex social-icons-container mt-4">
                 {!socialLoading && socialLinks && (
                   <>
-                    <Link to="#" onClick={() => openExternalLink(socialLinks.whatsapp.link)}>
-                      <img src={app} alt="WhatsApp" className="me-3 w-100 pe-2" />
+                    <Link
+                      to="#"
+                      onClick={() =>
+                        openExternalLink(socialLinks.whatsapp.link)
+                      } aria-label="Follow us on WhatsApp"
+                    >
+                      <div className="icon-container px-2 py-2 rounded-2 bg-light mt-2 me-3">
+                        <FaWhatsapp className="fs-2 " />
+                      </div>
                     </Link>
-                    <Link to="#" onClick={() => openExternalLink(socialLinks.facebook.link)}>
-                      <img src={fb} alt="Facebook" className="me-3 w-100 pe-2" />
+                    <Link
+                      to="#"
+                      onClick={() =>
+                        openExternalLink(socialLinks.facebook.link)
+                      }
+                       aria-label="Follow us on Facebook"
+                    >
+                      <div className=" icon-container px-2 py-2 rounded-2 bg-light mt-2 me-3">
+                        <RiFacebookCircleLine className="fs-2 " />{" "}
+                      </div>
                     </Link>
-                    <Link to="#" onClick={() => openExternalLink(socialLinks.instagram.link)}>
-                      <img src={insta} alt="Instagram" className="me-3 w-100 pe-2" />
+                    <Link
+                      to="#"
+                      onClick={() =>
+                        openExternalLink(socialLinks.instagram.link)
+                      }
+                        aria-label="Follow us on Instagram"
+                    >
+                      {" "}
+                      <div className=" icon-container px-2 py-2 rounded-2 bg-light mt-2 me-3 ">
+                        <FiInstagram className="fs-2 " />
+                      </div>
                     </Link>
-                    <Link to="#" onClick={() => openExternalLink(socialLinks.youtube.link)}>
-                      <img src={yt} alt="YouTube" className="me-3 w-100 pe-2" />
+                    <Link
+                      to="#"
+                      onClick={() => openExternalLink(socialLinks.youtube.link)}
+                        aria-label="Follow us on YouTube"
+                    >
+                      <div className=" icon-container px-2 py-2 rounded-2 bg-light mt-2 ">
+                        <FiYoutube className="fs-2" />
+                      </div>
                     </Link>
                   </>
                 )}
@@ -182,23 +243,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

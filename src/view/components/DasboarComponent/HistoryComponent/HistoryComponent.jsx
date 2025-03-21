@@ -9,10 +9,10 @@ const HistoryComponent = () => {
     <div className="all-section-width py-5 ">
       <div className=" row mt-5">
         <div className="col-sm-12">
-          <div className="row responsive-history">
+          <div className="row ">
             <div
               
-              className=" image-container position-relative mb-4 mb-md-0 responsive-history-divumn col-lg-6 col-sm-12 "
+              className=" image-container position-relative mb-4 mb-md-0  col-lg-6 col-sm-12 "
             >
               <div className="image-border">
                 <Image
@@ -20,11 +20,12 @@ const HistoryComponent = () => {
                   alt="Dr. Bhimrao Ambedkar"
                 
                   className="ambedkar-image img-fluid"
+                  
                 />
               </div>
             </div>
 
-            <div className="p-0 m-0 responsive-history-divumn col-lg-6 col-sm-12 p-lg-0 p-5">
+            <div className="p-0 m-0  col-lg-6 col-sm-12 p-lg-0 p-5">
               <h3 className="text-uppercase biography-header p-0 m-0 mt-2  fw-medium fs-1 ">
                 Historyof Janmabhoomi
               </h3>
@@ -49,7 +50,7 @@ const HistoryComponent = () => {
                 </p>
               </div>
 
-              <div className="mb-5 mt-4">
+              <div className="mb-5 mt-4 ">
                 <p className="fs-4 fw-bold p-0 m-0 ">Legacy</p>
                 <p className="section-content fs-5 p-0 m-0 fw-normal lh-base mt-1">
                   Dr. Ambedkar's birthplace remains a sacred site for those

@@ -3,30 +3,24 @@ import { useGallerys } from "../../hooks/index";
 import "./GalleryPage.css";
 import { pgallery } from "../../../assests/index";
 import { initLightboxJS, SlideshowLightbox } from "lightbox.js-react";
-
 const GalleryPage = () => {
   useEffect(() => {
     initLightboxJS("Insert your License Key here", "Insert plan type here");
   }, []);
-
   const [activeTab, setActiveTab] = useState("birthplace");
   const { data, isLoading, error } = useGallerys();
   const [showAllImages, setShowAllImages] = useState(false);
-
   if (isLoading) {
     return <div className="spinner"></div>;
   }
-
   if (error) {
     return <div>Error fetching events: {error}</div>;
   }
-
   const renderImages = (mediaArray) => {
     const rows = [];
     for (let i = 0; i < mediaArray.length; i += 3) {
       rows.push(mediaArray.slice(i, i + 3));
     }
-
     return rows.map((row, rowIndex) => (
       <div key={rowIndex} className="row mt-4 m-0 p-0">
         {row.map((image, index) => (
@@ -43,21 +37,34 @@ const GalleryPage = () => {
       </div>
     ));
   };
-
   const galleryInfo = data?.[0]?.gallery_info;
   const galleryDescription = data?.[0]?.gallery_description;
-
   const handleTabClick = (tab) => {
     setActiveTab(tab);
+    setShowAllImages(false); 
   };
-
   const handleShowMore = () => {
     setShowAllImages(!showAllImages);
   };
-
+  const getMediaForActiveTab = () => {
+    switch (activeTab) {
+      case "birthplace":
+        return data?.[0]?.birthplace_media || [];
+      case "events":
+        return data?.[0]?.events_media || [];
+      case "exhibitions":
+        return data?.[0]?.exhibitions_media || [];
+      case "resources":
+        return data?.[0]?.online_media || [];
+      default:
+        return [];
+    }
+  };
+  const mediaForTab = getMediaForActiveTab();
+  const shouldShowLoadMore = mediaForTab.length > 6;
   return (
-    <div>
-      <div className="all-section-width">
+    <div className="all-section-width">
+      <div className="about-item">
         <div className="img-banner">
           <img src={pgallery} alt="about-image" className="mb-2 all-image" />
         </div>
@@ -70,12 +77,10 @@ const GalleryPage = () => {
             and exhibitions dedicated to his life and work.
           </p>
         </div>
-
         <div className="custom-tabs mb-2">
           <div className="tab-nav d-lg-flex justify-content-start fs-4">
             <div
-              className={`tab-link p-0 me-lg-3 ms-lg-0 ms-3 ${activeTab === "birthplace" ? "active" : ""
-                }`}
+              className={`tab-link p-0 me-lg-3 ms-lg-0 ms-3 ${activeTab === "birthplace" ? "active" : ""}`}
               onClick={() => handleTabClick("birthplace")}
             >
               BIRTHPLACE
@@ -99,55 +104,21 @@ const GalleryPage = () => {
               ONLINE RESOURCES
             </div>
           </div>
-
           <div className="tab-content">
-            {activeTab === "birthplace" && (
-              <div className="row mt-4 m-0">
-                {renderImages(
-                  showAllImages
-                    ? data?.[0]?.birthplace_media || []
-                    : data?.[0]?.birthplace_media?.slice(0, 6) || []
-                )}
-              </div>
-            )}
-            {activeTab === "events" && (
-              <div className="row mt-4 m-0">
-                {renderImages(
-                  showAllImages
-                    ? data?.[0]?.events_media || []
-                    : data?.[0]?.events_media?.slice(0, 6) || []
-                )}
-              </div>
-            )}
-            {activeTab === "exhibitions" && (
-              <div className="row mt-4 m-0">
-                {renderImages(
-                  showAllImages
-                    ? data?.[0]?.exhibitions_media || []
-                    : data?.[0]?.exhibitions_media?.slice(0, 6) || []
-                )}
-              </div>
-            )}
-            {activeTab === "resources" && (
-              <div className="row mt-4 m-0">
-                {renderImages(
-                  showAllImages
-                    ? data?.[0]?.online_media || []
-                    : data?.[0]?.online_media?.slice(0, 6) || []
-                )}
-              </div>
-            )}
+            <div className="row mt-4 m-0">
+              {renderImages(
+                showAllImages ? mediaForTab : mediaForTab.slice(0, 6)
+              )}
+            </div>
           </div>
-
-          {data?.[0]?.birthplace_media?.length > 6 && (
+          {shouldShowLoadMore && (
             <div className="text-end mt-4">
-              <button onClick={handleShowMore} className="btn btn-primary ">
+              <button onClick={handleShowMore} className="btn btn-primary">
                 {showAllImages ? "Show Less" : "Load More..."}
               </button>
             </div>
           )}
         </div>
-
         <div className="border border-2 mt-5 pe-1">
           {galleryInfo && (
             <p
@@ -158,11 +129,10 @@ const GalleryPage = () => {
             />
           )}
         </div>
-
         <div className="border border-2 mt-5 pe-1">
           {galleryDescription && (
             <p
-              className="fs-5 px-3 mt-2"
+              className="fs-5 px-3 mt-2 about-des"
               dangerouslySetInnerHTML={{
                 __html: galleryDescription,
               }}
@@ -173,5 +143,4 @@ const GalleryPage = () => {
     </div>
   );
 };
-
 export default GalleryPage;

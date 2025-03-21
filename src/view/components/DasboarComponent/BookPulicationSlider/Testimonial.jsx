@@ -1,7 +1,5 @@
 import React from "react";
 import "../BookPulicationSlider/BookPulicationSlider.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import { Card } from "react-bootstrap";

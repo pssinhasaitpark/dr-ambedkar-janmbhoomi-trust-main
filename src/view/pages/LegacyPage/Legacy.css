@@ -14,30 +14,14 @@
   max-width: 100%; 
   height: 190px; 
 }
-
 @media (min-width: 576px) {
-  .textarea-submit {
-    max-width: 540px; 
-  }
-}
-
+  .textarea-submit {max-width: 540px; }}
 @media (min-width: 768px) {
-  .textarea-submit {
-    max-width: 720px;
-  }
-}
-
+  .textarea-submit {max-width: 720px;}}
 @media (min-width: 992px) {
-  .textarea-submit {
-    max-width: 960px; 
-  }
-}
-
+  .textarea-submit {max-width: 960px; }}
 @media (min-width: 1200px) {
-  .textarea-submit {
-    max-width: 1503px; 
-  }
-}
+  .textarea-submit {max-width: 1503px; }}
 
 
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { useBooks } from "../../hooks/index";
-import { BookPulicationSlider } from "../../components/index";
+import { BookPulicationSlider  } from "../../components/index";
+
 const BookPage = () => {
   const { data, isLoading, error } = useBooks();
 
@@ -15,6 +16,7 @@ const BookPage = () => {
     <>
       <div className="all-section-width">
         <div className="mt-5 p-3">
+ 
           {data && data.length > 0 ? (
             data.map((book, index) => (
               <div key={index} className="event-item ">
@@ -39,6 +41,7 @@ const BookPage = () => {
                   <p>No images available</p>
                 )}
                 
+                        {/* <div className=""><BookData/></div> */}
                 <h2 className="text-uppercase fs-1 mt-5 m-0 p-0">{book.title}</h2>
                 <p className="mb-3 fs-5">{book.name}</p>
                 
