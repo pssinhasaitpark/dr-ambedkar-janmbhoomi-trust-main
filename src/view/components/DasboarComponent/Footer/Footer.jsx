@@ -3,7 +3,6 @@ import "./Footer.css";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { useSubscribes, useSocials } from "../../../hooks/index.js";
-// import { yt, fb, app, insta } from "../../../../assests/index.js";
 import FooterBottom from "./FooterBottom.jsx";
 import { Link } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
@@ -11,15 +10,13 @@ import { RiFacebookCircleLine } from "react-icons/ri";
 import { FiInstagram } from "react-icons/fi";
 import { FiYoutube } from "react-icons/fi";
 const Footer = () => {
-  const [errorMessage, setErrorMessage] = useState("");
   const { mutate: subscribe, isLoading } = useSubscribes();
   const [subscribed, setSubscribed] = useState(false);
-  const { data: socialLinks, isLoading: socialLoading } = useSocials();
 
+  const { data: socialLinks, isLoading: socialLoading } = useSocials();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
   const openExternalLink = (url) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
@@ -29,31 +26,26 @@ const Footer = () => {
       formik.handleSubmit();
     }
   };
-
   const quickLinks1 = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "History", path: "/history" },
     { name: "Books", path: "/book" },
   ];
-
   const quickLinks2 = [
     { name: "News", path: "/news" },
     { name: "Gallery", path: "/gallery" },
     { name: "Contact", path: "/contact" },
     { name: "Trustee", path: "/trustee" },
   ];
-
   const FormSchema = yup.object().shape({
     email: yup
       .string()
       .matches(
         /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
         "Invalid email address"
-      )
-     
+      ),
   });
-
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -64,16 +56,9 @@ const Footer = () => {
       subscribe(subscribeData, {
         onSuccess: () => {
           setSubscribed(true);
-          setErrorMessage("");
           resetForm();
         },
-        onError: (error) => {
-          const errorMsg = error?.response?.data?.message?.toLowerCase();
-          if (errorMsg?.includes("already subscribed")) {
-            setErrorMessage("This email is already subscribed.");
-          } else {
-            setErrorMessage("Something went wrong. Please try again.");
-          }
+        onError: () => {
           resetForm();
         },
       });
@@ -164,10 +149,8 @@ const Footer = () => {
                   />
                   <button
                     type="submit"
-                    className="btn btn-primary  px-5 text-light fs-4 fw-medium rounded-end rounded-0"
-                    disabled={
-                      isLoading || !formik.isValid || formik.isSubmitting
-                    }
+                    className="btn btn-primary  px-5 text-light fs-4 fw-medium rounded-end rounded-0 border-0"
+                    disabled={isLoading}
                   >
                     {subscribed
                       ? "Subscribed"
@@ -176,13 +159,6 @@ const Footer = () => {
                       : "Subscribe"}
                   </button>
                 </div>
-
-                {formik.touched.email && formik.errors.email && (
-                  <div className="text-danger">{formik.errors.email}</div>
-                )}
-                {errorMessage && (
-                  <div className="text-danger">{errorMessage}</div>
-                )}
               </form>
               <div className="d-flex social-icons-container mt-4">
                 {!socialLoading && socialLinks && (
@@ -191,7 +167,8 @@ const Footer = () => {
                       to="#"
                       onClick={() =>
                         openExternalLink(socialLinks.whatsapp.link)
-                      } aria-label="Follow us on WhatsApp"
+                      }
+                      aria-label="Follow us on WhatsApp"
                     >
                       <div className="icon-container px-2 py-2 rounded-2 bg-light mt-2 me-3">
                         <FaWhatsapp className="fs-2 " />
@@ -202,7 +179,7 @@ const Footer = () => {
                       onClick={() =>
                         openExternalLink(socialLinks.facebook.link)
                       }
-                       aria-label="Follow us on Facebook"
+                      aria-label="Follow us on Facebook"
                     >
                       <div className=" icon-container px-2 py-2 rounded-2 bg-light mt-2 me-3">
                         <RiFacebookCircleLine className="fs-2 " />{" "}
@@ -213,7 +190,7 @@ const Footer = () => {
                       onClick={() =>
                         openExternalLink(socialLinks.instagram.link)
                       }
-                        aria-label="Follow us on Instagram"
+                      aria-label="Follow us on Instagram"
                     >
                       {" "}
                       <div className=" icon-container px-2 py-2 rounded-2 bg-light mt-2 me-3 ">
@@ -223,7 +200,7 @@ const Footer = () => {
                     <Link
                       to="#"
                       onClick={() => openExternalLink(socialLinks.youtube.link)}
-                        aria-label="Follow us on YouTube"
+                      aria-label="Follow us on YouTube"
                     >
                       <div className=" icon-container px-2 py-2 rounded-2 bg-light mt-2 ">
                         <FiYoutube className="fs-2" />

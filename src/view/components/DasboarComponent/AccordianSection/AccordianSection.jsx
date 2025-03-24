@@ -11,7 +11,7 @@ const AccordianSection = () => {
       <div className="accordian-start">
         <div className="col-sm-12 accordian-started">
           <div className="row m-0">
-            <div className="col-sm-4 border border-dark rounded m-3 Accordian-width ">
+            <div className="col-sm-4 border border-dark rounded m-3 Accordian-width mb-4 ">
               <ul className="fs-5 list-unstyled mt-3 mb-3  ">
                 <li className="border-bottom fs-4    accordian-list hover-li fw-normal border-2">
                   <Link to="/about" className="text-dark text-decoration-none justify-content-between d-flex  " onClick={scrollToTop}>

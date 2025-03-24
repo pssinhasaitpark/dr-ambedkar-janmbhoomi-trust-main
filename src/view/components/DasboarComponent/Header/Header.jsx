@@ -12,36 +12,37 @@ const Header = () => {
     <Navbar
       expand="lg"
       sticky="top"
+      
       className="header-nav all-background p-0"
     >
       <Container className="p-0 ">
-        <Navbar.Toggle aria-controls="navbar" className=" border-0  fs-6 rounded-0" />
+        <Navbar.Toggle aria-controls="navbar" className=" border-0  fs-6 rounded-0" style={{filter:"invert(1)"}}/>
 
         <Navbar.Collapse id="navbar">
           <Nav className="mx-auto">
-            <Link to="/" className="header-nav pe-3 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
+            <Link to="/" className="header-nav pe-3 ms-3 text-light text-decoration-none" onClick={scrollToTop}>
               Home
             </Link>
-            <Link to="/about" className="header-nav pe-3 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
+            <Link to="/about" className="header-nav pe-3 ms-3 text-light text-decoration-none" onClick={scrollToTop}>
               About
             </Link>
-            <Link to="/history" className="header-nav pe-2 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
+            <Link to="/history" className="header-nav pe-2 ms-3 text-light text-decoration-none" onClick={scrollToTop}>
               History
             </Link>
-            <Link to="/book" className="header-nav pe-2 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
+            <Link to="/book" className="header-nav pe-2 ms-3 text-light text-decoration-none" onClick={scrollToTop}>
               Books
             </Link>
-            <Link to="/news" className="header-nav pe-2 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
+            <Link to="/news" className="header-nav pe-2 ms-3 text-light text-decoration-none" onClick={scrollToTop}>
               News
             </Link>
-            <Link to="/gallery" className="header-nav pe-2 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
+            <Link to="/gallery" className="header-nav pe-2 ms-3 text-light text-decoration-none" onClick={scrollToTop}>
               Gallery
             </Link>
-            <Link to="/contact" className="header-nav pe-2 ms-3 text-light text-decoration-none"  onClick={scrollToTop}>
+            <Link to="/contact" className="header-nav pe-2 ms-3 text-light text-decoration-none" onClick={scrollToTop}>
               Contact
             </Link>
 
-            <div className="d-lg-none d-block mt-3 ms-2">
+            <div className="d-lg-none d-block mt-3 ms-2 ">
               <div>
                 <div className="d-flex align-items-center">
                   <Link to="tel:+911234567891">

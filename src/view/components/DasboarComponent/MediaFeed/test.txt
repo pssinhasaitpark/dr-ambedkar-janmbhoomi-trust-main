@@ -1,0 +1,389 @@
+/* .book-publish .slick-slide img {max-height: 283px;} */
+.testimonial-card {
+  width: 94%;
+  min-height: 435px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  box-sizing: border-box; 
+}
+.book-publish .slick-dots li button:before {
+  font-size: 15px;
+  margin-top: -1rem;
+  padding: 0;
+}
+.testimonial .slick-dots li button:before {
+  font-size: 15px;
+  margin-top: 1rem;
+  padding: 0;
+}
+.book-image {
+  width: 100%;
+  height: 283px; 
+  object-fit: fill; 
+  padding: 4%;
+}
+.trustee-image {
+  height: 12.5rem;
+  width: 98%;
+  padding: 4px;
+  object-fit: cover;
+  display: block;
+}
+.book-publish .slick-list {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.book-publish .arrow-right {right: 30px;}
+.book-publish .arrow-left {left: 30px;}
+.book-publish.slick-slider {
+  width: 97%;
+  margin-left: 1.6rem;
+}
+@media (min-width: 250px) and (max-width: 768px) {
+  .book-publish .slick-list {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .book-publish.slick-slider {
+    width: 100%;
+    margin-left: 0;
+  }
+  .testimonial-card {
+    width: 92%;
+    min-height: 400px; 
+  }}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .book-publish.slick-slider {
+    width: 96%;
+    margin-left: 1rem;
+  }
+  .testimonial-card {
+    width: 90%;
+    min-height: 450px;
+  }}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .book-publish.slick-slider {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .testimonial-card {
+    width: 90%;
+    min-height: 500px; 
+  }}
+@media (min-width: 900px) and (max-width: 1536px) {
+  .testimonial-card {
+    width: 90%;
+    min-height: 595px; 
+  }}
+@media (min-width: 800px) and (max-width: 1024px) {
+  .book-publish .slick-list {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .book-publish.slick-slider {
+    width: 90%;
+    margin-left: 3rem;
+  }
+  .trustee-image{width: 100%;}
+  .book-image {width: 100%;}
+  .testimonial-card {
+    width: 92%;
+    min-height: 896px;
+}
+  .book-publish .arrow-right, .book-publish .arrow-left {
+    top: 50%;
+    font-size: 25px;
+  }
+  .book-publish .arrow-right {right: -30px;}
+  .book-publish .arrow-left {left: -30px;}}
+
+/* .trustee-image{
+  width: 100%;
+  height: 200px; 
+  object-fit: cover; 
+  padding: 4%;
+} */
+
+/* .book-image {
+  width: 98%;
+  padding: 4px;
+} */
+
+
+
+
+
+
+import React from "react";
+import { useNews } from "../../hooks/index";
+import { Link } from "react-router-dom";
+import { news1 } from "../../../assests/index";
+import { Row, Col, Card } from "react-bootstrap";
+import "./NewsPage.css";
+const NewsPage = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const { data, isLoading, error } = useNews();
+  if (isLoading) {
+    return <div className="spinner"></div>;
+  }
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+  if (!data || !Array.isArray(data) || data.length === 0) {
+    return <p>No news available.</p>;
+  }
+  const truncateDescription = (text, maxLength = 1000) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "...";
+    }
+    return text;
+  };
+  return (
+    <div className="all-section-width">
+      <div className="img-banner">
+        <img src={news1} alt="about-image" className="mb-2 all-image" />
+      </div>
+
+      <div className="mt-5 mb-4">
+        <h2 className="text-uppercase fs-1 m-0 p-0">News and Updates</h2>
+        <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
+      </div>
+      <Row className="mb-4 row-newspage responsive-about">
+        <Col key={data[0]._id} lg={12} md={12} sm={12} className="p-0 m-3">
+          <h5 className="mb-3 fs-4">{data[0]?.headline || 'No headline available'}</h5>
+          <Card className="border-1 rounded-0">
+            <Card.Body>
+              <Row>
+                <Col lg={5} md={12} className="mb-3 mb-lg-0 responsive-about-column">
+                  <img
+                    src={data[0]?.images[0] || ''}
+                    alt={data[0]?.headline || 'No image available'}
+                    className="w-100 h-100 object-fit-cover"
+                  />
+                </Col>
+                <Col lg={7} md={12} className="responsive-about-column">
+                  <div
+                    className="description"
+                    dangerouslySetInnerHTML={{
+                      __html: truncateDescription(data[0]?.description || '', 1000),
+                    }}
+                  />
+                  <ul className="lh-base">
+                    {data[0]?.latest_news
+                      ?.split(":")
+                      .slice(1)
+                      .map((event, index) => (
+                        <li key={index} className="fs-6 ms-4">
+                          {event.trim()}
+                        </li>
+                      ))}
+                  </ul>
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+      <div className="border p-4 mb-3">
+        <Row className="mb-4 p-0 m-0 responsive-about">
+          <Col key={data[1]?._id} lg={6} md={6} sm={12} className="p-0 m-0">
+            <Card className="border-0">
+              <Row className="responsive-row">
+                <Col xs={5} className="responsive-about-column">
+                  <img
+                    src={data[1]?.images[0] || ''}
+                    alt={data[1]?.headline || 'No image available'}
+                    className="newspage-image"
+                  />
+                </Col>
+                <Col xs={7} className="responsive-about-column">
+                  <p className="fs-5 m-0 p-0">{data[1]?.headline || 'No headline available'}</p>
+                  <div
+                    className="description"
+                    dangerouslySetInnerHTML={{
+                      __html: truncateDescription(data[1]?.description || '', 110),
+                    }}
+                  />
+                  <Link
+                    to={`/news/get/${data[1]?._id}`}
+                    className="text-decoration-none text-dark fw-bold fs-5"
+                    onClick={scrollToTop}
+                  >
+                    Read More
+                  </Link>
+                </Col>
+              </Row>
+            </Card>
+          </Col>
+
+          <Col key={data[2]?._id} lg={6} md={6} sm={12} className="p-0 m-0">
+            <Card className="border-0">
+              <Row className="responsive-row">
+                <Col xs={5} className="responsive-about-column">
+                  <img
+                    src={data[2]?.images[0] || ''}
+                    alt={data[2]?.headline || 'No image available'}
+                    className="newspage-image"
+                  />
+                </Col>
+                <Col xs={7} className="responsive-about-column">
+                  <p className="fs-5 m-0 p-0">{data[2]?.headline || 'No headline available'}</p>
+                  <div
+                    className="description"
+                    dangerouslySetInnerHTML={{
+                      __html: truncateDescription(data[2]?.description || '', 110),
+                    }}
+                  />
+                  <Link
+                    to={`/news/get/${data[2]?._id}`}
+                    className="text-decoration-none text-dark fw-bold fs-5"
+                    onClick={scrollToTop}
+                  >
+                    Read More
+                  </Link>
+                </Col>
+              </Row>
+            </Card>
+          </Col>
+        </Row>
+        <Row className="mb-4 p-0 m-0 responsive-about">
+          <Col key={data[3]?._id} lg={6} md={6} sm={12} className="p-0 m-0">
+            <Card className="border-0">
+              <Row className="responsive-row">
+                <Col xs={5} className="responsive-about-column">
+                  <img
+                    src={data[3]?.images[0] || ''}
+                    alt={data[3]?.headline || 'No image available'}
+                    className="newspage-image"
+                  />
+                </Col>
+                <Col xs={7} className="responsive-about-column">
+                  <p className="fs-5 m-0 p-0">{data[3]?.headline || 'No headline available'}</p>
+                  <div
+                    className="description"
+                    dangerouslySetInnerHTML={{
+                      __html: truncateDescription(data[3]?.description || '', 110),
+                    }}
+                  />
+                  <Link
+                    to={`/news/get/${data[3]?._id}`}
+                    className="text-decoration-none text-dark fw-bold fs-5"
+                    onClick={scrollToTop}
+                  >
+                    Read More
+                  </Link>
+                </Col>
+              </Row>
+            </Card>
+          </Col>
+
+          <Col key={data[4]?._id} lg={6} md={6} sm={12} className="p-0 m-0">
+            <Card className="border-0">
+              <Row className="responsive-row">
+                <Col xs={5} className="responsive-about-column">
+                  <img
+                    src={data[4]?.images[0] || ''}
+                    alt={data[4]?.headline || 'No image available'}
+                    className="newspage-image"
+                  />
+                </Col>
+                <Col xs={7} className="responsive-about-column">
+                  <p className="fs-5 m-0 p-0">{data[4]?.headline || 'No headline available'}</p>
+                  <div
+                    className="description"
+                    dangerouslySetInnerHTML={{
+                      __html: truncateDescription(data[4]?.description || '', 110),
+                    }}
+                  />
+                  <Link
+                    to={`/news/get/${data[4]?._id}`}
+                    className="text-decoration-none text-dark fw-bold fs-5"
+                    onClick={scrollToTop}
+                  >
+                    Read More
+                  </Link>
+                </Col>
+              </Row>
+            </Card>
+          </Col>
+        </Row>
+      </div>
+
+      <Row className="mb-4 row-newspage">
+        <Col lg={12} md={12} sm={12} className="p-0 m-3">
+          <h5 className="mb-3 fs-4">
+            {data[1]?.headline || data[0]?.headline || 'No headline available'}
+          </h5>
+          <Card className="border-1 rounded-0">
+            <Card.Body>
+              <Row className="responsive-about">
+                <Col lg={5} md={12} className="mb-3 mb-lg-0 responsive-about-column">
+                  <img
+                    src={data[1]?.images[0] || data[0]?.images[0] || ''}
+                    alt={data[1]?.headline || data[0]?.headline || 'No image available'}
+                    className="w-100 h-100 object-fit-cover"
+                  />
+                </Col>
+                <Col lg={7} md={12} className="responsive-about-column">
+                  <div
+                    className="description"
+                    dangerouslySetInnerHTML={{
+                      __html: truncateDescription(data[1]?.description || '', 1000),
+                    }}
+                  />
+                  <ul className="lh-base">
+                    {data[1]?.latest_news
+                      ?.split(":")
+                      .slice(1)
+                      .map((event, index) => (
+                        <li key={index} className="fs-6 ms-4">
+                          {event.trim()}
+                        </li>
+                      )) || null}
+                  </ul>
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+      <div className="rounded-0">
+        {data.slice(4).map((item, index) => (
+          <Row key={item._id} className="mb-4">
+            <h5 className="mb-3 fs-4">{item?.headline || 'No headline available'}</h5>
+            <Col className="p-0 m-0 responsive-about-column">
+              <Card>
+                <Card.Body>
+                  <div
+                    className="description"
+                    dangerouslySetInnerHTML={{
+                      __html: item?.description || 'No description available',
+                    }}
+                  />
+                  <ul className="lh-base mt-3">
+                    {item?.latest_news
+                      ?.split(":")
+                      .slice(1)
+                      .map((event, eventIndex) => (
+                        <li key={eventIndex} className="fs-6 ms-4">
+                          {event.trim()}
+                        </li>
+                      )) || null}
+                  </ul>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default NewsPage;
+
+
