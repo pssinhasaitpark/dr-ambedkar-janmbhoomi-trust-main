@@ -70,7 +70,7 @@ const FaqSection = () => {
         <p className="text-center">Dr. Bhimrao Ambedkar</p>
         {faqs.map((section, sectionIndex) => (
           <div key={sectionIndex} className="mb-4">
-            <h4 className="fw-bold">{section.category}</h4>
+            <h2 className="fw-bold">{section.category}</h2>
             <div className="accordion mt-5">
               {section.items.map((item, index) => {
                 const isOpen = openIndex === `${sectionIndex}-${index}`;

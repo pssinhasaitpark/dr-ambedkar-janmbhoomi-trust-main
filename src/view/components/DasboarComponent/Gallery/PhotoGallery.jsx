@@ -3,6 +3,9 @@ import './PhotoGallery.css'
 import { photo, photo1, photo2, photo3, photo4 } from "../../../../assests/index";
 import { Link } from 'react-router-dom';
 const PhotoGallery = () => {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
     return (
         <div>
             <div className='container-fluid mt-4 mb-4'>
@@ -11,7 +14,7 @@ const PhotoGallery = () => {
                     <p className="text-center">Dr. Bhimrao Ambedkar</p>
                 </div>
                 <div className='start-gallery'>
-                    <Link to="/gallery">
+                    <Link to="/gallery" onClick={scrollToTop}>
                         <div className="gallery-row d-flex flex-wrap justify-content-center">
 
                             <div className="gallery-item mb-3 ">

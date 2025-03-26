@@ -1,39 +1,11 @@
 import React from 'react';
 import Slider from "react-slick";
 import './BookPulicationSlider.css';
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import { useBookSlider } from '../../../hooks/index';
 import { useNavigate } from 'react-router-dom';
 
 
-function SampleNextArrow(props) {
-  const { onClick } = props;
-  return (
-    <div
-      className="d-block position-absolute top-50 translate-middle-y arrow-right cursor-pointer"
-      onClick={onClick}
-    >
-      <IoIosArrowRoundForward
-        size={45} className='heading-ambedkar border border-dark border rounded-circle' />
-    </div>
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { onClick } = props;
-  return (
-    <div
-      className="d-block position-absolute top-50 translate-middle-y arrow-left cursor-pointer"
-      onClick={onClick}
-    >
-      <IoIosArrowRoundBack
-        size={45} className='heading-ambedkar border border-dark border rounded-circle' />
-    </div>
-  );
-}
-
-
-const BookPulicationSlider = () => {
+const BookData = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -42,12 +14,11 @@ const BookPulicationSlider = () => {
   const { data, isLoading, error } = useBookSlider();
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     slidesToShow: 6,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+ 
     responsive: [
       {
         breakpoint: 1024,
@@ -92,7 +63,7 @@ const BookPulicationSlider = () => {
   }
 
   return (
-    <div className=" mt-4 mb-4">
+    <div className=" mt-4 mb-4 bg-dark ps-1 pe-1">
       <Slider {...settings} className="book-publish">
 
         {data?.map((item) => {
@@ -113,4 +84,4 @@ const BookPulicationSlider = () => {
   );
 };
 
-export default BookPulicationSlider;
+export default BookData

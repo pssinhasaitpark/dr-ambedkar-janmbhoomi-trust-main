@@ -68,18 +68,18 @@ const About = () => {
   return (
     <div className="container-fluid px-0 mb-4" id="about">
       <div className="row g-0 responsive-about">
-        <div className="col-lg-6 col-sm-12 p-0 responsive-about-column">
+        <div className="col-lg-6 col-sm-12 p-0 ">
           <div
             loading="lazy"
             className="text-white background-image h-100 position-relative "
           >
             <Card className="custom-card bg-transparent border-0">
               <Card.Body className="card-style mt-4">
-                <h5 className="badge-ambedkar badge bg-primary text-white mb-3 ms-1">
+                <h4 className="badge-ambedkar badge bg-primary text-white mb-3 ms-1">
                   {name}
-                </h5>
+                </h4>
 
-                <h3 className="fw-medium  p-1 display-6 lh-base ">
+                <h3 className="fw-medium  p-1 display-6 lh-base About-head ">
                   {heading.split(",")[0]},
                   <span className="text-primary">{heading.split(",")[1]}</span>
                 </h3>

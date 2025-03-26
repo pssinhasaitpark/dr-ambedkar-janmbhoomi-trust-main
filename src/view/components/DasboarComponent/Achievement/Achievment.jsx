@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import '../Gallery/PhotoGallery.css'
 import {
   achieve,
@@ -9,6 +10,9 @@ import {
 } from "../../../../assests/index";
 
 const Achievment = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <div>
       <div className="container-fluid mt-5 mb-4 ">
@@ -17,6 +21,7 @@ const Achievment = () => {
           <p className=" text-center">Dr. Bhimrao Ambedkar</p>
         </div>
         <div className="start-gallery">
+        <Link to="/award" onClick={scrollToTop}>
           <div className="gallery-row d-flex flex-wrap justify-content-center">
             <div className="gallery-item mb-3 ">
               <img
@@ -54,6 +59,7 @@ const Achievment = () => {
               />
             </div>
           </div>
+          </Link>
         </div>
       </div>
     </div>

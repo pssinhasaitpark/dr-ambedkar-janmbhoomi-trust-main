@@ -13,6 +13,9 @@ const useTrustees = () => {
         full_name: trustee.full_name,
         image: trustee.image,
         designations: trustee.designations,
+        user_name:trustee.user_name,
+        email:trustee.email,
+        mobile:trustee.mobile,
       }));
     }
   });

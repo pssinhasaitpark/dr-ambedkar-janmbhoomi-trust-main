@@ -12,6 +12,7 @@ const Trustee = () => {
   if (error) {
     return <div>Error: {error.message || "An error occurred"}</div>;  
   }
+  
 
   return (
     <div className="all-section-width ">
@@ -35,7 +36,7 @@ const Trustee = () => {
         <div className="row">
           {data && data.length > 0 ? (
             data.map((trustee, index) => (
-              <div key={index} className="col-sm-6 pe-4 mb-3">
+              <div key={trustee.id} className="col-sm-6 pe-4 mb-3">
                 <div className="row border gx-1 ">
                   <div className="col-sm-4 p-0">
                     <img

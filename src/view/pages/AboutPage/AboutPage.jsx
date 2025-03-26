@@ -42,7 +42,7 @@ const HomeDashboard = () => {
               <p className="mb-3 fs-5">{about.name}</p>
               <div className="border border-2 mt-3 p-3">
                 <div
-                  className="about-des"
+                  className="about-desy"
                   dangerouslySetInnerHTML={{
                     __html: about.biography,
                   }}

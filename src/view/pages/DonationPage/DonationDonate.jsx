@@ -5,14 +5,12 @@ import { Container, Form, Button, Card, Row, Col } from 'react-bootstrap';
 import { useDonates } from '../../hooks/index';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { ToastContainer,toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import axios from 'axios'; 
 
 const phoneRegExp = /^(\+?\d{0-9})?\s?-?\s?(\(?\d{7}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
-
 const DonationDonate = () => {
   const navigate = useNavigate();
-
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://checkout.razorpay.com/v1/checkout.js';
@@ -24,7 +22,6 @@ const DonationDonate = () => {
       console.error('Error loading Razorpay script');
     };
     document.body.appendChild(script);
-
     return () => {
       document.body.removeChild(script);
     };
@@ -51,14 +48,12 @@ const DonationDonate = () => {
     validationSchema: validationSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-  
         const donationResponse = await mutation.mutateAsync({
           amount: values.amount,
           full_name: values.fullName,
           email: values.email,
           phone: values.phone,
         });
-
         const razorpayOrderId = donationResponse?.data?.orderId;
 
         if (razorpayOrderId) {
@@ -100,7 +95,6 @@ const DonationDonate = () => {
               color: '#3399cc',
             },
           };
-
           const razorpay = new window.Razorpay(options);
           razorpay.open();
           razorpay.on('payment.failed', (paymentError) => {
@@ -117,7 +111,6 @@ const DonationDonate = () => {
       }
     },
   });
-
   return (
     <Container className="py-5">
       <Row className="justify-content-center">
@@ -127,7 +120,6 @@ const DonationDonate = () => {
               <h3 className="font-weight-bold mb-0" style={{ color: '#2c3e50' }}>Bhim Janmabhoomi, Dr. Bhimrao Ambedkar Memorial Mhow</h3>
               <p className="text-muted mt-2 mb-0">Donation Form</p>
             </Card.Header>
-
             <Card.Body className="px-4 py-4">
               <Form onSubmit={formik.handleSubmit}>
                 <Row>
@@ -166,7 +158,6 @@ const DonationDonate = () => {
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <Row>
                   <Col md={6}>
                     <Form.Group className="mb-4">
@@ -203,7 +194,6 @@ const DonationDonate = () => {
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <div className="text-center mt-4">
                   <div className="d-grid gap-2 col-md-6 mx-auto">
                     <Button
@@ -222,7 +212,7 @@ const DonationDonate = () => {
                 </div>
               </Form>
             </Card.Body>
-            <ToastContainer />
+            {/* <ToastContainer /> */}
             <Card.Footer className="text-center py-3 bg-light text-muted">
               <small>Secure payment processing • All information is encrypted</small>
             </Card.Footer>
@@ -232,5 +222,4 @@ const DonationDonate = () => {
     </Container>
   );
 };
-
 export default DonationDonate;
