@@ -57,7 +57,7 @@ const NewsPage = () => {
                   <div
                     className="description"
                     dangerouslySetInnerHTML={{
-                      __html: truncateDescription(data[0]?.description || '', 1000),
+                      __html: truncateDescription(data[0]?.description || '',2000),
                     }}
                   />
                   <ul className="lh-base">

@@ -1,121 +1,3 @@
-/* .book-publish .slick-slide img {max-height: 283px;} */
-.testimonial-card {
-  width: 94%;
-  min-height: 435px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 15px;
-  box-sizing: border-box; 
-}
-.book-publish .slick-dots li button:before {
-  font-size: 15px;
-  margin-top: -1rem;
-  padding: 0;
-}
-.testimonial .slick-dots li button:before {
-  font-size: 15px;
-  margin-top: 1rem;
-  padding: 0;
-}
-.book-image {
-  width: 100%;
-  height: 283px; 
-  object-fit: fill; 
-  padding: 4%;
-}
-.trustee-image {
-  height: 12.5rem;
-  width: 98%;
-  padding: 4px;
-  object-fit: cover;
-  display: block;
-}
-.book-publish .slick-list {
-  margin-left: 100px;
-  margin-right: 100px;
-}
-.book-publish .arrow-right {right: 30px;}
-.book-publish .arrow-left {left: 30px;}
-.book-publish.slick-slider {
-  width: 97%;
-  margin-left: 1.6rem;
-}
-@media (min-width: 250px) and (max-width: 768px) {
-  .book-publish .slick-list {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .book-publish.slick-slider {
-    width: 100%;
-    margin-left: 0;
-  }
-  .testimonial-card {
-    width: 92%;
-    min-height: 400px; 
-  }}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .book-publish.slick-slider {
-    width: 96%;
-    margin-left: 1rem;
-  }
-  .testimonial-card {
-    width: 90%;
-    min-height: 450px;
-  }}
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .book-publish.slick-slider {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .testimonial-card {
-    width: 90%;
-    min-height: 500px; 
-  }}
-@media (min-width: 900px) and (max-width: 1536px) {
-  .testimonial-card {
-    width: 90%;
-    min-height: 595px; 
-  }}
-@media (min-width: 800px) and (max-width: 1024px) {
-  .book-publish .slick-list {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  .book-publish.slick-slider {
-    width: 90%;
-    margin-left: 3rem;
-  }
-  .trustee-image{width: 100%;}
-  .book-image {width: 100%;}
-  .testimonial-card {
-    width: 92%;
-    min-height: 896px;
-}
-  .book-publish .arrow-right, .book-publish .arrow-left {
-    top: 50%;
-    font-size: 25px;
-  }
-  .book-publish .arrow-right {right: -30px;}
-  .book-publish .arrow-left {left: -30px;}}
-
-/* .trustee-image{
-  width: 100%;
-  height: 200px; 
-  object-fit: cover; 
-  padding: 4%;
-} */
-
-/* .book-image {
-  width: 98%;
-  padding: 4px;
-} */
-
-
-
-
-
-
 import React from "react";
 import { useNews } from "../../hooks/index";
 import { Link } from "react-router-dom";
@@ -385,5 +267,25 @@ const NewsPage = () => {
 };
 
 export default NewsPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
