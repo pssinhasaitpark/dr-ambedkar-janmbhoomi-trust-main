@@ -5,7 +5,6 @@ import { Container, Form, Button, Card, Row, Col } from 'react-bootstrap';
 import { useDonates } from '../../hooks/index';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import {toast } from 'react-toastify';
 import axios from 'axios'; 
 
 const phoneRegExp = /^(\+?\d{0-9})?\s?-?\s?(\(?\d{7}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
@@ -78,11 +77,11 @@ const DonationDonate = () => {
                   console.log('Payment verified successfully!');
                   navigate("/donate");
                 } else {
-                  toast.error('Payment verification failed.');
+                 
                   console.error('Payment verification failed:', verificationResponse.data);
                 }
               } catch (error) {
-                toast.error('Payment verification failed');
+            
                 console.error('Error verifying payment:', error);
               }
             },
@@ -99,14 +98,14 @@ const DonationDonate = () => {
           razorpay.open();
           razorpay.on('payment.failed', (paymentError) => {
             console.error('Payment Failed:', paymentError);
-            toast.error("Payment failed. Please try again.");
+            
           });
         }
         setTimeout(() => {
           resetForm();
         }, 6000);
       } catch (error) {
-        toast.error("Failed to process payment. Please try again.");
+     
         console.error("Payment error:", error);
       }
     },
@@ -212,7 +211,7 @@ const DonationDonate = () => {
                 </div>
               </Form>
             </Card.Body>
-            {/* <ToastContainer /> */}
+          
             <Card.Footer className="text-center py-3 bg-light text-muted">
               <small>Secure payment processing • All information is encrypted</small>
             </Card.Footer>

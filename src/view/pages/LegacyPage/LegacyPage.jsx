@@ -6,7 +6,6 @@ import "./Legacy.css";
 import { useSelector } from "react-redux";
 import { Testimonial } from "../../components/index";
 import { useTestimonials } from "../../hooks/index";
-import { toast } from "react-toastify";
 const LegacyPage = () => {
   const [showUpload, setShowUpload] = useState(false);
   const [image, setImage] = useState({
@@ -69,7 +68,6 @@ const LegacyPage = () => {
 
     try {
       await submitTestimonial(formData);
-      toast.success("Testimonial submitted successfully!");
       setTestimonial({
         description: "",
         case_studies: null,
@@ -81,7 +79,6 @@ const LegacyPage = () => {
       });
       setShowUpload(false);
     } catch (error) {
-      toast.error("There was an error submitting the testimonial.");
     }
   };
 
