@@ -128,7 +128,7 @@ const ContactPage = () => {
         <ContactCard
           image={contact3}
           title="EMAIL ADDRESS"
-          content="Dr Ambedkartrust@.gmail.com"
+          content="DrAmbedkartrust@gmail.com"
           type="email"
         />
       </div>

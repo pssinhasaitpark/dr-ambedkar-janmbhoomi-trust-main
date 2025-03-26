@@ -22,8 +22,8 @@ const BookDetailPage = () => {
   };
   return (
     <div className="all-section-width">
-      <div className="text-center">
-        <img src={data.cover_image} alt={data.cover_image} className="" />
+      <div className="mx-auto w-25 h-25">
+        <img src={data.cover_image} alt={data.cover_image} className="w-100 h-100" />
       </div>
       <div className="">
         <h4 className="mt-2">Book Title:- {toTitleCase(data.book_title)}</h4>

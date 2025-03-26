@@ -22,7 +22,7 @@ const GalleryPage = () => {
       rows.push(mediaArray.slice(i, i + 3));
     }
     return rows.map((row, rowIndex) => (
-      <div key={rowIndex} className="row mt-4 m-0 p-0">
+      <div key={rowIndex} className="row  m-0 p-0">
         {row.map((image, index) => (
           <div key={index} className={`col-sm-${index === 0 ? 6 : 3} p-0`}>
             <SlideshowLightbox>

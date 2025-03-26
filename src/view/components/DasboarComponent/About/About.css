@@ -41,14 +41,11 @@
   .heading-ambedkar {font-size: 32px;}
   .ambedkar-responsive {
     font-size: 1rem !important;
-    font-weight: 500 !important;
-  }
+    font-weight: 500 !important; }
   .card-img-top {
     object-fit: fill; 
     height: auto;  
-    max-height: 300px;  
-  }
-
+    max-height: 300px;  }
   .about-slider .slick-list {max-height: 400px; }}
 @media (min-width: 768px) and (max-width: 1024px) {
   .card-style {padding: 4%;}
@@ -60,8 +57,7 @@
   (min-width: 1536px) and (max-height: 864px),
   (min-width: 1600px) and (max-height: 900px) {
   img.card-img-top {height: 700px; }
-.card-style { padding: 5%; }
-}
+.card-style { padding: 5%; }}
 
 /* @media screen and (min-width: 1024px) and (max-height: 1366px),(max-width: 1024px) and (max-height: 600px) { */
   /* .no-background-table td:first-child {width: 50%;} */
