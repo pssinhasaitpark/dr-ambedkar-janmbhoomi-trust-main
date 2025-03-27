@@ -30,6 +30,7 @@ const NewsPage = () => {
     return text;
   };
 
+
   return (
     <div className="all-section-width">
       <div className="img-banner">
@@ -93,11 +94,11 @@ const NewsPage = () => {
                           />
                         </Col>
                         <Col xs={7} className="responsive-about-column">
-                          <p className="fs-5 m-0 p-0">{item?.headline || 'No headline available'}</p>
+                          <p className="fs-5 m-0 p-0 fw-bolder"> {truncateDescription(item?.headline || 'No headline available', 80)} </p>
                           <div
                             className="description"
                             dangerouslySetInnerHTML={{
-                              __html: truncateDescription(item?.description || '', 110),
+                              __html: truncateDescription(item?.description || '', 280),
                             }}
                           />
                           <Link
