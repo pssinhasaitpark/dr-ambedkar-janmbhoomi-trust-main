@@ -4,7 +4,7 @@ import "./Biography.css";
 const biographyData = [
   {
     date: "14th April 1891",
-    text: "Born at Mahu (Madhya Pradesh), the fourteenth child of Subhedar Ramji Sakpal and Mrs Bhimabai Ambedkar.",
+    text: "Born at Mhow (Madhya Pradesh), the fourteenth child of Subhedar Ramji Sakpal and Mrs Bhimabai Ambedkar.",
   },
   {
     date: "6 December 1956",
