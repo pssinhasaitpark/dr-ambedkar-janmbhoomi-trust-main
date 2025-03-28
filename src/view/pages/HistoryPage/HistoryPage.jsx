@@ -11,7 +11,7 @@ const HistoryPage = () => {
       <div className="img-banner ">
         <img src={award1} alt="visitor-image" className="mb-2 all-image" />
       </div>
-      <div className="mt-5 mb-4">
+      <div className="mt-4 mb-4">
         <h2 className="text-uppercase fs-1 m-0 p-0 ">History of Janmabhoomi</h2>
         <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
         <p className=" fw-normal  mt-2 paragraph-birth ">

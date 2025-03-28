@@ -75,7 +75,7 @@ const Footer = () => {
       <div className="footer bg-dark text-light py-5">
         <div className="p-0 m-0">
           <div className="row m-0 mb-5">
-            <div className="col-md-4 footer-section w-25 ms-5 mt-2 p-0 mx-0 ps-4">
+            <div className="col-md-4 footer-section w-25 ms-5 mt-2 p-0 mx-0 ps-lg-4 ps-0">
               <span className="ms-4 badge-ambedkar badge bg-primary mb-3">
                 Dr Bhimrao Ambedkar
               </span>
@@ -134,7 +134,7 @@ const Footer = () => {
 
               <form onSubmit={formik.handleSubmit}>
                 <div
-                  className="d-flex mt-4 "
+                  className="d-flex mt-4 newsletter-style "
                   style={{ height: "60px", width: "102%" }}
                 >
                   <input
@@ -149,7 +149,7 @@ const Footer = () => {
                   />
                   <button
                     type="submit"
-                    className="btn btn-primary  px-5 text-light fs-4 fw-medium rounded-end rounded-0 border-0"
+                    className="btn btn-primary  px-5 text-light fs-4 fw-medium rounded-end rounded-0 border-0 subscribe-button"
                     disabled={isLoading}
                   >
                     {subscribed

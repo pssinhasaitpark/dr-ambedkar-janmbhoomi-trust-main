@@ -23,5 +23,10 @@ button:focus{
     padding-left: 0px;
  
   }
+  .logo-image{
+    width:100px;
+    height:100px;
+    margin-top: 1%;
+  }
 }
    

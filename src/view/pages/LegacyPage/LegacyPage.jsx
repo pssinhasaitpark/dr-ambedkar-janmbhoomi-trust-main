@@ -87,7 +87,7 @@ const LegacyPage = () => {
       <div className="img-banner ">
         <img src={legacyy} alt="legacy-image" className="mb-2 legacy-image" />
       </div>
-      <div className="mt-5 mb-4">
+      <div className="mt-4 mb-4">
         <h2 className="text-uppercase fs-1 m-0 p-0 ">Dr.Ambedkar's Legacy</h2>
         <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
         <p className=" fw-medium  mt-2 paragraph-birth ">
@@ -223,7 +223,7 @@ const LegacyPage = () => {
         </div>
       </div>
       <div className="paragraph-birth fw-medium  mt-5">
-        Dr. B.R. Ambedkar's contributions continue to resonate in contemporary
+        Dr. B.R. Ambedkar's contributions continue to resonate in the contemporary
         India, influencing various facets of society. Here are some
         testimonials, case studies, and stories that highlight the enduring
         relevance of his work:

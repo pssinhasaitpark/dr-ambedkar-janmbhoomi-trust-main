@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 const About = () => {
   const { data, status, error } = useBanners();
   if (status === "loading") return <div className="spinner"></div>;
-  if (status === "failed") return <div>Error: {error}</div>;
+  if (status === "failed") return <div> {error}</div>;
   if (!data || data.length === 0) {
     return;
   }
@@ -90,19 +90,19 @@ const About = () => {
                       <td className="fw-medium fs-4 heading-ambedkar">
                         Beginning date:
                       </td>
-                      <td className="fw-normal fs-4">{beginning_date}</td>
+                      <td className="fw-normal fs-4 ambedkar-responsive ">{beginning_date}</td>
                     </tr>
                     <tr>
                       <td className="fw-medium fs-4 heading-ambedkar">
                         Completion date:
                       </td>
-                      <td className="fw-normal fs-4">{completion_date}</td>
+                      <td className="fw-normal fs-4 ambedkar-responsive ">{completion_date}</td>
                     </tr>
                     <tr>
                       <td className="fw-medium fs-4 heading-ambedkar">
                         Opening date:
                       </td>
-                      <td className="fw-normal fs-4">{opening_date}</td>
+                      <td className="fw-normal fs-4 ambedkar-responsive ">{opening_date}</td>
                     </tr>
                   </tbody>
                 </table>

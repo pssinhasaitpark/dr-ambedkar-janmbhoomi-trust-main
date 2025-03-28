@@ -10,13 +10,18 @@ const HomeDashboard = () => {
     return <div className="spinner"></div>;
   }
 
+  // if (error) {
+  //   return <div>Error fetching events: {error}</div>;
+  // }
   if (error) {
-    return <div>Error fetching events: {error}</div>;
+    const errorMessage = error.message || "An unknown error occurred.";
+    return <div>{errorMessage}</div>;
   }
+
 
   return (
     <div className="all-section-width">
-      <div className="mt-5 p-3">
+      <div className="">
         {data && data.length > 0 ? (
           data.map((about, index) => (
             <div key={index} className="about-item">
@@ -38,7 +43,7 @@ const HomeDashboard = () => {
                 <p>No images available</p>
               )}
 
-              <h2 className="text-uppercase fs-1 mt-5 p-0 m-0">{about.title}</h2>
+              <h2 className="text-uppercase fs-1 mt-4 p-0 m-0">{about.title}</h2>
               <p className="mb-3 fs-5">{about.name}</p>
               <div className="border border-2 mt-3 p-3">
                 <div

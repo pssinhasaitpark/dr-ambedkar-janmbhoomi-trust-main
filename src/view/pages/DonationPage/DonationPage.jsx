@@ -18,7 +18,7 @@ const DonationPage = () => {
       <div className="img-banner ">
         <img src={donation} alt="about-image" className="mb-2 all-image" />
       </div>
-      <div className="mt-5 mb-4">
+      <div className="mt-4 mb-4">
       <div className="d-flex justify-content-between">
       <h2 className="text-uppercase fs-1  p-0 m-0"> Donation and Support</h2>
       <button className="btn btn-primary" ><Link to="/donate" className="text-light fs-4 text-decoration-none">Donate</Link></button></div>
@@ -74,24 +74,19 @@ const DonationPage = () => {
         </p>
 
         <div className="mb-3">
-          <div className="d-flex justify-content-between overflow-hidden">
-            <img
-              src={donationImgs1}
-              alt="Children"
-              className="donationImg img-fluid"
-            />
-            <img
-              src={donationImgs2}
-              alt="People"
-              className="donationImgs img-fluid"
-            />
-            <img
-              src={donationImgs3}
-              alt="Historic "
-              className="donationImgs img-fluid"
-            />
+    <div className="row mt-4 m-0 ms-4 me-4 mb-5">
+          <div className="col-sm-4 p-0">
+            <img src={donationImgs1} alt="birth-image" className="w-100" style={{height:"15rem"}} />
+          </div>
+          <div className="col-sm-4 p-0">
+            <img src={donationImgs2} alt="birth-image" className="w-100" style={{height:"15rem"}} />
+          </div>
+          <div className="col-sm-4 p-0">
+            <img src={donationImgs3} alt="birth-image" className="w-100" style={{height:"15rem"}} />
           </div>
         </div>
+      </div>
+        
       </div>
       <div className="border p-4 mb-4">
       <p className="fs-4 p-0 m-0  fw-medium">Volunteering opportunities.</p>

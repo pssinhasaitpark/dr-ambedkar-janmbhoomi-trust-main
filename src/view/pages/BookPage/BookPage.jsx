@@ -10,12 +10,14 @@ const BookPage = () => {
   }
 
   if (error) {
-    return <div>Error fetching events: {error}</div>;
+    const errorMessage = error.message || "An unknown error occurred.";
+    return <div>{errorMessage}</div>;
   }
+
   return (
     <>
       <div className="all-section-width">
-        <div className="mt-5 p-3">
+        <div className=" ">
  
           {data && data.length > 0 ? (
             data.map((book, index) => (
@@ -42,7 +44,7 @@ const BookPage = () => {
                 )}
 {/*                 
                         <div className=""><BookData/></div> */}
-                <h2 className="text-uppercase fs-1 mt-5 m-0 p-0">{book.title}</h2>
+                <h2 className="text-uppercase fs-1 mt-4 m-0 p-0">{book.title}</h2>
                 <p className="mb-3 fs-5">{book.name}</p>
                 
                 <div className="border border-2 mt-3 p-3">

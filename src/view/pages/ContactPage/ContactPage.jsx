@@ -98,7 +98,7 @@ const ContactPage = () => {
       <div className="img-banner ">
         <img src={contact2} alt="about-image" className="mb-2 all-image" />
       </div>
-      <div className="mt-5 mb-4">
+      <div className="mt-4 mb-4">
         <h2 className="text-uppercase fs-1 p-0 m-0  ">CONTACT US/JOIN US</h2>
         <p className=" fs-5">Dr. Bhimrao Ambedkar</p>
         <p className=" fw-normal  mt-2 paragraph-birth ">
