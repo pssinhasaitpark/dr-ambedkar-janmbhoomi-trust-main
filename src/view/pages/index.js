@@ -17,7 +17,7 @@ import HistoryPage from "./HistoryPage/HistoryPage";
 import DonationDonate from "./DonationPage/DonationDonate";
 import BookDetailPage from "./BookPage/BookDetail";
 import NewsList from "./NewsPage/NewsList";
-
+import PageNotFound from "./PageNotFound/PageNotFound";
 
 
 export {
@@ -39,5 +39,5 @@ export {
     HistoryPage,
     DonationDonate,
     BookDetailPage,
-    NewsList
+    NewsList,PageNotFound,
 }

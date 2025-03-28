@@ -10,8 +10,12 @@ const NewsList = () => {
   if (isLoading) {
     return <div className="spinner"></div>;
   }
+  // if (error) {
+  //   return <p>Error: {error?.message || "An unknown error occurred"}</p>;
+  // }
   if (error) {
-    return <p>Error: {error?.message || "An unknown error occurred"}</p>;
+    const errorMessage = error.message || "An unknown error occurred.";
+    return <div>{errorMessage}</div>;
   }
   if (!data) {
     return <p>No news available.</p>;

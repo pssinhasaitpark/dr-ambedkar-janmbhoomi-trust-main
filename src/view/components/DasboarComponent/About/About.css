@@ -38,10 +38,11 @@
 @media (min-width: 250px) and (max-width: 768px) {
   .card-style {padding: 2%; }
 .badge-ambedkar { font-size: 16px;}
-  .heading-ambedkar {font-size: 32px;}
+  .heading-ambedkar {font-size: 25px;}
+  .no-background-table td:first-child {width: 55%;}
   .ambedkar-responsive {
-    font-size: 1rem !important;
-    font-weight: 500 !important; }
+    font-size: 21px !important;
+    line-height: normal !important;}
   .card-img-top {
     object-fit: fill; 
     height: auto;  

@@ -16,7 +16,7 @@ const NewsPage = () => {
   }
 
   if (error) {
-    return <p>Error: {error.message}</p>;
+    return <p> {error.message}</p>;
   }
 
   if (!data || !Array.isArray(data) || data.length === 0) {
@@ -37,7 +37,7 @@ const NewsPage = () => {
         <img src={news1} alt="about-image" className="mb-2 all-image" />
       </div>
 
-      <div className="mt-5 mb-4">
+      <div className="mt-4 mb-4">
         <h2 className="text-uppercase fs-1 m-0 p-0">News and Updates</h2>
         <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
       </div>

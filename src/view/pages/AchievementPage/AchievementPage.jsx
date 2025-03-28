@@ -33,7 +33,7 @@ const AchievementPage = () => {
           </div>
         </div>
       </div>
-      <div className="mt-5 mb-4">
+      <div className="mt-4 mb-4">
         <h2 className="text-uppercase fs-1 p-0 m-0 ">Achievements</h2>
         <p className="mb-3 fs-5 ">Dr. Bhimrao Ambedkar</p>
         <p className=" fw-medium  mt-4 paragraph-birth ">

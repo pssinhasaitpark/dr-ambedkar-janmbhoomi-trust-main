@@ -12,7 +12,7 @@ const AwardPage = () => {
       <div className="img-banner ">
         <img src={award1} alt="about-image" className="mb-2 all-image" />
       </div>
-      <div className="mt-5 mb-4">
+      <div className=" mt-4 mb-4">
         <h2 className="text-uppercase fs-1 biography-header m-0 p-0 ">Awards</h2>
         <p className="mb-3 fs-5">Dr. Bhimrao Ambedkar</p>
         <p className=" fw-medium  mt-2 paragraph-birth ">
@@ -22,9 +22,9 @@ const AwardPage = () => {
         </p>
       </div>
       <div className="border border-2 mt-4">
-        <div className="mt-4 mb-4 ms-4">
-          <p className="fs-3 p-0 m-0 fw-medium ms-1">Major Awards and Honors</p>
-          <ol type="a" className="ms-4">
+        <div className="mt-4 mb-4 ms-lg-4 ms-0">
+          <p className="fs-3 p-0 m-0 fw-medium ms-lg-1 ms-3 ">Major Awards and Honors</p>
+          <ol type="a" className="ms-lg-4 ms-0">
             <li className="fs-5 lh-lg">
               Bharat Ratna (1990) – India's highest civilian award, conferred
               posthumously for his immense role in drafting the Indian
@@ -46,7 +46,7 @@ const AwardPage = () => {
               honorary doctorates.
             </li>
           </ol>
-          <p className="ms-5 fs-5 mt-5 mb-5">
+          <p className="ms-4 fs-5 mt-5 mb-5 px-lg-0 px-3">
             {" "}
             Dr. Ambedkar's work continues to inspire movements for equality and
             human rights worldwide.
@@ -59,21 +59,22 @@ const AwardPage = () => {
             <img
               src={achievementimg2}
               alt="achievement-image"
-              className="museum-image"
+             className="w-100"
             />
           </div>
           <div className="col-sm-4 p-0 m-0">
             <img
               src={achievementimg1}
               alt="achievement-image"
-              className="museum-image"
+             className="w-100"
             />
           </div>
           <div className="col-sm-4 p-0 m-0">
             <img
               src={achievementimg}
               alt="achievement-image"
-              className="museum-image"
+              className="w-100"
+          
             />
           </div>
         </div>

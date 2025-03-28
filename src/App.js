@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { PageLayout, AboutPage, BirthPlace, MuseumLayout, EventCelebrationLayout, GalleryLayout, AwardLayout, BookLayout, LegacyLayout, EducationLayout, AchievementLayout, NewsLayout, ContactLayout, DonationLayout, VisitorLayout, TrusteeLayout, HistoryLayout, BookListLayout, DonationDonateLayout, NewsListLayout } from "./view/layouts";
 
-
+import { PageNotFound } from "./view/pages";
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
         <Route path="/bookDetail/:id" element={<BookListLayout />} />
         <Route path="/donate" element={<DonationDonateLayout />} />
         <Route path="/news/get/:id" element={<NewsListLayout />} /> 
+        <Route path="*" element={<PageNotFound />} />
       
 
       </Routes>

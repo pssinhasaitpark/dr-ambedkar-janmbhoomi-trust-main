@@ -14,8 +14,10 @@ const GalleryPage = () => {
     return <div className="spinner"></div>;
   }
   if (error) {
-    return <div>Error fetching events: {error}</div>;
+    const errorMessage = error.message || "An unknown error occurred.";
+    return <div>{errorMessage}</div>;
   }
+
   const renderImages = (mediaArray) => {
     const rows = [];
     for (let i = 0; i < mediaArray.length; i += 3) {
@@ -68,7 +70,7 @@ const GalleryPage = () => {
         <div className="img-banner">
           <img src={pgallery} alt="about-image" className="mb-2 all-image" />
         </div>
-        <div className="mt-5 mb-4">
+        <div className="mt-4 mb-4">
           <h2 className="text-uppercase fs-1 p-0 m-0">Photo Gallery</h2>
           <p className="fs-5">Dr. Bhimrao Ambedkar</p>
           <p className="fw-medium fs-5 mt-2 paragraph-birth p-0 m-0">

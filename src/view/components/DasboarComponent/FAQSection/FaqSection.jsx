@@ -28,7 +28,7 @@ const FaqSection = () => {
         },
         {
           question:
-            "Why is Dr. Ambedkar called the 'Father of the Indian' Constitution?",
+            "How did Dr. Ambedkar contribute to education?",
           answer:
             "Dr. B R Ambedkar and his contributions toward country is of no bound. His contribution towards formation of the constitution and other policies earned him global recognition and admiration.",
         },
@@ -42,13 +42,9 @@ const FaqSection = () => {
           answer:
             "Dr. B R Ambedkar and his contributions toward country is of no bound. His contribution towards formation of the constitution and other policies earned him global recognition and admiration.",
         },
+      
         {
-          question: "What were Dr. Ambedkar’s major contributions?",
-          answer:
-            "Dr. B R Ambedkar and his contributions toward country is of no bound. His contribution towards formation of the constitution and other policies earned him global recognition and admiration.",
-        },
-        {
-          question: "Why is Dr. Ambedkar called the Father of the Indian Constitution?",
+          question: "What role did Dr. Ambedkar play in the Indian Constitution?",
           answer:
             "Dr. B R Ambedkar and his contributions toward country is of no bound. His contribution towards formation of the constitution and other policies earned him global recognition and admiration.",
         },
